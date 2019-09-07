@@ -4,10 +4,10 @@
     <v-card-text>
       <v-container>
         <v-divider></v-divider>
-        <v-row v-for="n in Problems">
+        <v-row v-for="key in Problems">
           <v-col>
             <v-card>
-              <v-card-title>{{n[0]}} {{n[1]}}</v-card-title>
+              <v-card-title>{{key[0]}} {{key[1]}}</v-card-title>
             </v-card>
           </v-col>
         </v-row>
@@ -51,3 +51,4 @@ export default Vue.extend({
   height: 100%;
 }
 </style>
+ 
