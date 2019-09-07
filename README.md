@@ -1,5 +1,9 @@
 # guoj-frontend
 
+![](https://img.shields.io/github/issues/quank123wip/GuOJFrontend)
+![](https://img.shields.io/github/forks/quank123wip/GuOJFrontend)
+![](https://img.shields.io/github/stars/quank123wip/GuOJFrontend)
+![](https://img.shields.io/github/license/quank123wip/GuOJFrontend)
 ## Project setup
 ```
 yarn install
