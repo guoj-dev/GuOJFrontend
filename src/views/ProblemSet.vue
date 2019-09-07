@@ -1,7 +1,18 @@
 <template>
   <v-card style=" width:100%; height:100%;" tile flex dark grey darken-3>
-    <v-card-title>Welcome To GuOJ!</v-card-title>
-    
+    <v-card-title>ProblemSet</v-card-title>
+    <v-card-text>
+      <v-container>
+        <v-divider></v-divider>
+        <v-row v-for="n in Problems">
+          <v-col>
+            <v-card>
+              <v-card-title>{{n[0]}} {{n[1]}}</v-card-title>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card-text>
   </v-card>
 </template>
 
