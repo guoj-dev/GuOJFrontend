@@ -17,7 +17,6 @@ new Vue({
   vuetify,
   router,
   store,
-  GeminiScrollbar,
   render: h => h(App)
 }).$mount('#app')
 
