@@ -4,7 +4,7 @@
     <v-card-text>
       <v-container>
         <v-divider></v-divider>
-        <v-row v-for="key in Problems">
+        <v-row :v-for="(key,value) in Problems">
           <v-col>
             <v-card>
               <v-card-title>{{key[0]}} {{key[1]}}</v-card-title>
