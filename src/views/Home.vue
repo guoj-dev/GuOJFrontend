@@ -1,7 +1,25 @@
 <template>
   <v-card style=" width:100%; height:100%;" tile flex dark grey darken-3>
-    <v-card-title>Welcome To GuOJ!</v-card-title>
-    
+    <v-carousel>
+    <v-carousel-item
+      v-for="Slide in Slides"
+      :key="Slide"
+    >
+      <v-sheet
+        :color="Slide[0]"
+        height="100%"
+        tile
+      >
+        <v-row
+          class="fill-height"
+          align="center"
+          justify="center"
+        >
+          <div class="display-3">{{ Slide[1] }}</div>
+        </v-row>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
   </v-card>
 </template>
 
@@ -12,24 +30,13 @@ export default Vue.extend({
   components: {},
   data: () => {
     return {
-        Problems:[
-            [
-                "P1000",
-                "A+B Problem"
-            ],
-            [
-                "P1001",
-                "A+B Problem"
-            ],
-            [
-                "P1002",
-                "A+B Problem"
-            ],
-            [
-                "P1003",
-                "A+B Problem"
-            ],
-        ]
+        Slides: [
+          ['primary','GuOJ'],
+          ['secondary','GuOJ'],
+          ['yellow darken-2','GuOJ'],
+          ['red','GuOJ'],
+          ['orange','GuOJ'],
+        ],
     };
   }
 });

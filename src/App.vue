@@ -4,11 +4,12 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant.sync="mini"
-      :clipped="$vuetify.breakpoint.lgAndUp"
+      clipped="true"
       app
       dark
-      flat
-      color="grey darken-3"
+      permanent
+      mini-variant-width="56"
+      color="blue darken-3"
     >
       <v-list dense>
         <template v-for="item in items">
@@ -24,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="black" dark flat fixed>
+    <v-app-bar :clipped-left="true" app color="blue" dark flat fixed src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
       <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
         <span class="hidden-sm-and-down">GuOJ</span>
@@ -38,13 +39,11 @@
       </v-btn>
     </v-app-bar>
     <v-content>
-        
-      <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color="grey darken-2">
+      <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
         <router-view></router-view>
       </v-container>
     </v-content>
-    <v-footer app>
-    </v-footer>
+    <v-footer app></v-footer>
   </v-app>
 </template>
 
@@ -61,8 +60,8 @@ export default {
     drawer: null,
     mini: false,
     items: [
-      { icon: "home", text: "Home", to:"/" },
-      { icon: "list", text: "ProblemSet", to:"/ProblemSet" },
+      { icon: "home", text: "Home", to: "/" },
+      { icon: "list", text: "ProblemSet", to: "/ProblemSet" },
       { icon: "stars", text: "Contests" },
       { icon: "people", text: "My Group" },
       { icon: "chat", text: "Fourm" }
