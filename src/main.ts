@@ -23,6 +23,6 @@ new Vue({
 
 export default new vuetify({
   icons: {
-    iconfont: 'md',
+    iconfont: 'mdi',
   }
 })

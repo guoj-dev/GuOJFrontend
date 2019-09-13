@@ -1,12 +1,4 @@
 <template>
-  <v-card
-    style=" width:100%; height:100%;"
-    tile
-    flex
-    dark
-    color="white darken-3"
-    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
-  >
     <v-container>
       <v-row>
         <v-col>
@@ -74,7 +66,6 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-card>
 </template>
 
 <script lang="ts">
@@ -86,10 +77,6 @@ export default Vue.extend({
     return {
       Slides: [
         ["primary", "New GuOJ Generation"],
-        ["secondary", "GuOJ"],
-        ["yellow darken-2", "GuOJ"],
-        ["red", "GuOJ"],
-        ["orange", "GuOJ"]
       ]
     };
   }

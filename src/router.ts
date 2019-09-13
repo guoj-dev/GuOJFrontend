@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ProblemSet from './views/ProblemSet.vue'
+import ProblemView from './views/ProblemView.vue'
 
 Vue.use(Router)
 
@@ -16,14 +17,11 @@ export default new Router({
         path: '/ProblemSet',
         name: 'ProblemSet',
         component: ProblemSet
-      },
+    },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+        path: '/Problem/:ProblemID',
+        name: 'Problem',
+        component: ProblemView
+    },
   ]
 })

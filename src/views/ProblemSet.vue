@@ -1,12 +1,6 @@
 <template>
-  <v-card
-    style=" width:100%; height:100%;"
-    tile
-    color="white darken-3"
-    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
-  >
     <v-card-text>
-      <v-card dark elevation="2" color="light-blue light-1" transition="slide-y-reverse-transition">
+      <v-card dark elevation="12" color="light-blue light-1" transition="slide-y-reverse-transition">
         <v-card-title>
           <span>ProblemSet</span>
         </v-card-title>
@@ -38,7 +32,6 @@
         </v-container>
       </v-card>
     </v-card-text>
-  </v-card>
 </template>
 
 <script lang="ts">
@@ -54,12 +47,10 @@ export default Vue.extend({
         ["P1001", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
         ["P1002", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
         ["P1003", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
-        ["P1004", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
         ["P1005", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
-        ["P1006", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
-        ["P1007", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
-        ["P1008", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
-        ["P1009", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]]
+        ["P1006", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
+        ["P1007", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1008", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]]
       ],
       items: [
         {

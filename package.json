@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/velocity-animate": "^1.2.33",
+    "animate.css": "^3.7.2",
     "core-js": "^2.6.5",
     "js-cookie": "^2.2.1",
     "markdown-it": "^9.1.0",

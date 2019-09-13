@@ -26,22 +26,52 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :clipped-left="true" app color="blue" dark fixed src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" elevation="5">
+    <v-app-bar
+      :clipped-left="true"
+      app
+      color="blue"
+      dark
+      fixed
+      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+      elevation="5"
+    >
       <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
         <span class="hidden-sm-and-down">GuOJ</span>
       </v-toolbar-title>
       <div class="flex-grow-1"></div>
-      <v-btn light>
-        <v-avatar height="36" width="36">
-          <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar" />
-        </v-avatar>
-        <span>Quank</span>
-      </v-btn>
+      <v-card style="width:150px;" class="hidden-sm-and-down" dark color="blue">
+        <v-row no-gutters>
+          <v-col cols="4" style="padding:2px 4px 2px 4px;">
+            <v-avatar height="36" width="36">
+              <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar" />
+            </v-avatar>
+          </v-col>
+          <v-col style="padding:2px 4px 2px 4px;">
+            <div style="font-size:4px;">Quank</div>
+            <v-progress-linear value="75"></v-progress-linear>
+            <div style="font-size:4px;">
+              <v-icon small color="yellow">monetization_on</v-icon>-8000
+            </div>
+          </v-col>
+        </v-row>
+      </v-card>
     </v-app-bar>
     <v-content>
       <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
-        <router-view></router-view>
+        <v-card
+            style=" width:100%; height:100%;"
+            tile
+            flex
+            dark
+            color="white darken-3"
+            img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
+          >
+          
+          
+            <transition mode="out-in" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown"><router-view></router-view></transition>
+          </v-card>
+        
       </v-container>
     </v-content>
     <v-footer app></v-footer>
@@ -71,5 +101,11 @@ export default {
 };
 </script>
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
 
