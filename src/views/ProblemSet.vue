@@ -50,7 +50,8 @@ export default Vue.extend({
         ["P1005", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
         ["P1006", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
         ["P1007", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
-        ["P1008", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]]
+        ["P1008", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
+        ["P1009", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
       ],
       items: [
         {

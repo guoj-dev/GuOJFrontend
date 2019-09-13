@@ -61,15 +61,13 @@
       <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
         <v-card
             style=" width:100%; height:100%;"
-            tile
-            flex
             dark
             color="white darken-3"
             img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
           >
           
           
-            <transition mode="out-in" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown"><router-view></router-view></transition>
+            <transition mode="out-in" enter-active-class="animated fadeInUp" leave-active-class="animatedfadeOutDown"><router-view></router-view></transition>
           </v-card>
         
       </v-container>
