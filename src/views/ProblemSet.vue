@@ -1,20 +1,42 @@
 <template>
-  <v-card style=" width:100%; height:100%;" tile color="grey darken-3">
-    
+  <v-card
+    style=" width:100%; height:100%;"
+    tile
+    color="white darken-3"
+    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
+  >
     <v-card-text>
-          
-            <v-card elevation="3" color="white lighten-1">
-                <v-card-title>ProblemSet</v-card-title>
-                <v-container>
-                <v-row v-for="key in Problems" :key="key" >
-          <v-col>
-            <v-card color="white" elevation="3">
-              <v-card-title><v-icon>mdi-chevron-right</v-icon>{{key[0]}} {{key[1]}}</v-card-title>
-            </v-card>
-          </v-col>
-        </v-row>
+      <v-card dark elevation="2" color="light-blue light-1" transition="slide-y-reverse-transition">
+        <v-card-title>
+          <span>ProblemSet</span>
+        </v-card-title>
+        <v-container>
+          <v-row v-for="key in Problems" :key="key">
+            <v-col>
+              <v-card dark :color="key[2]" elevation="3">
+                <v-container style="padding: 0 4px 0 0;">
+                <v-row>
+                  <v-col>
+                    <v-card-title style="padding:0 0 0 0;">
+                      <v-icon>mdi-chevron-right</v-icon>
+                      {{key[0]}} {{key[1]}}
+                    </v-card-title>
+                  </v-col>
+                  <v-col>
+                    <div align="right" >
+                      <v-chip :color="key[3][0]">{{key[3][1]}}</v-chip>
+                    </div>
+                  </v-col>
+                </v-row>
                 </v-container>
-            </v-card>
+              </v-card>
+            </v-col>
+          </v-row>
+          <div class="text-center">
+            <v-pagination v-model="page" :length="4" circle></v-pagination>
+          </div>
+        </v-container>
+      </v-card>
     </v-card-text>
   </v-card>
 </template>
@@ -23,28 +45,34 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    /* eslint-disable */
+  /* eslint-disable */
   components: {},
   data: () => {
     return {
-        Problems:[
-            [
-                "P1000",
-                "A+B Problem"
-            ],
-            [
-                "P1001",
-                "A+B Problem"
-            ],
-            [
-                "P1002",
-                "A+B Problem"
-            ],
-            [
-                "P1003",
-                "A+B Problem"
-            ],
-        ]
+      Problems: [
+        ["P1000", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
+        ["P1001", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1002", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
+        ["P1003", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
+        ["P1004", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
+        ["P1005", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
+        ["P1006", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
+        ["P1007", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
+        ["P1008", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1009", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]]
+      ],
+      items: [
+        {
+          text: "GuOJ",
+          disabled: true,
+          href: "/"
+        },
+        {
+          text: "ProblemSet",
+          disabled: true,
+          href: "/ProblemSet"
+        }
+      ]
     };
   }
 });

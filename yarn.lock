@@ -675,7 +675,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@fortawesome/fontawesome-free@^5.10.1":
+"@fortawesome/fontawesome-free@^5.10.2":
   version "5.10.2"
   resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.10.2.tgz#27e02da1e34b50c9869179d364fb46627b521130"
   integrity sha1-J+AtoeNLUMmGkXnTZPtGYntSETA=
@@ -762,6 +762,13 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/jquery@*":
+  version "3.3.31"
+  resolved "https://registry.npm.taobao.org/@types/jquery/download/@types/jquery-3.3.31.tgz#27c706e4bf488474e1cb54a71d8303f37c93451b"
+  integrity sha1-J8cG5L9IhHThy1SnHYMD83yTRRs=
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/json-schema@^7.0.3":
   version "7.0.3"
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
@@ -786,6 +793,18 @@
   version "1.5.2"
   resolved "https://registry.npm.taobao.org/@types/q/download/@types/q-1.5.2.tgz?cache=0&sync_timestamp=1567534086032&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fq%2Fdownload%2F%40types%2Fq-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha1-aQoUdbhPKohP0HzXl8APXzE1bqg=
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.npm.taobao.org/@types/sizzle/download/@types/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha1-qBG4wY4rq6t9VCszZYh64uTZ3kc=
+
+"@types/velocity-animate@^1.2.33":
+  version "1.2.33"
+  resolved "https://registry.npm.taobao.org/@types/velocity-animate/download/@types/velocity-animate-1.2.33.tgz#611fb5007fe32f02a9056114bc9254a37510c2d7"
+  integrity sha1-YR+1AH/jLwKpBWEUvJJUo3UQwtc=
+  dependencies:
+    "@types/jquery" "*"
 
 "@types/vue-markdown@^2.2.1":
   version "2.2.1"
@@ -3860,11 +3879,6 @@ gauge@~2.7.3:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
-
-gemini-scrollbar@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.npm.taobao.org/gemini-scrollbar/download/gemini-scrollbar-1.5.3.tgz#7abc916e103e11f983f15856ef8c583cedef95cf"
-  integrity sha1-eryRbhA+EfmD8VhW74xYPO3vlc8=
 
 get-caller-file@^1.0.1:
   version "1.0.3"
@@ -8448,13 +8462,6 @@ vue-eslint-parser@^5.0.0:
     espree "^4.1.0"
     esquery "^1.0.1"
     lodash "^4.17.11"
-
-vue-gemini-scrollbar@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npm.taobao.org/vue-gemini-scrollbar/download/vue-gemini-scrollbar-2.0.1.tgz#052dde8007cf1b40ec699ecf0d62d2b0b16de061"
-  integrity sha1-BS3egAfPG0DsaZ7PDWLSsLFt4GE=
-  dependencies:
-    gemini-scrollbar "^1.5.3"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"

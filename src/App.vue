@@ -9,7 +9,8 @@
       dark
       permanent
       mini-variant-width="56"
-      color="blue darken-3"
+      elevation="12"
+      color="blue"
     >
       <v-list dense>
         <template v-for="item in items">
@@ -25,7 +26,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :clipped-left="true" app color="blue" dark flat fixed src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+    <v-app-bar :clipped-left="true" app color="blue" dark fixed src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" elevation="5">
       <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
         <span class="hidden-sm-and-down">GuOJ</span>
@@ -60,11 +61,11 @@ export default {
     drawer: null,
     mini: false,
     items: [
-      { icon: "home", text: "Home", to: "/" },
-      { icon: "list", text: "ProblemSet", to: "/ProblemSet" },
-      { icon: "stars", text: "Contests" },
-      { icon: "people", text: "My Group" },
-      { icon: "chat", text: "Fourm" }
+      { icon: "home", text: "主页", to: "/" },
+      { icon: "list", text: "题库", to: "/ProblemSet" },
+      { icon: "stars", text: "比赛" },
+      { icon: "people", text: "小组" },
+      { icon: "chat", text: "论坛" }
     ]
   })
 };
