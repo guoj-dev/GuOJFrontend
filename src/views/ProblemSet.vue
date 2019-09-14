@@ -2,12 +2,12 @@
     <v-card-text>
       <v-card dark elevation="12" color="light-blue light-1" transition="slide-y-reverse-transition">
         <v-card-title>
-          <span>ProblemSet</span>
+          <span>题库 </span>
         </v-card-title>
         <v-container>
           <v-row v-for="key in Problems" :key="key">
             <v-col>
-              <v-card dark :color="key[2]" elevation="3">
+              <v-card dark :color="key[2]" elevation="3" :to="'/Problem/'+key[0]">
                 <v-container style="padding: 0 4px 0 0;">
                 <v-row>
                   <v-col>
@@ -27,7 +27,7 @@
             </v-col>
           </v-row>
           <div class="text-center">
-            <v-pagination v-model="page" :length="4" circle></v-pagination>
+            <v-pagination v-model="page" :length="4" light circle></v-pagination>
           </div>
         </v-container>
       </v-card>

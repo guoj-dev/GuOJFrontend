@@ -4,6 +4,8 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import store from './store'
 import Velocity from 'velocity-animate'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -11,6 +13,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 
 Vue.config.productionTip = false;
 Vue.prototype.Velocity = Velocity;
+Vue.use(mavonEditor)
 
 
 

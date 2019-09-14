@@ -72,13 +72,11 @@
         
       </v-container>
     </v-content>
-    <v-footer app></v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   props: {
