@@ -12,6 +12,7 @@
     "animate.css": "^3.7.2",
     "core-js": "^2.6.5",
     "js-cookie": "^2.2.1",
+    "js-xss": "^0.0.2",
     "markdown-it": "^10.0.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-attrs": "^3.0.1",
@@ -41,7 +42,8 @@
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "xss": "^1.0.6"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.10.2",

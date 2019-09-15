@@ -43,15 +43,15 @@ export default Vue.extend({
   data: () => {
     return {
       Problems: [
-        ["P1000", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
+        ["P1000", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
         ["P1001", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
-        ["P1002", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
-        ["P1003", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
-        ["P1005", "A+B Problem", "light-blue accent-2", ["green", "入门难度"]],
-        ["P1006", "A+B Problem", "light-blue accent-3", ["green", "入门难度"]],
+        ["P1002", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1003", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1005", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1006", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
         ["P1007", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
-        ["P1008", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
-        ["P1009", "A+B Problem", "light-blue darken-3", ["green", "入门难度"]],
+        ["P1008", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
+        ["P1009", "A+B Problem", "light-blue accent-4", ["green", "入门难度"]],
       ],
       items: [
         {

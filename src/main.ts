@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 
 
 
+
 Vue.config.productionTip = false;
 Vue.prototype.Velocity = Velocity;
 Vue.use(mavonEditor)

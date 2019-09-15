@@ -7,14 +7,13 @@
         </v-chip>
       </v-container>
       <v-card-title>{{$route.params.ProblemID}} A+B Problem</v-card-title>
-      <v-container style="padding: 0px 12px 12px">
-        <v-chip small="true" outlined elevation="12">
-          <v-rating v-model="rate" readonly="true" half-increments="true" color="yellow"></v-rating>
-        </v-chip>
-      </v-container>
+      <v-container style="padding: 0px 12px 12px"></v-container>
       <v-divider></v-divider>
       <v-card-text>
-        <markdown :Markdown="MarkdownData"></markdown>
+        <div style="color:#fff;">
+          <markdown-editor ref="markdown" :Markdown="Markdown"></markdown-editor>
+          
+        </div>
       </v-card-text>
     </v-card>
   </v-container>
@@ -22,11 +21,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Markdown from "@/components/Markdown.vue";
+import MarkdownEditor from "@/components/MarkdownEditor.vue";
+
 
 export default Vue.extend({
   /* eslint-disable */
-  components: { Markdown },
+  components: { MarkdownEditor },
   data: () => {
     return {
       items: [
@@ -43,11 +43,13 @@ export default Vue.extend({
         {
           text: "题目",
           disabled: true
+        },
+        {
+          text: "编辑题目",
+          disabled: true
         }
       ],
-      rate: "1",
-      hardcolor: "green",
-      MarkdownData:"# 这里是题面",
+      Markdown:'aaa'
     };
   }
 });
