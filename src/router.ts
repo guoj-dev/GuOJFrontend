@@ -6,6 +6,7 @@ import ProblemView from './views/ProblemView.vue'
 import ProblemEdit from './views/ProblemEdit.vue'
 import JudgeList from './views/JudgeList.vue'
 import JudgeStatus from './views/JudgeStatus.vue'
+import UserInfo from './views/UserInfo.vue'
 
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
         path: '/JudgeStatus',
         name: 'JudgeList',
         component: JudgeList
+    },
+    {
+        path: '/User/:UserID',
+        name: 'User',
+        component: UserInfo
     },
   ]
 })

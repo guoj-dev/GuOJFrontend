@@ -44,11 +44,11 @@
         <v-row no-gutters>
           <v-col cols="4" style="padding:2px 4px 2px 4px;">
             <v-avatar height="36" width="36">
-              <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar" />
+              <img src="https://cdn.v2ex.com/gravatar/275f907fb8dbf72131b4867378b1c707?s=1000&d=mm" alt="avatar" />
             </v-avatar>
           </v-col>
           <v-col style="padding:2px 4px 2px 4px;">
-            <div style="font-size:4px;">Quank<v-icon small color="grey darken-5">check_circle</v-icon></div>
+            <div style="font-size:4px;">Quank<v-icon small color="purple darken-5">check_circle</v-icon><i class="fas fa-medal" style="color:grey;"></i></div>
             <v-progress-linear value="75"></v-progress-linear>
             <div style="font-size:4px;">
               <v-icon small color="yellow">monetization_on</v-icon>-8000
