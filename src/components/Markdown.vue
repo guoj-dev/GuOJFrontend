@@ -30,7 +30,6 @@ filterXSS.whiteList['td'] = ['style', 'class']
 filterXSS.whiteList['p'] = ['style', 'class']
 filterXSS.whiteList['div'] = ['style', 'class']
 filterXSS.whiteList['a'] = ['style', 'class', 'id', 'target', 'href', 'title']
-filterXSS.stripIgnoreTag = true
 import "mavon-editor/dist/css/index.css";
 
 Vue.use(mavonEditor);
