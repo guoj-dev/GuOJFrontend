@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import mavonEditor from "mavon-editor";
-import "mavon-editor/dist/css/index.css";
+import mavonEditor from "mavon-editor-guoj";
+import "mavon-editor-guoj/dist/css/index.css";
 
 Vue.use(mavonEditor);
 export default Vue.extend({

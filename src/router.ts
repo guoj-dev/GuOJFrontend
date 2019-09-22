@@ -7,46 +7,59 @@ import ProblemEdit from './views/ProblemEdit.vue'
 import JudgeList from './views/JudgeList.vue'
 import JudgeStatus from './views/JudgeStatus.vue'
 import UserInfo from './views/UserInfo.vue'
+import Login from './views/Login.vue'
+import NotFound from './views/404.vue'
 
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-        path: '/ProblemSet',
-        name: 'ProblemSet',
-        component: ProblemSet
-    },
-    {
-        path: '/Problem/:ProblemID',
-        name: 'Problem',
-        component: ProblemView
-    },
-    {
-        path: '/Problem/Edit/:ProblemID',
-        name: 'ProblemEdit',
-        component: ProblemEdit
-    },
-    {
-        path: '/JudgeStatus/:JudgeID',
-        name: 'JudgeStatus',
-        component: JudgeStatus
-    },
-    {
-        path: '/JudgeStatus',
-        name: 'JudgeList',
-        component: JudgeList
-    },
-    {
-        path: '/User/:UserID',
-        name: 'User',
-        component: UserInfo
-    },
-  ]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/ProblemSet',
+            name: 'ProblemSet',
+            component: ProblemSet
+        },
+        {
+            path: '/Problem/:ProblemID',
+            name: 'Problem',
+            component: ProblemView
+        },
+        {
+            path: '/Problem/Edit/:ProblemID',
+            name: 'ProblemEdit',
+            component: ProblemEdit
+        },
+        {
+            path: '/JudgeStatus/:JudgeID',
+            name: 'JudgeStatus',
+            component: JudgeStatus
+        },
+        {
+            path: '/JudgeStatus',
+            name: 'JudgeList',
+            component: JudgeList
+        },
+        {
+            path: '/User/:UserID',
+            name: 'User',
+            component: UserInfo
+        },
+        {
+            path: '/Login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '*',
+            name: '404',
+            component: NotFound
+        },
+    ]
 })

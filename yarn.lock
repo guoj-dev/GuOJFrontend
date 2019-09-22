@@ -5360,13 +5360,14 @@ material-design-icons-iconfont@^5.0.1:
   resolved "https://registry.npm.taobao.org/material-design-icons-iconfont/download/material-design-icons-iconfont-5.0.1.tgz#371875ed7fe9c8c520bc7123c3231feeab731c31"
   integrity sha1-Nxh17X/pyMUgvHEjwyMf7qtzHDE=
 
-mavon-editor@^2.7.6:
-  version "2.7.6"
-  resolved "https://registry.npm.taobao.org/mavon-editor/download/mavon-editor-2.7.6.tgz#82426e8afc0d14fc646a8cc6cced0814723a98ff"
-  integrity sha1-gkJuivwNFPxkaozGzO0IFHI6mP8=
+mavon-editor-guoj@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/mavon-editor-guoj/download/mavon-editor-guoj-1.0.0.tgz?cache=0&sync_timestamp=1569062972047&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmavon-editor-guoj%2Fdownload%2Fmavon-editor-guoj-1.0.0.tgz#b74f73b85cf3c568b833ebf90ea108e938d9fbf7"
+  integrity sha1-t09zuFzzxWi4M+v5DqEI6TjZ+/c=
   dependencies:
     highlight.js "^9.11.0"
     highlight.js-async-webpack "^1.0.4"
+    js-xss "^0.0.2"
 
 md5.js@^1.3.4:
   version "1.3.5"

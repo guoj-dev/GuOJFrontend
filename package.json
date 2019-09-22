@@ -29,7 +29,7 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-toc": "^1.1.0",
-    "mavon-editor": "^2.7.6",
+    "mavon-editor-guoj": "1.0.0",
     "moment": "^2.24.0",
     "prismjs": "^1.17.1",
     "velocity-animate": "^1.5.2",
