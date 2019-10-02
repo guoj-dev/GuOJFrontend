@@ -9,6 +9,7 @@ import JudgeStatus from './views/JudgeStatus.vue'
 import UserInfo from './views/UserInfo.vue'
 import Login from './views/Login.vue'
 import NotFound from './views/404.vue'
+import Error from './views/Error.vue'
 
 
 Vue.use(Router)
@@ -55,6 +56,12 @@ export default new Router({
             path: '/Login',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/Error/:ErrorMessage',
+            name: 'Error',
+            component: Error,
+            
         },
         {
             path: '*',

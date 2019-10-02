@@ -28,7 +28,7 @@
               <v-col cols="1" justify="end"></v-col>
               <v-col cols="8" justify="end">
                 <div style="color:#fff;font-size: 32px;">{{Username}} <v-icon style="height:32px;width:32px;" color="purple">check_circle</v-icon><i class="fas fa-medal" style="color:grey;height:32px;width:32px;"></i></div>
-                <div style="color:#fff;font-size: 32px;"><i class="fas fa-atom" style="color:white;height:36px;width:36px;"></i><v-progress-linear value="75" dark></v-progress-linear></div>
+                <div style="color:#fff;font-size: 32px;"><v-progress-linear value="75" dark color="blue"></v-progress-linear></div>
                 
               </v-col>
             </v-row>

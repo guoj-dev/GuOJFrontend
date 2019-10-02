@@ -40,29 +40,7 @@
                 <span class="hidden-sm-and-down">GuOJ</span>
             </v-toolbar-title>
             <div class="flex-grow-1"></div>
-            <v-card style="width:150px;" class="hidden-sm-and-down" dark color="blue">
-                <v-row no-gutters>
-                    <v-col cols="4" style="padding:2px 4px 2px 4px;">
-                        <v-avatar height="36" width="36">
-                            <img
-                                src="https://cdn.v2ex.com/gravatar/275f907fb8dbf72131b4867378b1c707?s=1000&d=mm"
-                                alt="avatar"
-                            />
-                        </v-avatar>
-                    </v-col>
-                    <v-col style="padding:2px 4px 2px 4px;">
-                        <div style="font-size:4px;">
-                            Quank
-                            <v-icon small color="purple darken-5">check_circle</v-icon>
-                            <i class="fas fa-medal" style="color:grey;"></i>
-                        </div>
-                        <v-progress-linear value="75"></v-progress-linear>
-                        <div style="font-size:4px;">
-                            <v-icon small color="yellow">monetization_on</v-icon>-8000
-                        </div>
-                    </v-col>
-                </v-row>
-            </v-card>
+            <user-card/>
         </v-app-bar>
         <v-content>
             <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
@@ -87,23 +65,18 @@
 
 <script lang="ts">
 import Vue from "vue";
+import UserCard from "@/components/UserCard.vue";
 
 export default {
+    components:{
+        UserCard
+    },
     props: {
         source: String
     },
-    computerd: {
-        islogin() {
-            return this.store.user.islogin
-        },
-        user() {
-            return {
-                username: String(this.store.user.username),
-                avatar: String(this.store.user.avatar),
-                coin: String(this.store.user.coin),
-            };
-        }
-    },
+    //computerd: {
+        
+    //},
     data: () => ({
         dialog: false,
         drawer: null,
