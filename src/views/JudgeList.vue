@@ -12,24 +12,7 @@
                 <v-row>
                   <v-col>
                     <v-card-title style="padding:0 0 0 12px;">
-                      <v-card style="width:150px; margin: 0px 12px 0px 0px;" dark color="blue">
-                        <v-row no-gutters>
-                          <v-col cols="4" style="padding:2px 4px 2px 4px;">
-                            <v-avatar height="36" width="36">
-                              <img
-                                src="https://vuetifyjs.com/apple-touch-icon-180x180.png"
-                                alt="avatar"
-                              />
-                            </v-avatar>
-                          </v-col>
-                          <v-col style="padding:2px 4px 2px 4px;">
-                            <div style="font-size:4px;">
-                              Quank
-                              <v-icon small color="grey darken-5">check_circle</v-icon>
-                            </div>
-                          </v-col>
-                        </v-row>
-                      </v-card>
+                      <user-card-public></user-card-public>
                       #{{key[0]}} {{key[1]}}
                       <v-chip style="margin:0px 8px" :color="key[2][0]">{{key[2][1]}}</v-chip>
                     </v-card-title>
@@ -50,10 +33,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import UserCardPublic from '@/components/UserCardPublic.vue'
 
 export default Vue.extend({
   /* eslint-disable */
-  components: {},
+  components: {UserCardPublic},
   data: () => {
     return {
       Judges: [
