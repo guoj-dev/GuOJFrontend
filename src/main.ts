@@ -9,6 +9,7 @@ import mavonEditor from 'mavon-editor-guoj'
 import 'mavon-editor-guoj/dist/css/index.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
 import '@fortawesome/fontawesome-free/css/all.css'
+import './registerServiceWorker'
 
 
 
