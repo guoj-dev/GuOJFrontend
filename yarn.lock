@@ -8706,7 +8706,7 @@ vue-cli-plugin-axios@^0.0.4:
   resolved "https://registry.npm.taobao.org/vue-cli-plugin-axios/download/vue-cli-plugin-axios-0.0.4.tgz#29d4eb48275c7fe15b92e1fd5d95fbe2a966436f"
   integrity sha1-KdTrSCdcf+FbkuH9XZX74qlmQ28=
 
-vue-cli-plugin-vuetify@^0.6.1:
+vue-cli-plugin-vuetify@^0.6.3:
   version "0.6.3"
   resolved "https://registry.npm.taobao.org/vue-cli-plugin-vuetify/download/vue-cli-plugin-vuetify-0.6.3.tgz#71d956cdec419f5628d2b44c43bdc1e6ec3356bf"
   integrity sha1-cdlWzexBn1Yo0rRMQ73B5uwzVr8=
