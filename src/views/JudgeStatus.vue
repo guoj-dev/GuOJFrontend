@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="8">
         <v-card color="primary" dark>
           <v-container style="padding: 12px 12px 0px">
             <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
@@ -12,24 +12,26 @@
           <v-divider></v-divider>
           <v-card-text>
             <v-container>
-              <v-row align="center" justify="start" v-for="i in 6" :key="i" no-gutters>
-                <div v-for="j in 6" :key="j" style="padding:10px 10px 10px 10px">
-                  <v-card elevation="10" color="green" style="height:100px;width:100px;">
+              <v-tooltip bottom v-for="i in 10" :key="i" dark>
+              <template v-slot:activator="{ on }">
+                <v-card v-on="on" elevation="10" color="green" style="display:inline-block;height:100px;width:100px;margin:10px 10px 10px 10px">
                     <div style="text-align:center;padding:10%">
                       <v-icon large>check</v-icon>
                       <br />
-                      #{{(i-1)*6+j}}
+                      #{{i}}
                       <br />Accepted
                     </div>
                   </v-card>
-                </div>
-              </v-row>
+                  
+              </template>
+              <span>Time:0ms<br/>Memory:0kb</span>
+              </v-tooltip>
             </v-container>
           </v-card-text>
         </v-card>
       </v-col>
-      <div class="flex-grow-1"></div>
-      <v-col justify="end" cols="5">
+      
+      <v-col justify="end" cols="4">
           <v-card color="primary">
               <v-card-title>
                   评测信息
