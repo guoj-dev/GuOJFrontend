@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import './plugins/axios'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import router from './router'
@@ -9,8 +8,10 @@ import mavonEditor from 'mavon-editor-guoj'
 import 'mavon-editor-guoj/dist/css/index.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
 import '@fortawesome/fontawesome-free/css/all.css'
-import './registerServiceWorker'
-
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
 
 
 

@@ -36,6 +36,7 @@
     "register-service-worker": "^1.6.2",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
+    "vue-axios": "^2.1.5",
     "vue-class-component": "^7.0.2",
     "vue-clipboards": "^1.3.0",
     "vue-gemini-scrollbar": "^2.0.1",
