@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mavon-editor v-model="Markdown" box-shadow="false" ishljs="true" codestyle="vs2015" scrollStyle="true" :toolbars="config"></mavon-editor>
+    <mavon-editor v-model="Markdown" :boxShadow="false" :codeStyle="atom-onedark" :scrollStyle="true" :toolbars="config"></mavon-editor>
   </div>
 </template>
 

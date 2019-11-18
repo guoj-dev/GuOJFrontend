@@ -14,7 +14,7 @@
       </v-container>
       <v-divider></v-divider>
       <v-card-text>
-        <markdown :Markdown="MarkdownData"></markdown>
+        <markdown :Markdown="MarkdownData">{{MarkdownData}}</markdown>
       </v-card-text>
     </v-card>
   </v-container>

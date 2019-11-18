@@ -10,7 +10,10 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure
 import '@fortawesome/fontawesome-free/css/all.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
- 
+import VueSocketIO from 'vue-socket.io-extended';
+import io from 'socket.io-client';
+
+const socket = io('http://127.0.0.1:3000');
 Vue.use(VueAxios, axios)
 
 
@@ -19,7 +22,7 @@ Vue.config.productionTip = false;
 Vue.prototype.Velocity = Velocity;
 Vue.use(mavonEditor)
 
-
+Vue.use(VueSocketIO,socket)
 
 new Vue({
     vuetify,

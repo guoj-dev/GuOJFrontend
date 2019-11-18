@@ -1,7 +1,7 @@
 <template>
   <v-card light color="white">
       <v-card-text>
-          <div v-html="html" style="color:#000;">
+          <div :v-html="html" style="color:#000;">
             <slot>
               
             </slot>
@@ -27,12 +27,14 @@ export default Vue.extend({
       html:""
     };
   },
-  mounted(){
-      this.Render()
+  watch:{
+        Markdown: function(val,oldVal) {
+            this.Render(val);
+        }
   },
     methods:{
-        Render() {
-            this.html=this.filterXSS(mavonEditor.markdownIt.render(this.Markdown))
+        Render(val) {
+            this.html=this.filterXSS(mavonEditor.markdownIt.render(val))
         }
     }
 });
