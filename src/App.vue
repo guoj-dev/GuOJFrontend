@@ -7,6 +7,7 @@
             app
             light
             permanent
+            expand-on-hover
             mini-variant-width="56"
             elevation="12"
             color="grey lighten-4"
