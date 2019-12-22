@@ -4,6 +4,7 @@
 ![](https://img.shields.io/github/forks/quank123wip/GuOJFrontend)
 ![](https://img.shields.io/github/stars/quank123wip/GuOJFrontend)
 ![](https://img.shields.io/github/license/quank123wip/GuOJFrontend)
+![](https://github.com/guoj-dev/guojfrontend/workflows/Node%20CI/badge.svg)
 ## Project setup
 ```
 yarn install
