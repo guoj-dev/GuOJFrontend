@@ -38,7 +38,7 @@
               </v-card-title>
               <v-divider/>
               <v-card-text>
-                  <div style="color:#fff">
+                  <div style="color:#000">
                     题目: <v-chip style="margin:4px 4px 4px 4px;" small color="green">{{ProblemID}} {{ProblemName}}</v-chip><br>
                     日期: <v-chip style="margin:4px 4px 4px 4px;" small color="indigo">2019/09/15 14:15:30</v-chip><br>
                     状态: <v-chip style="margin:4px 4px 4px 4px;" small="true" color="green">Accepted</v-chip><br>

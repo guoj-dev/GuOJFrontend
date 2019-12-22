@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-card outlined color="primary" dark style="margin:100px;padding:100px;">
+    <v-card outlined color="primary" light style="margin:100px;padding:100px;">
         <v-card-title>
             <div style="padding:10px;color:white;font-size:36px;">
                 Error

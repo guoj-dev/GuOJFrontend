@@ -2,12 +2,12 @@
     <v-container>
       <v-row>
         <v-col>
-          <v-card elevation="12">
+          <v-card light elevation="12">
             <v-carousel>
               <v-carousel-item v-for="Slide in Slides" :key="Slide">
                 <v-sheet :color="Slide[0]" height="100%" tile>
                   <v-row class="fill-height" align="center" justify="center">
-                    <div class="display-3">{{ Slide[1] }}</div>
+                    <div class="display-3" style="color:#000;">{{ Slide[1] }}</div>
                   </v-row>
                 </v-sheet>
               </v-carousel-item>
@@ -17,7 +17,7 @@
       </v-row>
       <v-row>
         <v-col cols="4">
-          <v-card color="green" elevation="12">
+          <v-card color="white" light elevation="12">
             <v-card-title>
               <v-icon color="white">mdi-chevron-right</v-icon>鸽子算命
             </v-card-title>
@@ -27,12 +27,12 @@
                 <v-container>
                   <v-row justify="center">
                     <v-col>
-                      <div style="font-size:20px;color:#fff;">今日运势</div>
+                      <div style="font-size:20px;color:#000;">今日运势</div>
                     </v-col>
                   </v-row>
                   <v-row justify="center">
                     <v-col>
-                      <div style="font-size:40px;color:#fff;">🕊大吉🕊</div>
+                      <div style="font-size:40px;color:#000;">🕊大吉🕊</div>
                     </v-col>
                   </v-row>
                 </v-container>
@@ -41,11 +41,11 @@
           </v-card>
         </v-col>
         <v-col cols="4">
-            <v-card color="primary" elevation="12">
+            <v-card color="white" elevation="12">
                 <v-card-title><v-icon>mdi-chevron-right</v-icon>鸽子语录</v-card-title>
                 <v-divider></v-divider>
                 <v-card-text>
-                    <p class="white--text">
+                    <p class="black--text">
                         今天要干什么呢？
                     </p>
                     
@@ -53,11 +53,11 @@
             </v-card>
         </v-col>
         <v-col cols="4">
-            <v-card color="cyan" elevation="12">
+            <v-card color="white" elevation="12">
                 <v-card-title><v-icon>mdi-chevron-right</v-icon>题库动态</v-card-title>
                 <v-divider></v-divider>
                 <v-card-text>
-                    <p class="white--text">
+                    <p class="black--text">
                         新鲜好题：
                     </p>
                     
@@ -76,7 +76,7 @@ export default Vue.extend({
   data: () => {
     return {
       Slides: [
-        ["primary", "New GuOJ Generation"],
+        ["white", "New GuOJ Generation"],
       ]
     };
   }

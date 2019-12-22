@@ -5,11 +5,11 @@
             :mini-variant.sync="mini"
             clipped="true"
             app
-            dark
+            light
             permanent
             mini-variant-width="56"
             elevation="12"
-            color="blue"
+            color="grey lighten-4"
         >
             <v-list dense>
                 <template v-for="item in items">
@@ -28,10 +28,9 @@
         <v-app-bar
             :clipped-left="true"
             app
-            color="blue"
-            dark
+            color="white"
+            light
             fixed
-            src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
             elevation="5"
         >
             <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon>
@@ -45,9 +44,7 @@
             <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
                 <v-card
                     style=" width:100%; height:100%; border-radius:0px; background-attachment:fixed;"
-                    dark
                     color="white darken-3"
-                    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
                 >
                     <transition
                         mode="out-in"

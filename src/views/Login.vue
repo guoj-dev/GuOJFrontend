@@ -1,5 +1,5 @@
 <template>
-    <v-card color="primary" dark style="margin: 100px 400px 100px 400px;">
+    <v-card color="primary" light style="margin: 100px 400px 100px 400px;">
         <v-card-title>登录</v-card-title>
         <v-divider></v-divider>
         <v-card-text>

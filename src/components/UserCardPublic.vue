@@ -1,5 +1,5 @@
 <template>
-    <v-card style="width:150px; margin: 0px 12px 0px 0px;" dark color="blue">
+    <v-card style="width:150px; margin: 0px 12px 0px 0px;" light color="white">
         <v-row no-gutters>
             <v-col cols="4" style="padding:2px 4px 2px 4px;">
                 <v-avatar height="36" width="36">

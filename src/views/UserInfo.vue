@@ -2,9 +2,9 @@
   <v-container>
     <v-row>
       <v-col cols="8">
-        <v-card color="primary">
+        <v-card color="white">
           <v-container style="padding: 12px 12px 0px">
-            <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
+            <v-chip label outlined style="padding:4px 4px 4px 4px;" small="true" color="primary">
               <v-breadcrumbs style="padding:12px ;" light :items="items"></v-breadcrumbs>
             </v-chip>
           </v-container>
@@ -14,7 +14,7 @@
         </v-card>
       </v-col>
       <v-col cols="4">
-        <v-card color="primary">
+        <v-card color="white">
           <v-card-text>
             <v-row>
               <v-col cols="2" justify="start">
@@ -27,8 +27,8 @@
               </v-col>
               <v-col cols="1" justify="end"></v-col>
               <v-col cols="8" justify="end">
-                <div style="color:#fff;font-size: 32px;">{{Username}} <v-icon style="height:32px;width:32px;" color="purple">check_circle</v-icon><i class="fas fa-medal" style="color:grey;height:32px;width:32px;"></i></div>
-                <div style="color:#fff;font-size: 32px;"><v-progress-linear value="75" dark color="blue"></v-progress-linear></div>
+                <div style="color:#000;font-size: 32px;">{{Username}} <v-icon style="height:32px;width:32px;" color="purple">check_circle</v-icon><i class="fas fa-medal" style="color:grey;height:32px;width:32px;"></i></div>
+                <div style="color:#000;font-size: 32px;"><v-progress-linear value="75" light color="blue"></v-progress-linear></div>
                 
               </v-col>
             </v-row>

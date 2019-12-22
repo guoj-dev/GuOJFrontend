@@ -1,20 +1,20 @@
 <template>
   <v-card-text>
-    <v-card dark elevation="12" color="light-blue light-1" transition="slide-y-reverse-transition">
+    <v-card light elevation="12" color="white light-1" transition="slide-y-reverse-transition">
       <v-card-title>
         <span>评测列表</span>
       </v-card-title>
       <v-container>
         <v-row v-for="key in Judges" :key="key">
           <v-col>
-            <v-card dark color="primary" elevation="3" :to="'/JudgeStatus/'+key[0]">
+            <v-card light color="white" elevation="3" :to="'/JudgeStatus/'+key[0]">
               <v-container style="padding: 0 4px 0 0;">
                 <v-row>
                   <v-col>
                     <v-card-title style="padding:0 0 0 12px;">
                       <user-card-public></user-card-public>
                       #{{key[0]}} {{key[1]}}
-                      <v-chip style="margin:0px 8px" :color="key[2][0]">{{key[2][1]}}</v-chip>
+                      <v-chip outlined style="margin:0px 8px" :color="key[2][0]">{{key[2][1]}}</v-chip>
                     </v-card-title>
                   </v-col>
                   <v-col></v-col>

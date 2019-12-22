@@ -10,7 +10,7 @@
       <v-container style="padding: 0px 12px 12px"></v-container>
       <v-divider></v-divider>
       <v-card-text>
-        <div style="color:#fff;">
+        <div style="color:#000;">
           <markdown-editor ref="markdown" :Markdown="Markdown"></markdown-editor>
           
         </div>
