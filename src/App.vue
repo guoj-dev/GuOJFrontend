@@ -7,6 +7,7 @@
             app
             dark
             permanent
+            expand-on-hover
             mini-variant-width="56"
             elevation="12"
             color="blue"
@@ -34,7 +35,7 @@
             src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
             elevation="5"
         >
-            <v-app-bar-nav-icon @click.stop="mini = !mini"></v-app-bar-nav-icon>
+            <v-btn flat rounded icon style="margin-left:-12px;size:48px"><v-icon size="40px">mdi-alpha-g</v-icon></v-btn>
             <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
                 <span class="hidden-sm-and-down">GuOJ</span>
             </v-toolbar-title>
