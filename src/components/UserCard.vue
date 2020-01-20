@@ -56,6 +56,7 @@
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
+import auth from '@/api/auth'
 export default Vue.extend({
     props: {
         
@@ -78,9 +79,7 @@ export default Vue.extend({
             return -8000;
         },
         logout() {
-            axios.post('/auth/logout')
-            this.$store.commit("SetNotLogin");
-            //alert(this.$store.state.auth.islogin)
+            auth.logout();
         },
     },
     computed: {
