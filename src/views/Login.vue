@@ -44,7 +44,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
+import axios from "@/api/session";
+import auth from '@/api/auth'
 export default Vue.extend({
     components: {},
     data: () => {
@@ -60,33 +61,10 @@ export default Vue.extend({
         };
     },
     methods: {
-        getCookie (name:String) {
-      var value = '; ' + document.cookie
-      var parts = value.split('; ' + name + '=')
-      if (parts.length === 2) return parts.pop().split(';').shift()
-    },
-        async Login() {
+        Login() {
             const username = this.username;
             const password = this.password;
-            const store=this.$store
-            const router=this.$router
-            axios
-                .post("/auth/login/", { username: username, password: password },{headers: {'X-CSRFToken': this.getCookie('csrftoken')}})
-                .then(function(response) {
-                  axios.get('/auth/user').then(function(response){
-                    store.commit('Login',response.data.pk)
-                  }).catch(function(error){})
-                  router.push('/')
-                })
-                .catch(function(error) {
-                    axios
-                        .post("/auth/login/", {
-                            email: username,
-                            password: password
-                        })
-                        .then(function(response) {router.push('/')})
-                        .catch(function(error) {alert(error)});
-                });
+            this.$store.dispatch('Login',{username,password}).then(()=>this.$router.push('/'))
         }
     }
 });
