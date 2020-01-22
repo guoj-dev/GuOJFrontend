@@ -83,6 +83,7 @@ const UserContributionState: UserContributionState = {
 }
 
 export default {
+    namespaced:true,
     state:UserState,
     getters: {
         username:(UserState: UserState)=>UserState.username,
@@ -105,6 +106,44 @@ export default {
 
     },
     modules: {
+        info:{
+            namespaced:true,
+            state:UserinfoState,
+            getters:{
 
+            },
+            mutations:{
+
+            },
+            actions:{
+
+            }
+        },
+        judge:{
+            namespaced:true,
+            state:UserJudgeState,
+            getters:{
+
+            },
+            mutations:{
+
+            },
+            actions:{
+
+            }
+        },
+        contribution:{
+            namespaced:true,
+            state:UserContributionState,
+            getters:{
+
+            },
+            mutations:{
+
+            },
+            actions:{
+
+            }
+        }
     }
 }
