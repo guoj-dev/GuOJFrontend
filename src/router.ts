@@ -10,6 +10,7 @@ import UserInfo from './views/UserInfo.vue'
 import Login from './views/Login.vue'
 import NotFound from './views/404.vue'
 import Error from './views/Error.vue'
+import Register from './views/Register.vue'
 
 
 Vue.use(Router)
@@ -56,6 +57,11 @@ export default new Router({
             path: '/Login',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/Register',
+            name: 'Register',
+            component: Register
         },
         {
             path: '/Error/:ErrorMessage',

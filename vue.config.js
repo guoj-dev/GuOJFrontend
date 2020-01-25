@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
     configureWebpack: {
         devServer: {
             proxy: {
@@ -9,3 +9,4 @@ module.exports = {
         }
     }
   }
+  */

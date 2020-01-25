@@ -48,7 +48,7 @@
         </div>
         <div v-else>
             <v-btn color="primary" to="/Login">登录</v-btn>
-            <v-btn style="margin:12px;" color="green">注册</v-btn>
+            <v-btn style="margin:12px;" color="green" to="/Register">注册</v-btn>
         </div>
     </div>
 </template>
