@@ -9039,6 +9039,11 @@ vuetify@^2.0.0:
   resolved "https://registry.npmjs.org/vuetify/-/vuetify-2.2.4.tgz#3f82cb1694a306aac7c88bda815ad812df555bf9"
   integrity sha512-jhSdCeatWgHrY4Bb2FTi1sFfGDrVHLmkvI7pkG9FEF9TmZ+Qq7Ts85XAft9ucwU8ybB5nDmN6s+oeHJgvL+4tA==
 
+vuex-simple@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/vuex-simple/-/vuex-simple-2.2.0.tgz#8c0ad521942462c370848172269cd5ac72880fc3"
+  integrity sha512-4CI1merNNNZnmiK754dGFTgqjY/ToQ4tzIIG2I9f2CaueEr4aFfrbWOn7Dx2vOwr8OtEnyU3zscbE0yg2RrZjA==
+
 vuex@^3.0.1:
   version "3.1.2"
   resolved "https://registry.npmjs.org/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"

@@ -1,83 +1,62 @@
-import { ActionContext, Module } from 'vuex';
-import auth from '@/api/auth';
-import session from '@/api/session';
-import {
-    LOGIN_BEGIN,
-    LOGIN_FAILURE,
-    LOGIN_SUCCESS,
-    LOGOUT,
-    REMOVE_TOKEN,
-    SET_TOKEN,
-} from './commit';
+import Axios from 'axios'
+import { Mutation, Action, Getter, State } from 'vuex-simple'
 
-const TOKEN_STORAGE = 'TOKEN_STORAGE';
-export interface Loginstate {
-    authenticating: Boolean,
-    error: Boolean,
-    uid: Number,
-    token: String,
+export interface User{
+    Username:String,
+    uid:Number
 }
 
-const ModuleState: Loginstate = {
-    authenticating: false,
-    error: false,
-    uid: -1,
-    token: localStorage.getItem(TOKEN_STORAGE) || '',
+export interface AuthData{
+    username:String,
+    password:String
 }
 
-const getters = {
-    isAuthenticated: (ModuleState: Loginstate) => !!ModuleState.token,
-    uid: (ModuleState: Loginstate) => ModuleState.uid
-}
+export default class AuthModule {
+    @State()
+    public status = new String('');
 
-const actions = {
-    Login(context: ActionContext<Loginstate, any>, username: String, password: String) {
-        context.commit(LOGIN_BEGIN);
-        return auth.login(username, password)
-            .then((responses) => context.commit(SET_TOKEN, responses.data.key))
-            .then(() => context.commit(LOGIN_SUCCESS))
-            .catch(() => context.commit(LOGIN_FAILURE))
-    },
-    Logout(context: ActionContext<Loginstate, any>) {
-        return auth.logout()
-            .then(() => context.commit(LOGOUT))
-            .finally(() => context.commit(REMOVE_TOKEN))
-    },
-}
+    @State()
+    public token = new String(localStorage.getItem('token') || '');
 
-const mutations = {
-    [LOGIN_BEGIN](state: Loginstate) {
-        state.authenticating = true;
-        state.error = false;
-    },
-    [LOGIN_FAILURE](state: Loginstate) {
-        state.authenticating = false;
-        state.error = true;
-    },
-    [LOGIN_SUCCESS](state: Loginstate) {
-        state.authenticating = false;
-        state.error = false;
-    },
-    [LOGOUT](state: Loginstate) {
-        state.authenticating = false;
-        state.error = false;
-    },
-    [SET_TOKEN](state: Loginstate, token:String) {
-        session.defaults.headers.Authorization = `Token ${token}`;
-        state.token = token;
-    },
-    [REMOVE_TOKEN](state: Loginstate) {
-        localStorage.removeItem(TOKEN_STORAGE);
-        delete session.defaults.headers.Authorization;
-        state.token = '';
-    },
-}
+    @State()
+    public user = {};
 
+    @Mutation()
+    public auth_request(){
+        this.status = 'loading';
+    }
 
+    @Mutation()
+    public auth_success(token:String){
+        this.status = 'success';
+        this.token = token;
+    }
 
-export default {
-    state: ModuleState,
-    getters: getters,
-    mutations: mutations,
-    actions: actions
+    @Mutation()
+    public auth_error(){
+        this.status = 'error';
+    }
+
+    @Mutation()
+    public auth_logout(){
+        this.status = '';
+        this.token = '';
+    }
+
+    @Action()
+    public login(User:AuthData){
+        return new Promise((resolve, reject) => {
+            this.auth_request();
+            Axios.post('http://localhost:8000/auth/login', User).then(Response =>{
+                const token = Response.data.key;
+                localStorage.setItem('token', token);
+                this.auth_success(token);
+                resolve(Response);
+            }).catch(Error => {
+                this.auth_error(Error);
+                localStorage.removeItem('token')
+                reject(Error);
+            })
+        })
+    }
 }

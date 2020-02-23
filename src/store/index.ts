@@ -1,20 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import actions from './actions'
-import getters from './getters'
-import auth from './modules/auth'
-
+import { createVuexStore } from 'vuex-simple'
+import { Store } from './store'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-    actions,
-    getters,
-    modules:{
-        auth,
-    }
+const instance = new Store();
+
+export default createVuexStore(instance, {
+    strict: false,
+    modules: {},
+    plugins: []
 })
-
-export interface State {
-
-}
