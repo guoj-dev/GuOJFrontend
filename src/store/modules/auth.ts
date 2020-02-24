@@ -13,9 +13,6 @@ export default class AuthModule {
     @State()
     public Token = new String(localStorage.getItem('token') || '');
 
-    @State()
-    public user = {};
-
     @Mutation()
     public auth_request(){
         this.Status = 'loading';
