@@ -44,16 +44,15 @@
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "@/api/session";
-import auth from '@/api/auth'
+import {AuthData }from '../store/modules/auth'
 export default Vue.extend({
     components: {},
     data: () => {
         return {
             valid: true,
             show: false,
-            username: "",
-            password: "",
+            username: String(""),
+            password: String(""),
             rules: {
                 required: (value: String) => !!value || "必填",
                 min: (value: String) => value.length >= 8 || "至少8个字符"
@@ -64,7 +63,8 @@ export default Vue.extend({
         Login() {
             const username = this.username;
             const password = this.password;
-            this.$store.dispatch('Login',{username,password}).then(()=>this.$router.push('/'))
+            const Payload:AuthData = {Username:username,Password:password}
+            this.$store.dispatch('Auth/Login',{username,password}).then(()=>this.$router.push('/'))
         }
     }
 });

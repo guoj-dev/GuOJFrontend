@@ -35,12 +35,14 @@
             src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
             elevation="5"
         >
-            <v-btn flat rounded icon style="margin-left:-12px;size:48px"><v-icon size="40px">mdi-alpha-g</v-icon></v-btn>
+            <v-btn flat rounded icon style="margin-left:-12px;size:48px">
+                <v-icon size="40px">mdi-alpha-g</v-icon>
+            </v-btn>
             <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
                 <span class="hidden-sm-and-down">GuOJ</span>
             </v-toolbar-title>
             <div class="flex-grow-1"></div>
-            <user-card/>
+            <user-card />
         </v-app-bar>
         <v-content>
             <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
@@ -68,14 +70,14 @@ import Vue from "vue";
 import UserCard from "@/components/UserCard.vue";
 
 export default {
-    components:{
+    components: {
         UserCard
     },
     props: {
         source: String
     },
     //computerd: {
-        
+
     //},
     data: () => ({
         dialog: false,
@@ -93,7 +95,14 @@ export default {
             { icon: "people", text: "小组" },
             { icon: "chat", text: "论坛" }
         ]
-    })
+    }),
+    async mounted() {
+        this.$store.dispatch("Auth/Init");
+        if (this.$store.getters["Auth/isLogin"]) {
+            await this.$store.dispatch("User/Update");
+            await this.$store.dispatch('User/UpdateUserData')
+        }
+    }
 };
 </script>
 <style>

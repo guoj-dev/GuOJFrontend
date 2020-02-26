@@ -32,9 +32,8 @@ export default class UserModule {
     }
 
     @Mutation()
-    public update(Username: String, UserID: Number) {
-        this.User.Username = Username;
-        this.User.UserID = UserID;
+    public update(NewUser:User) {
+        this.User=NewUser
     }
 
     @Mutation()
@@ -51,8 +50,8 @@ export default class UserModule {
     @Action()
     public Update() {
         return new Promise((resolve, reject) => {
-            Axios.get('http://localhost:8000/auth/user').then(Response => {
-                this.update(Response.data.username, Response.data.pk);
+            Axios.get('/auth/user/').then(Response => {
+                this.update({Username:Response.data.username, UserID:Response.data.pk});
                 resolve(Response);
             })
         })
@@ -61,7 +60,7 @@ export default class UserModule {
     @Action()
     public UpdateUserData() {
         return new Promise((resolve, reject) => {
-            Axios.get('https://localhost:8000/api/users' + String(this.User.UserID) + '/').then(Response => {
+            Axios.get('/api/users/' + String(this.User.UserID) + '/').then(Response => {
                 this.update_userdata({
                     Name: Response.data.username,
                     Email: Response.data.email,
@@ -78,5 +77,55 @@ export default class UserModule {
                 resolve(Response)
             })
         })
+    }
+
+    @Getter()
+    public get Username(){
+        return this.User.Username;
+    }
+
+    @Getter()
+    public get UserID(){
+        return this.User.Username;
+    }
+
+    @Getter()
+    public get Avatar(){
+        return this.UserData.Avatar;
+    }
+
+    @Getter()
+    public get Nameplate(){
+        return this.UserData.Nameplate;
+    }
+
+    @Getter()
+    public get NameColor(){
+        return this.UserData.NameColor;
+    }
+
+    @Getter()
+    public get NamePlateColor(){
+        return this.UserData.NameColor;
+    }
+
+    @Getter()
+    public get Coins(){
+        return this.UserData.Coins;
+    }
+    
+    @Getter()
+    public get Rating(){
+        return this.UserData.Rating;
+    }
+
+    @Getter()
+    public get Experince(){
+        return this.UserData.Experience;
+    }
+
+    @Getter()
+    public get Contribution(){
+        return this.UserData.Contribution;
     }
 }
