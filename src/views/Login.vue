@@ -66,6 +66,10 @@ export default Vue.extend({
             const Payload:AuthData = {Username:username,Password:password}
             this.$store.dispatch('Auth/Login',{username,password}).then(()=>this.$router.push('/'))
         }
+    },
+    created(){
+        if(this.$store.getters["Auth/isLogin"])
+            this.$router.push('/')
     }
 });
 </script>
