@@ -15,7 +15,7 @@ export interface UserData {
     Contribution: Number,
     Nameplate: String,
     NameColor: String,
-    NamePlateColor: String,
+    NameplateColor: String,
     Text: String,
 }
 
@@ -28,7 +28,7 @@ export default class UserModule {
 
     constructor() {
         this.User = { Username: '', UserID: 0 };
-        this.UserData = { Name: '', Email: '', Avatar: '', Coins: 0, Rating: 0, Experience: 0, Contribution: 0, Nameplate: '', NameColor: '', NamePlateColor: '', Text: '' }
+        this.UserData = { Name: '', Email: '', Avatar: '', Coins: 0, Rating: 0, Experience: 0, Contribution: 0, Nameplate: '', NameColor: '', NameplateColor: '', Text: '' }
     }
 
     @Mutation()
@@ -71,7 +71,7 @@ export default class UserModule {
                     Contribution: Response.data.Contribution,
                     Nameplate: Response.data.Nameplate,
                     NameColor: Response.data.NameColor,
-                    NamePlateColor: Response.data.NamePlateColor,
+                    NameplateColor: Response.data.NameplateColor,
                     Text: Response.data.Text,
                 });
                 resolve(Response)
@@ -105,7 +105,7 @@ export default class UserModule {
     }
 
     @Getter()
-    public get NamePlateColor(){
+    public get NameplateColor(){
         return this.UserData.NameColor;
     }
 
