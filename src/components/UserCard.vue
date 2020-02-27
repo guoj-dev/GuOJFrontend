@@ -2,24 +2,33 @@
     <div>
         <div v-if="islogin">
             <v-card dark color="blue">
-                <v-container no-gutters style="padding:4px 12px 10px 12px">
+                <v-container no-gutters style="padding:2px 8px 2px 8px">
                     <v-row no-gutters justify="space-between">
-                        <v-col no-gutters cols="auto" >
-                            <v-badge overlap bottom color="deep-purple accent-4" icon="mdi-vuetify">
-                                <v-avatar size="40">
+                        <v-col no-gutters cols="auto">
+                                <v-avatar size="40" style="margin:4px 0px 4px 0px;">
                                     <img :src="Avatar" />
                                 </v-avatar>
-                            </v-badge>
                         </v-col>
-                        <v-col no-gutters cols="auto" style="margin:0px 8px 0px 8px;">
-                            <v-row no-gutters justify="center"  class="flex-column ma-0 " >
+                        <v-col no-gutters cols="auto" style="margin:0px 4px 0px 4px;">
+                            <v-row no-gutters justify="center" class="flex-column ma-0">
                                 <v-col>
                                     {{Username}}
-                                    <v-chip v-if="Nameplate" small label :color="NameplateColor">{{Nameplate}}</v-chip>
+                                    <v-chip
+                                        v-if="Nameplate"
+                                        x-small
+                                        label
+                                        :color="NameplateColor"
+                                        style="padding:4px;"
+                                    >{{Nameplate}}</v-chip>
                                 </v-col>
                                 <v-col>
-                                    <v-chip small >
-                                        <v-icon left color="yellow darken-2" small>mdi-alpha-c-circle-outline</v-icon>{{Coins}}
+                                    <v-chip x-small color="grey darken-3">
+                                        <v-icon
+                                            left
+                                            color="yellow darken-2"
+                                            small
+                                        >mdi-alpha-c-circle-outline</v-icon>
+                                        {{Coins}}
                                     </v-chip>
                                 </v-col>
                             </v-row>
@@ -70,15 +79,23 @@ export default Vue.extend({
         islogin(): Boolean {
             return this.$store.getters["Auth/isLogin"];
         },
-        NameColor(): String{
+        NameColor(): String {
             return this.$store.getters["User/NameColor"];
         },
-        Nameplate(): String{
+        Nameplate(): String {
             return this.$store.getters["User/Nameplate"];
         },
-        NameplateColor(): String{
+        NameplateColor(): String {
             return this.$store.getters["User/NameplateColor"];
-        },
+        }
+    },
+    watch: {
+        async islogin(val) {
+            if (this.$store.getters["Auth/isLogin"]) {
+                await this.$store.dispatch("User/Update");
+                await this.$store.dispatch("User/UpdateUserData");
+            }
+        }
     },
     mounted() {
         //alert(this.$store.getters)
