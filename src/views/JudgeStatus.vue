@@ -84,7 +84,7 @@ export default Vue.extend({
         {
           text: "评测",
           disabled: false,
-          to: { name: "ProblemSet" }
+          to: { path: "JudgeStatus" }
         },
         {
           text: "任务",
