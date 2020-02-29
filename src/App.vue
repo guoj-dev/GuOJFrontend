@@ -67,7 +67,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UserCard from "@/components/UserCard.vue";
+import UserCard from "./components/UserCard.vue";
 
 export default {
     components: {

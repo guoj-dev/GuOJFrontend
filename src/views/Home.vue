@@ -4,10 +4,10 @@
         <v-col>
           <v-card elevation="12">
             <v-carousel>
-              <v-carousel-item v-for="Slide in Slides" :key="Slide">
-                <v-sheet :color="Slide[0]" height="100%" tile>
+              <v-carousel-item v-for="(Slide,i) in Slides" :key="i" :src='Slide.Background'>
+                <v-sheet :color="Slide.Color" height="100%" tile>
                   <v-row class="fill-height" align="center" justify="center">
-                    <div class="display-3">{{ Slide[1] }}</div>
+                    <div class="display-3">{{ Slide.Title }}</div>
                   </v-row>
                 </v-sheet>
               </v-carousel-item>
@@ -73,13 +73,17 @@ import Vue from "vue";
 
 export default Vue.extend({
   components: {},
-  data: () => {
-    return {
-      Slides: [
-        ["primary", "New GuOJ Generation"],
-      ]
-    };
-  }
+  props:{
+    
+  },
+  computed:{
+    Slides(){
+      return this.$store.getters["Slides/SlidesObject"];
+    }
+  },
+  mounted(){
+    this.$store.dispatch("Slides/UpdateSlides")
+  },
 });
 </script>
 
