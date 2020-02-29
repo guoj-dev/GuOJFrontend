@@ -22,6 +22,7 @@
                             :type="show ? 'text' : 'password'"
                             label="密码"
                             hint="至少8个字符"
+                            :loading="login_button_loading"
                             :value="password"
                             v-model='password'
                             class="input-group--focused"
@@ -51,6 +52,7 @@ export default Vue.extend({
         return {
             valid: true,
             show: false,
+            login_button_loading: false,
             username: String(""),
             password: String(""),
             rules: {
@@ -61,6 +63,7 @@ export default Vue.extend({
     },
     methods: {
         Login() {
+            this.login_button_loading=true;
             const username = this.username;
             const password = this.password;
             const Payload:AuthData = {Username:username,Password:password}

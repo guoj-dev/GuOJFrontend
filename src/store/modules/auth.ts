@@ -56,6 +56,7 @@ export default class AuthModule {
     @Action()
     public Logout(){
         return new Promise((resolve, reject) => {
+            Axios.post('/auth/logout/')
             this.auth_logout();
             localStorage.removeItem('token');
             resolve();

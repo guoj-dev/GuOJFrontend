@@ -5,9 +5,9 @@
                 <v-container no-gutters style="padding:2px 8px 2px 8px">
                     <v-row no-gutters justify="space-between">
                         <v-col no-gutters cols="auto">
-                                <v-avatar size="40" style="margin:4px 0px 4px 0px;">
-                                    <img :src="Avatar" />
-                                </v-avatar>
+                            <v-avatar size="40" style="margin:4px 0px 4px 0px;">
+                                <img :src="Avatar" />
+                            </v-avatar>
                         </v-col>
                         <v-col no-gutters cols="auto" style="margin:0px 4px 0px 4px;">
                             <v-row no-gutters justify="center" class="flex-column ma-0">
@@ -32,6 +32,20 @@
                                     </v-chip>
                                 </v-col>
                             </v-row>
+                        </v-col>
+                        <v-col>
+                            <v-menu offset-y>
+                                <template v-slot:activator="{ on }">
+                                    <v-btn flat icon small v-on="on">
+                                        <v-icon size="40px">mdi-chevron-down</v-icon>
+                                    </v-btn>
+                                </template>
+                                <v-list>
+                                    <v-list-item @click="logout">
+                                        <v-list-item-title>Logout</v-list-item-title>
+                                    </v-list-item>
+                                </v-list>
+                            </v-menu>
                         </v-col>
                     </v-row>
                 </v-container>
