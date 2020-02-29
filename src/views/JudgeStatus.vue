@@ -71,8 +71,7 @@ import Vue from "vue";
 import Markdown from "@/components/Markdown.vue";
 
 export default Vue.extend({
-  /* eslint-disable */
-  components: { Markdown },
+  components: { Markdown }, // eslint-disable-line vue/no-unused-components
   data: () => {
     return {
       items: [
