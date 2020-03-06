@@ -36,7 +36,6 @@ import Vue from "vue";
 import UserCardPublic from '@/components/UserCardPublic.vue'
 
 export default Vue.extend({
-  /* eslint-disable */
   components: {UserCardPublic},
   data: () => {
     return {

@@ -38,7 +38,6 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  /* eslint-disable */
   components: {},
   data: () => {
     return {

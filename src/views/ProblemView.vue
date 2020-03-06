@@ -119,7 +119,6 @@ import Markdown from "../components/Markdown.vue";
 import monaco from "../components/Monacoeditor.vue";
 
 export default Vue.extend({
-    /* eslint-disable */
     components: { Markdown, monaco },
     data: () => {
         return {

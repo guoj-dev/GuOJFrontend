@@ -25,7 +25,6 @@ import MarkdownEditor from "@/components/MarkdownEditor.vue";
 
 
 export default Vue.extend({
-  /* eslint-disable */
   components: { MarkdownEditor },
   data: () => {
     return {
