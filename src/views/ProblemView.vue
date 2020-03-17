@@ -77,7 +77,7 @@
                     </v-card-title>
                     <v-card outlined style="margin:10px;height:80%;box-sizing:border-box">
                         <v-container style="margin:0px;height:100%;width:100%">
-                            <v-row style="margin:0px;padding:0px">
+                            <v-row style="margin:0px;padding:0pxheight:10%;">
                                 <v-col align="left" class="pa-1" style="margin:0px;padding:0px">
                                     <v-select
                                         v-model="select"
@@ -95,9 +95,9 @@
                                     </v-btn>
                                 </v-col>
                             </v-row>
-                            <v-row style="margin:0px;height:100%;width:100%">
+                            <v-row style="margin:0px;height:90%;width:100%">
                                 <div style="height:100%;width:100%;">
-                                    <monaco :language="select" style="height:100%;width:100%"></monaco>
+                                    <monaco :language="select" style="margin:0px;"></monaco>
                                 </div>
                             </v-row>
                         </v-container>
