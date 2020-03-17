@@ -1,15 +1,16 @@
 <template>
-    <div class="monaco-container" style="height:100%;">
-        <div ref="container" class="monaco-editor" style="height:100%;"></div>
-    </div>
+    <MonacoEditor class="editor" v-model="code" :language="lang" :theme="theme" />
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import * as monaco from "monaco-editor";
+import MonacoEditor from "vue-monaco";
 export default Vue.extend({
+    components: {
+        MonacoEditor
+    },
     props: {
-        codes: {
+        code: {
             type: String,
             default: function() {
                 return "";
@@ -21,46 +22,32 @@ export default Vue.extend({
                 return "cpp";
             }
         },
-        readOnly: {
-            type: Boolean,
-            default: function() {
-                return false;
-            }
-        },
-        editorOptions: {
-            type: Object,
-            default: function() {
-                return {
-                    value: this.codes,
-                    language:this.language,
-                    theme:"vs-dark",
-                    selectOnLineNumbers: true,
-                    roundedSelection: false,
-                    readOnly: this.readOnly,
-                    cursorStyle: "line", 
-                    automaticLayout: false, 
-                    glyphMargin: true, 
-                    useTabStops: false,
-                    fontSize: 14, 
-                    autoIndent: false,
-                    fontFamily:
-                        "'Fira Mono', 'Bitstream Vera Sans Mono', 'Menlo', 'Consolas', 'Lucida Console', 'Source Han Sans SC', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', monospace"
-                };
+        theme:{
+            type: String,
+            default: function(){
+                return "vs-dark"
             }
         }
     },
-    mounted() {
-        this.monacoEditor = monaco.editor.create(this.$refs.container, this.editorOptions);
-    },
-    watch: {
-        language(val)
-        {
-            if(this.monacoEditor)
+    computed:{
+        lang(){
+            if(this.language=='cpp98'||this.language=='cpp11'||this.language=='cpp14'||this.language=='cpp17'||this.language=='cpp20')
             {
-                this.monacoEditor=this.monacoEditor.getModifiedEditor()
-                this.monaco.editor.setModelLanguage(this.monacoEditor.getModel(),val)
+                return 'cpp'
             }
+            if(this.language=='python2'||this.language=='python3'||this.language=='pypy2'||this.language=='pypy3')
+            {
+                return 'python'
+            }
+            return this.language
         }
     }
 });
 </script>
+
+<style scoped>
+.editor {
+  width: 100%;
+  height: 100%;
+}
+</style>

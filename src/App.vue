@@ -55,7 +55,7 @@
                     <transition
                         mode="out-in"
                         enter-active-class="animated fadeInUp"
-                        leave-active-class="animatedfadeOutDown"
+                        leave-active-class="animated fadeOutDown"
                     >
                         <router-view></router-view>
                     </transition>

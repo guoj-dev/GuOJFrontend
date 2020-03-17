@@ -31,10 +31,10 @@
                     </v-row>
                 </v-form>
                 <v-row>
-                    <v-col cols="2">
+                    <v-col>
                         <v-btn :disabled="!valid" color="success" @click='Login'>登录</v-btn>
                     </v-col>
-                    <v-col cols="2">
+                    <v-col>
                         <v-btn color="blue">注册</v-btn>
                     </v-col>
                 </v-row>

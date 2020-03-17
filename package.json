@@ -44,6 +44,7 @@
     "vue-gemini-scrollbar": "^2.0.1",
     "vue-markdown": "^2.2.4",
     "vue-moment": "^4.0.0",
+    "vue-monaco": "^1.1.0",
     "vue-property-decorator": "^8.4.0",
     "vue-router": "^3.0.3",
     "vue-socket.io": "^3.0.7",

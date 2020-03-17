@@ -75,37 +75,32 @@
                             <v-icon dark>mdi-close</v-icon>
                         </v-btn>提交代码
                     </v-card-title>
-                    <v-card outlined style="margin:10px;height:80%">
-                        <v-card-title style="margin:0px;padding:0px">
-                            <v-container style="margin:0px;width:100%">
-                                <v-row style="margin:0px;padding:0px">
-                                    <v-col align="left" class="pa-1" style="margin:0px;padding:0px">
-                                        <v-select
-                                            v-model="select"
-                                            style="margin:0px;padding:0px;height:48px;"
-                                            :items="Languages"
-                                            item-text="text"
-                                            item-value="lang"
-                                            label="选择语言"
-                                            solo
-                                        ></v-select>
-                                    </v-col>
-                                    <v-spacer></v-spacer>
-                                    <v-col
-                                        align="right"
-                                        class="pa-1"
-                                        style="margin:0px;padding:0px"
-                                    >
-                                        <v-btn rounded color="green" dark>
-                                            <v-icon dark left>mdi-checkbox-marked-circle-outline</v-icon>提交
-                                        </v-btn>
-                                    </v-col>
-                                </v-row>
-                            </v-container>
-                        </v-card-title>
-                        <div style="padding:10px 10px 10px 10px;height:80%;width:100%">
-                            <monaco :language="select" style="height:100%;width:100%"></monaco>
-                        </div>
+                    <v-card outlined style="margin:10px;height:80%;box-sizing:border-box">
+                        <v-container style="margin:0px;height:100%;width:100%">
+                            <v-row style="margin:0px;padding:0px">
+                                <v-col align="left" class="pa-1" style="margin:0px;padding:0px">
+                                    <v-select
+                                        v-model="select"
+                                        style="margin:0px;padding:0px;height:48px;"
+                                        :items="Languages"
+                                        item-text="text"
+                                        item-value="lang"
+                                        label="选择语言"
+                                    ></v-select>
+                                </v-col>
+                                <v-spacer></v-spacer>
+                                <v-col align="right" class="pa-1" style="margin:0px;padding:0px">
+                                    <v-btn rounded color="green" dark>
+                                        <v-icon dark left>mdi-checkbox-marked-circle-outline</v-icon>提交
+                                    </v-btn>
+                                </v-col>
+                            </v-row>
+                            <v-row style="margin:0px;height:100%;width:100%">
+                                <div style="height:100%;width:100%;">
+                                    <monaco :language="select" style="height:100%;width:100%"></monaco>
+                                </div>
+                            </v-row>
+                        </v-container>
                     </v-card>
                 </v-card>
             </v-container>
@@ -138,16 +133,49 @@ export default Vue.extend({
                     disabled: true
                 }
             ],
-            select: '',
+            select: "",
             Languages: [
-                { text: "C++ 11", lang: "cpp" },
-                { text: "TypeScript", lang: "typescript" }
+                { text: "C", lang: "c" },
+                { text: "C++ 98", lang: "cpp98" },
+                { text: "C++ 11", lang: "cpp11" },
+                { text: "C++ 14", lang: "cpp14" },
+                { text: "C++ 17", lang: "cpp17" },
+                { text: "C++ 20", lang: "cpp20" },
+                { text: "C#", lang: "csharp" },
+                { text: "Visual Basic .Net", lang: "vb" },
+                { text: "F#", lang: "fsharp" },
+                { text: "Java", lang: "java" },
+                { text: "Kotlin", lang: "kotlin" },
+                { text: "Scala", lang: "scala" },
+                { text: "Clojure", lang: "clojure" },
+                { text: "Python 2", lang: "python2" },
+                { text: "Python 3", lang: "python3" },
+                { text: "PyPy 2", lang: "pypy2" },
+                { text: "PyPy 3", lang: "pypy3" },
+                { text: "Ruby", lang: "ruby" },
+                { text: "Lua", lang: "lua" },
+                { text: "Perl", lang: "perl" },
+                { text: "PHP 5.0", lang: "php" },
+                { text: "JavaScript", lang: "javascript" },
+                { text: "TypeScript", lang: "typescript" },
+                { text: "Go", lang: "golang" },
+                { text: "Rust", lang: "rust" },
+                { text: "Haskell", lang: "haskell" },
+                { text: "Lisp", lang: "lisp" },
+                { text: "Racket", lang: "racket" },
+                { text: "Wenyan(JavaScript)", lang: "wenyanjs" },
+                { text: "Wenyan(Python)", lang: "wenyanpy" },
+                { text: "Wenyan(Ruby)", lang: "wenyanrb" },
+                { text: "Dongbei(Python)", lang: "dongbeipy" },
             ],
             rate: "1",
             hardcolor: "green",
             MarkdownData: "# 这里是题面",
             overlay: false
         };
+    },
+    mounted(){
+        window.addEventListener('resize', ()=>{this.overlay=false;})
     }
 });
 </script>

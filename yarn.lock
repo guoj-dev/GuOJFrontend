@@ -5881,6 +5881,11 @@ moment@^2.19.2, moment@^2.24.0:
   resolved "https://registry.npm.taobao.org/moment/download/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
 
+monaco-editor@^0.17.0:
+  version "0.17.1"
+  resolved "https://registry.npm.taobao.org/monaco-editor/download/monaco-editor-0.17.1.tgz#8fbe96ca54bfa75262706e044f8f780e904aa45c"
+  integrity sha1-j76WylS/p1JicG4ET494DpBKpFw=
+
 monaco-editor@^0.19.3:
   version "0.19.3"
   resolved "https://registry.npm.taobao.org/monaco-editor/download/monaco-editor-0.19.3.tgz#1c994b3186c00650dbcd034d5370d46bf56c0663"
@@ -5944,6 +5949,11 @@ nan@^2.12.1:
   version "2.14.0"
   resolved "https://registry.npm.taobao.org/nan/download/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha1-eBj3IgJ7JFmobwKV1DTR/CM2xSw=
+
+nano-assign@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/nano-assign/download/nano-assign-1.0.1.tgz#abb1c50d0416b865fb37bbd155c5368bb54378e5"
+  integrity sha1-q7HFDQQWuGX7N7vRVcU2i7VDeOU=
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -8923,6 +8933,14 @@ vue-moment@^4.0.0:
   integrity sha1-CSqP9yOpbG+FoKjiOtMPC/Mg87A=
   dependencies:
     moment "^2.19.2"
+
+vue-monaco@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/vue-monaco/download/vue-monaco-1.1.0.tgz#045df2621dfe82d01e0568f1f1f84155726b33fe"
+  integrity sha1-BF3yYh3+gtAeBWjx8fhBVXJrM/4=
+  dependencies:
+    monaco-editor "^0.17.0"
+    nano-assign "^1.0.0"
 
 vue-property-decorator@^8.4.0:
   version "8.4.0"
