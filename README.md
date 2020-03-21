@@ -1,9 +1,9 @@
 # guoj-frontend
 
-![](https://img.shields.io/github/issues/quank123wip/GuOJFrontend)
-![](https://img.shields.io/github/forks/quank123wip/GuOJFrontend)
-![](https://img.shields.io/github/stars/quank123wip/GuOJFrontend)
-![](https://img.shields.io/github/license/quank123wip/GuOJFrontend)
+![](https://img.shields.io/github/issues/guoj-dev/GuOJFrontend)
+![](https://img.shields.io/github/forks/guoj-dev/GuOJFrontend)
+![](https://img.shields.io/github/stars/guoj-dev/GuOJFrontend)
+![](https://img.shields.io/github/license/guoj-dev/GuOJFrontend)
 ![](https://github.com/guoj-dev/guojfrontend/workflows/Node%20CI/badge.svg)
 
 Backend Project[guoj-dev/Backend](https://github.com/guoj-dev/Backend)
