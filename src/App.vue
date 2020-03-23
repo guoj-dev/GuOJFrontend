@@ -35,20 +35,22 @@
             src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
             elevation="5"
         >
-            <v-btn flat rounded icon style="margin-left:-12px;size:48px">
+            <v-btn flat rounded icon x-large style="margin-left:-12px">
                 <v-icon size="40px">mdi-alpha-g</v-icon>
             </v-btn>
-            <v-toolbar-title style="width: 300px" class="ml-0 pl-4" flat>
+            <v-toolbar-title class="ml-0 pl-4" flat>
                 <span class="hidden-sm-and-down">GuOJ</span>
             </v-toolbar-title>
             <div class="flex-grow-1"></div>
             <user-card />
         </v-app-bar>
         <v-content>
-            <v-container class="fill-height" fluid style="padding: 0 0 0 0;" color>
+            <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
-                    style=" width:100%; height:100%; border-radius:0px; background-attachment:fixed;"
+                    style="background-attachment:fixed; width:100%;"
+                    class="fill-height inline-flex"
                     dark
+                    tile
                     color="white darken-3"
                     img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
                 >

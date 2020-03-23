@@ -15,9 +15,8 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row>
-        <v-col cols="4">
-          <v-card color="green" elevation="12">
+      <v-container class="d-flex justify-space-between">
+          <v-card class="d-flex flex-column flex-grow-1 me-6" color="green" elevation="12">
             <v-card-title>
               <v-icon color="white">mdi-chevron-right</v-icon>鸽子算命
             </v-card-title>
@@ -39,9 +38,7 @@
               </div>
             </v-card-text>
           </v-card>
-        </v-col>
-        <v-col cols="4">
-            <v-card color="primary" elevation="12">
+            <v-card class="d-flex flex-column flex-grow-1 mx-6" color="primary" elevation="12">
                 <v-card-title><v-icon>mdi-chevron-right</v-icon>鸽子语录</v-card-title>
                 <v-divider></v-divider>
                 <v-card-text>
@@ -51,9 +48,7 @@
                     
                 </v-card-text>
             </v-card>
-        </v-col>
-        <v-col cols="4">
-            <v-card color="cyan" elevation="12">
+            <v-card class="d-flex flex-column flex-grow-1 ms-6" color="cyan" elevation="12">
                 <v-card-title><v-icon>mdi-chevron-right</v-icon>题库动态</v-card-title>
                 <v-divider></v-divider>
                 <v-card-text>
@@ -63,8 +58,7 @@
                     
                 </v-card-text>
             </v-card>
-        </v-col>
-      </v-row>
+      </v-container>
     </v-container>
 </template>
 

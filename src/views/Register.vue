@@ -1,5 +1,6 @@
 <template>
-    <v-card color="primary" dark style="margin: 100px 400px 100px 400px;">
+<v-container class="fill-height justify-center align-center">
+    <v-card color="primary" dark style="max-width:550px;">
         <v-card-title>注册</v-card-title>
         <v-divider></v-divider>
         <v-card-text>
@@ -59,6 +60,7 @@
             </v-container>
         </v-card-text>
     </v-card>
+</v-container>
 </template>
 
 <script lang="ts">
