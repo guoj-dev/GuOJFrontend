@@ -1,7 +1,9 @@
 <template>
 <v-container class="fill-height justify-center align-center">
     <v-card color="primary" dark style="max-width:550px;">
-        <v-card-title>注册</v-card-title>
+        <v-card-title>
+            <v-icon left>mdi-account-multiple</v-icon>注册
+        </v-card-title>
         <v-divider></v-divider>
         <v-card-text>
             <v-container>
@@ -20,8 +22,8 @@
                             prepend-inner-icon="mdi-email"
                             label="邮箱"
                             :rules="[rules.required]"
-                            :value="username"
-                            v-model='username'
+                            :value="email"
+                            v-model='email'
                         ></v-text-field>
                     </v-row>
                     <v-row>
@@ -40,11 +42,11 @@
                         <v-text-field
                             prepend-inner-icon="mdi-key-outline"
                             :rules="[rules.required,rules.min]"
-                            type="false"
+                            type="password"
                             label="重复密码"
                             hint="至少8个字符"
-                            :value="password"
-                            v-model='password'
+                            :value="password_repeat"
+                            v-model='password_repeat'
                             class="input-group--focused"
                         ></v-text-field>
                     </v-row>
@@ -53,8 +55,8 @@
                     </v-row>
                 </v-form>
                 <v-row>
-                    <v-col cols="2">
-                        <v-btn :disabled="!valid" color="success" @click='Register'>注册</v-btn>
+                    <v-col>
+                        <v-btn block :disabled="!valid" color="success" @click='Register'>注册</v-btn>
                     </v-col>
                 </v-row>
             </v-container>

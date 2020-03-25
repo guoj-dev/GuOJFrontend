@@ -1,7 +1,9 @@
 <template>
     <v-container class="fill-height justify-center align-center">
         <v-card color="primary" dark style="width:450px;">
-            <v-card-title>登录</v-card-title>
+            <v-card-title>
+                <v-icon left>mdi-login</v-icon>登录
+            </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
                 <v-container>
@@ -33,10 +35,20 @@
                     </v-form>
                     <v-row>
                         <v-col>
-                            <v-btn :disabled="!valid" color="success" @click="Login">登录</v-btn>
+                            <v-btn block :disabled="!valid" color="success" @click="Login">登录</v-btn>
                         </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                        <v-divider></v-divider>
+                    </v-row>
+                    <v-row class="d-flex">
                         <v-col>
-                            <v-btn color="blue">注册</v-btn>
+                            <v-btn color="black" class="me-4">
+                                <v-icon left>mdi-github</v-icon>GitHub
+                            </v-btn>
+                            <v-btn color="blue" class="me-4">
+                                <v-icon left>mdi-microsoft</v-icon>Microsoft
+                            </v-btn>
                         </v-col>
                     </v-row>
                 </v-container>
