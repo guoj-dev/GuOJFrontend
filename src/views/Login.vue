@@ -6,7 +6,7 @@
             </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
-                <v-container>
+                <v-container class="py-0">
                     <v-form ref="form" v-model="valid">
                         <v-row>
                             <v-text-field
