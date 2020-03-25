@@ -1,5 +1,5 @@
 <template>
-    <v-card light color="white">
+    <v-card light color="white" outlined>
         <v-card-text>
             <div :v-html="html" style="color:#000;">
                 <slot></slot>

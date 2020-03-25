@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="8">
-                <v-card color="primary" dark>
+                <v-card light>
                     <v-container style="padding: 12px 12px 0px">
                         <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
                             <v-breadcrumbs style="padding:12px ;" light :items="items"></v-breadcrumbs>
@@ -10,17 +10,23 @@
                     </v-container>
                     <v-card-title>
                         评测任务 #{{$route.params.JudgeID}}
-                        <v-chip style="padding:4px 4px 4px 4px;" small="true" color="green">Accepted</v-chip>
+                        <v-chip
+                            style="padding:4px 4px 4px 4px;"
+                            small="true"
+                            color="green"
+                            outlined
+                        >Accepted</v-chip>
                     </v-card-title>
                     <v-divider></v-divider>
                     <v-card-text>
                         <v-container>
-                            <v-tooltip bottom v-for="i in 10" :key="i" dark>
+                            <v-tooltip bottom v-for="i in 10" :key="i" light>
                                 <template v-slot:activator="{ on }">
                                     <v-card
                                         v-on="on"
-                                        elevation="10"
+                                        elevation="5"
                                         color="green"
+                                        dark
                                         style="display:inline-block;height:100px;width:100px;margin:10px 10px 10px 10px"
                                     >
                                         <div style="text-align:center;padding:10%">
@@ -42,57 +48,69 @@
             </v-col>
 
             <v-col justify="end" cols="4">
-                <v-card color="primary">
+                <v-card color="white">
                     <v-card-title>评测信息</v-card-title>
                     <v-divider />
                     <v-card-text>
-                        <div style="color:#fff">
+                        <div>
                             题目:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small
                                 color="green"
+                                outlined
                             >{{ProblemID}} {{ProblemName}}</v-chip>
                             <br />日期:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small
                                 color="indigo"
+                                outlined
                             >2019/09/15 14:15:30</v-chip>
                             <br />状态:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small="true"
                                 color="green"
+                                outlined
                             >Accepted</v-chip>
                             <br />时间:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small="true"
-                                color="yellow darken-2"
+                                color="yellow"
+                                outlined
                             >{{Time}}/{{TimeLimit}}</v-chip>
                             <br />空间:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small="true"
-                                color="blue darken-4"
+                                color="blue lighten-4"
+                                outlined
                             >{{Memory}}/{{MemoryLimit}}</v-chip>
                             <br />评级:
-                            <v-chip style="margin:4px 4px 4px 4px;" small="true" color="green">A+</v-chip>
+                            <v-chip
+                                style="margin:4px 4px 4px 4px;"
+                                small="true"
+                                color="green"
+                                outlined
+                            >A+</v-chip>
                             <br />奖励:
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small="true"
-                                color="yellow darken-2"
+                                color="yellow"
+                                outlined
                             >
-                                <v-icon color="white">grade</v-icon>+1
+                                <v-icon>grade</v-icon>+1
                             </v-chip>
                             <v-chip
                                 style="margin:4px 4px 4px 4px;"
                                 small="true"
-                                color="yellow darken-2"
+                                color="yellow"
+                                outlined
                             >
-                                <v-icon color="white">monetization_on</v-icon>+1
+                                <v-icon>monetization_on</v-icon>+1
                             </v-chip>
                         </div>
                     </v-card-text>

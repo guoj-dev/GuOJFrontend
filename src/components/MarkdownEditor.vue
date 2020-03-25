@@ -3,7 +3,7 @@
         <mavon-editor
             v-model="Markdown"
             :boxShadow="false"
-            :codeStyle="atom-onedark"
+            :codeStyle="atom-onelight"
             :scrollStyle="true"
             :toolbars="config"
         ></mavon-editor>

@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="8">
-                <v-card color="primary">
+                <v-card>
                     <v-container style="padding: 12px 12px 0px">
                         <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
                             <v-breadcrumbs style="padding:12px ;" light :items="items"></v-breadcrumbs>
@@ -14,7 +14,7 @@
                 </v-card>
             </v-col>
             <v-col cols="4">
-                <v-card color="primary">
+                <v-card>
                     <v-card-text>
                         <v-row>
                             <v-col cols="2" justify="start">
@@ -39,7 +39,7 @@
                                     ></i>
                                 </div>
                                 <div style="color:#fff;font-size: 32px;">
-                                    <v-progress-linear value="75" dark color="blue"></v-progress-linear>
+                                    <v-progress-linear value="75" light color="blue"></v-progress-linear>
                                 </div>
                             </v-col>
                         </v-row>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="islogin">
-            <v-card dark color="blue">
+            <v-card light color="white">
                 <v-container no-gutters style="padding:2px 8px 2px 8px">
                     <v-row no-gutters justify="space-between">
                         <v-col no-gutters cols="auto">
@@ -22,10 +22,10 @@
                                     >{{Nameplate}}</v-chip>
                                 </v-col>
                                 <v-col>
-                                    <v-chip x-small color="grey darken-3">
+                                    <v-chip x-small color="grey lighten-3">
                                         <v-icon
                                             left
-                                            color="yellow darken-2"
+                                            color="yellow lighten-2"
                                             small
                                         >mdi-alpha-c-circle-outline</v-icon>
                                         {{Coins}}
@@ -52,8 +52,8 @@
             </v-card>
         </div>
         <div v-else>
-            <v-btn color="primary" to="/Login">登录</v-btn>
-            <v-btn style="margin:12px;" color="green" to="/Register">注册</v-btn>
+            <v-btn color="white" to="/Login">登录</v-btn>
+            <v-btn style="margin:12px;" color="white" to="/Register">注册</v-btn>
         </div>
     </div>
 </template>

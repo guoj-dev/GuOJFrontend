@@ -25,7 +25,7 @@ export default Vue.extend({
         theme: {
             type: String,
             default: function() {
-                return "vs-dark";
+                return "vs-light";
             }
         }
     },

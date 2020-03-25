@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-card color="primary" dark>
+        <v-card light>
             <v-container style="padding: 12px 12px 0px">
                 <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
                     <v-breadcrumbs style="padding:12px ;" light :items="items"></v-breadcrumbs>
@@ -16,7 +16,7 @@
                     disable
                     style="margin: 0px 6px 0px 0px;"
                 >
-                    <v-icon dark color="green" style="margin: 0px 0px 0px 0px;">mdi-check</v-icon>
+                    <v-icon light color="green" style="margin: 0px 0px 0px 0px;">mdi-check</v-icon>
                 </v-btn>
                 {{$route.params.ProblemID}} A+B Problem
             </v-card-title>
@@ -40,24 +40,25 @@
                             rounded
                             color="green"
                             @click="overlay = true"
+                            outlined
                             style="margin:0px 10px 0px 10px"
                         >
-                            <v-icon dark left>mdi-checkbox-marked-circle-outline</v-icon>提交
+                            <v-icon light left>mdi-checkbox-marked-circle-outline</v-icon>提交
                         </v-btn>
-                        <v-btn rounded color="yellow darken-2" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-format-list-checks</v-icon>提交记录
+                        <v-btn rounded color="yellow" outlined style="margin:0px 10px 0px 0px">
+                            <v-icon light left>mdi-format-list-checks</v-icon>提交记录
                         </v-btn>
-                        <v-btn rounded color="blue" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-card-text-outline</v-icon>测试数据
+                        <v-btn rounded color="blue" outlined style="margin:0px 10px 0px 0px">
+                            <v-icon light left>mdi-card-text-outline</v-icon>测试数据
                         </v-btn>
-                        <v-btn rounded color="cyan" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-file-table-outline</v-icon>统计
+                        <v-btn rounded color="cyan" outlined style="margin:0px 10px 0px 0px">
+                            <v-icon light left>mdi-file-table-outline</v-icon>统计
                         </v-btn>
-                        <v-btn rounded color="light-blue" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-forum-outline</v-icon>讨论
+                        <v-btn rounded color="light-blue" outlined style="margin:0px 10px 0px 0px">
+                            <v-icon light left>mdi-forum-outline</v-icon>讨论
                         </v-btn>
-                        <v-btn rounded color="black lighten-2" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-comment-question</v-icon>问答
+                        <v-btn rounded color="black lighten-2" outlined style="margin:0px 10px 0px 0px">
+                            <v-icon light left>mdi-comment-question</v-icon>问答
                         </v-btn>
                     </v-col>
                 </v-row>
@@ -72,7 +73,7 @@
                 <v-card light style="margin:0px;padding:0px;height:100%;">
                     <v-card-title>
                         <v-btn icon @click="overlay = false">
-                            <v-icon dark>mdi-close</v-icon>
+                            <v-icon light>mdi-close</v-icon>
                         </v-btn>提交代码
                     </v-card-title>
                     <v-card outlined style="margin:10px;height:80%;box-sizing:border-box">
@@ -90,8 +91,8 @@
                                 </v-col>
                                 <v-spacer></v-spacer>
                                 <v-col align="right" class="pa-1" style="margin:0px;padding:0px">
-                                    <v-btn rounded color="green" dark>
-                                        <v-icon dark left>mdi-checkbox-marked-circle-outline</v-icon>提交
+                                    <v-btn rounded color="green" light outlined>
+                                        <v-icon light left>mdi-checkbox-marked-circle-outline</v-icon>提交
                                     </v-btn>
                                 </v-col>
                             </v-row>

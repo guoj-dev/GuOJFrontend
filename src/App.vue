@@ -5,12 +5,12 @@
             :mini-variant.sync="mini"
             clipped="true"
             app
-            dark
+            light
             permanent
             expand-on-hover
             mini-variant-width="56"
             elevation="12"
-            color="blue"
+            color="white"
         >
             <v-list dense>
                 <template v-for="item in items">
@@ -29,10 +29,9 @@
         <v-app-bar
             :clipped-left="true"
             app
-            color="blue"
-            dark
+            color="white"
+            light
             fixed
-            src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
             elevation="5"
         >
             <v-btn flat rounded icon x-large style="margin-left:-12px">
@@ -49,10 +48,9 @@
                 <v-card
                     style="background-attachment:fixed; width:100%;"
                     class="fill-height inline-flex"
-                    dark
+                    light
                     tile
-                    color="white darken-3"
-                    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
+                    color="white lighten-3"
                 >
                     <perfect-scrollbar ref="scroll">
                         <transition

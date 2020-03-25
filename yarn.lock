@@ -1089,7 +1089,7 @@
 "@vue/component-compiler-utils@^3.0.0", "@vue/component-compiler-utils@^3.1.0":
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/@vue/component-compiler-utils/download/@vue/component-compiler-utils-3.1.1.tgz#d4ef8f80292674044ad6211e336a302e4d2a6575"
-  integrity sha1-1O+PgCkmdARK1iEeM2owLk0qZXU=
+  integrity sha1-1O+PgCkmlight1iEeM2owLk0qZXU=
   dependencies:
     consolidate "^0.15.1"
     hash-sum "^1.0.2"

@@ -1,6 +1,6 @@
 <template>
     <v-container class="fill-height justify-center align-center">
-        <v-card color="primary" dark style="max-width:550px;">
+        <v-card color="primary" light style="max-width:550px;">
             <v-card-title>
                 <v-icon left>mdi-account-multiple</v-icon>注册
             </v-card-title>
@@ -26,7 +26,8 @@
                                 v-model="email"
                             ></v-text-field>
                         </v-row>
-                        <v-row>
+                        <v-row class="justify-space-between">
+                            <v-col class="py-0 ps-0 pe-4">
                             <v-text-field
                                 prepend-inner-icon="mdi-key-outline"
                                 :append-icon="show ? 'visibility' : 'visibility_off'"
@@ -39,6 +40,8 @@
                                 class="input-group--focused"
                                 @click:append="show = !show"
                             ></v-text-field>
+                            </v-col>
+                            <v-col class="py-0 pe-0 ps-4">
                             <v-text-field
                                 prepend-inner-icon="mdi-key-outline"
                                 :rules="[rules.required,rules.min]"
@@ -49,6 +52,7 @@
                                 v-model="password_repeat"
                                 class="input-group--focused"
                             ></v-text-field>
+                            </v-col>
                         </v-row>
                         <v-row></v-row>
                     </v-form>

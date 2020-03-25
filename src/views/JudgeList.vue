@@ -1,9 +1,8 @@
 <template>
     <v-card-text>
         <v-card
-            dark
+            light
             elevation="12"
-            color="light-blue light-1"
             transition="slide-y-reverse-transition"
         >
             <v-card-title>
@@ -12,7 +11,7 @@
             <v-container>
                 <v-row v-for="key in Judges" :key="key">
                     <v-col>
-                        <v-card dark color="primary" elevation="3" :to="'/JudgeStatus/'+key[0]">
+                        <v-card light elevation="3" :to="'/JudgeStatus/'+key[0]">
                             <v-container style="padding: 0 4px 0 0;">
                                 <v-row>
                                     <v-col>
@@ -22,6 +21,7 @@
                                             <v-chip
                                                 style="margin:0px 8px"
                                                 :color="key[2][0]"
+                                                outlined
                                             >{{key[2][1]}}</v-chip>
                                         </v-card-title>
                                     </v-col>

@@ -1,6 +1,6 @@
 <template>
     <v-container class="fill-height justify-center align-center">
-        <v-card color="primary" dark style="width:450px;">
+        <v-card light style="width:450px;">
             <v-card-title>
                 <v-icon left>mdi-login</v-icon>登录
             </v-card-title>
@@ -43,10 +43,10 @@
                     </v-row>
                     <v-row class="d-flex">
                         <v-col>
-                            <v-btn color="black" class="me-4">
+                            <v-btn color="black" outlined class="me-4">
                                 <v-icon left>mdi-github</v-icon>GitHub
                             </v-btn>
-                            <v-btn color="blue" class="me-4">
+                            <v-btn color="blue" outlined class="me-4">
                                 <v-icon left>mdi-microsoft</v-icon>Microsoft
                             </v-btn>
                         </v-col>

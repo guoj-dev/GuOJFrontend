@@ -1,18 +1,13 @@
 <template>
     <v-card-text>
-        <v-card
-            dark
-            elevation="12"
-            color="light-blue light-1"
-            transition="slide-y-reverse-transition"
-        >
+        <v-card light>
             <v-card-title>
                 <span>题库</span>
             </v-card-title>
             <v-container>
                 <v-row v-for="key in Problems" :key="key">
                     <v-col>
-                        <v-card dark :color="key[2]" elevation="3" :to="'/Problem/'+key[0]">
+                        <v-card light :to="'/Problem/'+key[0]">
                             <v-container style="padding: 0 4px 0 0;">
                                 <v-row>
                                     <v-col>
@@ -23,7 +18,7 @@
                                     </v-col>
                                     <v-col>
                                         <div align="right">
-                                            <v-chip :color="key[3][0]">{{key[3][1]}}</v-chip>
+                                            <v-chip outlined :color="key[2][0]">{{key[2][1]}}</v-chip>
                                         </div>
                                     </v-col>
                                 </v-row>
@@ -50,55 +45,46 @@ export default Vue.extend({
                 [
                     "P1000",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1001",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1002",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1003",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1005",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1006",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1007",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1008",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ],
                 [
                     "P1009",
                     "A+B Problem",
-                    "light-blue accent-4",
                     ["green", "入门难度"]
                 ]
             ],
