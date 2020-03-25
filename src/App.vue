@@ -44,7 +44,7 @@
             <div class="flex-grow-1"></div>
             <user-card />
         </v-app-bar>
-        <v-content>
+        <v-content style="height:100%-64px;">
             <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
                     style="background-attachment:fixed; width:100%;"
@@ -54,13 +54,15 @@
                     color="white darken-3"
                     img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
                 >
-                    <transition
-                        mode="out-in"
-                        enter-active-class="animated fadeInUp"
-                        leave-active-class="animated fadeOutDown"
-                    >
-                        <router-view></router-view>
-                    </transition>
+                    <perfect-scrollbar ref="scroll">
+                        <transition
+                            mode="out-in"
+                            enter-active-class="animated fadeIn"
+                            leave-active-class="animated fadeOut"
+                        >
+                            <router-view></router-view>
+                        </transition>
+                    </perfect-scrollbar>
                 </v-card>
             </v-container>
         </v-content>
@@ -102,18 +104,32 @@ export default {
         this.$store.dispatch("Auth/Init");
         if (this.$store.getters["Auth/isLogin"]) {
             await this.$store.dispatch("User/Update");
-            await this.$store.dispatch('User/UpdateUserData')
+            await this.$store.dispatch("User/UpdateUserData");
+        }
+    },
+    watch: {
+        $route() {
+            this.$refs.scroll.$el.scrollTop = 0;
         }
     }
 };
 </script>
 <style>
+html,
+body {
+    height: 100%;
+}
+
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+}
+#inspire,
+.v-content {
+    height: 100%;
 }
 </style>
 

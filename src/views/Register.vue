@@ -67,8 +67,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "@/api/session";
-import auth from '@/api/auth'
+import axios from "../api/session";
+import auth from '../api/auth'
 export default Vue.extend({
     components: {},
     data: () => {

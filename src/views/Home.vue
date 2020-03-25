@@ -91,4 +91,7 @@ export default Vue.extend({
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+.ps{
+  height: 100%;
+}
 </style>
