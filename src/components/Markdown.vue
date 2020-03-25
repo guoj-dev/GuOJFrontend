@@ -1,13 +1,11 @@
 <template>
-  <v-card light color="white">
-      <v-card-text>
-          <div :v-html="html" style="color:#000;">
-            <slot>
-              
-            </slot>
-          </div>
-      </v-card-text>
-  </v-card>
+    <v-card light color="white">
+        <v-card-text>
+            <div :v-html="html" style="color:#000;">
+                <slot></slot>
+            </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 

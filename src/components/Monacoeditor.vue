@@ -22,24 +22,33 @@ export default Vue.extend({
                 return "cpp";
             }
         },
-        theme:{
+        theme: {
             type: String,
-            default: function(){
-                return "vs-dark"
+            default: function() {
+                return "vs-dark";
             }
         }
     },
-    computed:{
-        lang(){
-            if(this.language=='cpp98'||this.language=='cpp11'||this.language=='cpp14'||this.language=='cpp17'||this.language=='cpp20')
-            {
-                return 'cpp'
+    computed: {
+        lang() {
+            if (
+                this.language == "cpp98" ||
+                this.language == "cpp11" ||
+                this.language == "cpp14" ||
+                this.language == "cpp17" ||
+                this.language == "cpp20"
+            ) {
+                return "cpp";
             }
-            if(this.language=='python2'||this.language=='python3'||this.language=='pypy2'||this.language=='pypy3')
-            {
-                return 'python'
+            if (
+                this.language == "python2" ||
+                this.language == "python3" ||
+                this.language == "pypy2" ||
+                this.language == "pypy3"
+            ) {
+                return "python";
             }
-            return this.language
+            return this.language;
         }
     }
 });
@@ -47,7 +56,7 @@ export default Vue.extend({
 
 <style scoped>
 .editor {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 </style>

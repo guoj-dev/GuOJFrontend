@@ -166,7 +166,7 @@ export default Vue.extend({
                 { text: "Wenyan(JavaScript)", lang: "wenyanjs" },
                 { text: "Wenyan(Python)", lang: "wenyanpy" },
                 { text: "Wenyan(Ruby)", lang: "wenyanrb" },
-                { text: "Dongbei(Python)", lang: "dongbeipy" },
+                { text: "Dongbei(Python)", lang: "dongbeipy" }
             ],
             rate: "1",
             hardcolor: "green",
@@ -174,8 +174,10 @@ export default Vue.extend({
             overlay: false
         };
     },
-    mounted(){
-        window.addEventListener('resize', ()=>{this.overlay=false;})
+    mounted() {
+        window.addEventListener("resize", () => {
+            this.overlay = false;
+        });
     }
 });
 </script>
