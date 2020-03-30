@@ -8,6 +8,11 @@
 
 Backend Project
 [guoj-dev/Backend](https://github.com/guoj-dev/Backend)
+
+你可以通过这里捐助本项目
+
+[爱发电](https://afdian.net/@guoj-dev)
+
 ## Project setup
 ```
 yarn install
