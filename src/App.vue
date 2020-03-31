@@ -1,5 +1,6 @@
 <template>
     <v-app id="inspire">
+        <warn/>
         <v-navigation-drawer
             v-model="drawer"
             :mini-variant.sync="mini"
@@ -54,7 +55,7 @@
                     color="white darken-3"
                     img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
                 >
-                    <perfect-scrollbar ref="scroll">
+                    <vue-scroll :ops="ops">
                         <transition
                             mode="out-in"
                             enter-active-class="animated fadeIn"
@@ -62,7 +63,7 @@
                         >
                             <router-view></router-view>
                         </transition>
-                    </perfect-scrollbar>
+                    </vue-scroll>
                 </v-card>
             </v-container>
         </v-content>
@@ -72,10 +73,12 @@
 <script lang="ts">
 import Vue from "vue";
 import UserCard from "./components/UserCard.vue";
+import Warn from "./components/Warn.vue"
 
 export default {
     components: {
-        UserCard
+        UserCard,
+        Warn
     },
     props: {
         source: String
@@ -84,6 +87,12 @@ export default {
 
     //},
     data: () => ({
+        ops: {
+          vuescroll: {wheelScrollDuration:200},
+          scrollPanel: {},
+          rail: {background:"#000"},
+          bar: {background: '#888',opacity:0.6}
+        },
         dialog: false,
         drawer: null,
         mini: false,

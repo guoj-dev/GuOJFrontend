@@ -2,6 +2,7 @@ import { Module, State } from 'vuex-simple'
 import AuthModule from './modules/auth'
 import UserModule from './modules/user'
 import SlidesModule from './modules/slides'
+import WarnModule from './modules/warn'
 
 export class Store {
     @Module()
@@ -12,4 +13,7 @@ export class Store {
 
     @Module()
     public Slides = new SlidesModule()
+
+    @Module()
+    public Warn = new WarnModule()
 }

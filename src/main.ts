@@ -11,10 +11,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSocketIO from 'vue-socket.io-extended';
 import io from 'socket.io-client';
-import PerfectScrollbar from 'vue2-perfect-scrollbar'
-import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
+import vuescroll from 'vuescroll';
 
-Vue.use(PerfectScrollbar)
+Vue.use(vuescroll)
 const socket = io('http://127.0.0.1:3000');
 Vue.use(VueAxios, axios)
 
