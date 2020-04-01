@@ -58,8 +58,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { AuthData } from "../store/modules/auth";
+import Vue from 'vue';
+import { AuthData } from '../store/modules/auth';
 export default Vue.extend({
     components: {},
     data: () => {
@@ -67,11 +67,11 @@ export default Vue.extend({
             valid: true,
             show: false,
             login_button_loading: false,
-            username: String(""),
-            password: String(""),
+            username: String(''),
+            password: String(''),
             rules: {
-                required: (value: String) => !!value || "必填",
-                min: (value: String) => value.length >= 8 || "至少8个字符"
+                required: (value: String) => !!value || '必填',
+                min: (value: String) => value.length >= 8 || '至少8个字符'
             }
         };
     },
@@ -85,12 +85,12 @@ export default Vue.extend({
                 Password: password
             };
             this.$store
-                .dispatch("Auth/Login", { username, password })
-                .then(() => this.$router.push("/"));
+                .dispatch('Auth/Login', { username, password })
+                .then(() => this.$router.push('/'));
         }
     },
     created() {
-        if (this.$store.getters["Auth/isLogin"]) this.$router.push("/");
+        if (this.$store.getters['Auth/isLogin']) this.$router.push('/');
     }
 });
 </script>

@@ -1,8 +1,8 @@
-import { Module, State } from 'vuex-simple'
-import AuthModule from './modules/auth'
-import UserModule from './modules/user'
-import SlidesModule from './modules/slides'
-import WarnModule from './modules/warn'
+import { Module, State } from 'vuex-simple';
+import AuthModule from './modules/auth';
+import UserModule from './modules/user';
+import SlidesModule from './modules/slides';
+import WarnModule from './modules/warn';
 
 export class Store {
     @Module()

@@ -51,7 +51,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
     components: {},
@@ -59,16 +59,16 @@ export default Vue.extend({
         return {
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: false,
-                    to: { path: "/" }
+                    to: { path: '/' }
                 },
                 {
-                    text: "用户",
+                    text: '用户',
                     disabled: true
                 }
             ],
-            Username: "Quank"
+            Username: 'Quank'
         };
     }
 });

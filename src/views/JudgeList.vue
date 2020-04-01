@@ -40,34 +40,34 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import UserCardPublic from "../components/UserCardPublic.vue";
+import Vue from 'vue';
+import UserCardPublic from '../components/UserCardPublic.vue';
 
 export default Vue.extend({
     components: { UserCardPublic },
     data: () => {
         return {
             Judges: [
-                ["1", "A+B Problem", ["green", "Accepted"]],
-                ["2", "A+B Problem", ["green", "Accepted"]],
-                ["3", "A+B Problem", ["green", "Accepted"]],
-                ["4", "A+B Problem", ["green", "Accepted"]],
-                ["5", "A+B Problem", ["green", "Accepted"]],
-                ["6", "A+B Problem", ["green", "Accepted"]],
-                ["7", "A+B Problem", ["green", "Accepted"]],
-                ["8", "A+B Problem", ["green", "Accepted"]],
-                ["9", "A+B Problem", ["green", "Accepted"]]
+                ['1', 'A+B Problem', ['green', 'Accepted']],
+                ['2', 'A+B Problem', ['green', 'Accepted']],
+                ['3', 'A+B Problem', ['green', 'Accepted']],
+                ['4', 'A+B Problem', ['green', 'Accepted']],
+                ['5', 'A+B Problem', ['green', 'Accepted']],
+                ['6', 'A+B Problem', ['green', 'Accepted']],
+                ['7', 'A+B Problem', ['green', 'Accepted']],
+                ['8', 'A+B Problem', ['green', 'Accepted']],
+                ['9', 'A+B Problem', ['green', 'Accepted']]
             ],
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: true,
-                    href: "/"
+                    href: '/'
                 },
                 {
-                    text: "ProblemSet",
+                    text: 'ProblemSet',
                     disabled: true,
-                    href: "/ProblemSet"
+                    href: '/ProblemSet'
                 }
             ]
         };

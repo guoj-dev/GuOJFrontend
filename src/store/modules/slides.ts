@@ -1,5 +1,5 @@
-import Axios from '../../api/session'
-import { Mutation, Action, Getter, State } from 'vuex-simple'
+import Axios from '../../api/session';
+import { Mutation, Action, Getter, State } from 'vuex-simple';
 
 export interface Slide {
     Type: String,
@@ -23,7 +23,7 @@ export default class SlidesModule {
             Axios.get('/api/notice/').then(Response => {
                 const Slides = new Array<Slide>();
                 for (const i in Response.data) {
-                    var a: Slide = { Color: "", Title: "", Type: "", Background: "" };
+                    var a: Slide = { Color: '', Title: '', Type: '', Background: '' };
                     a.Color = Response.data[i].Color;
                     a.Title = Response.data[i].Title;
                     a.Type = Response.data[i].Type;
@@ -31,9 +31,9 @@ export default class SlidesModule {
                     Slides[i] = a;
                 }
                 this.update_slides(Slides);
-                resolve(Response)
-            })
-        })
+                resolve(Response);
+            });
+        });
     }
 
     @Getter()

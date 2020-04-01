@@ -1,5 +1,5 @@
-import Axios from '../../api/session'
-import { Mutation, Action, Getter, State } from 'vuex-simple'
+import Axios from '../../api/session';
+import { Mutation, Action, Getter, State } from 'vuex-simple';
 
 export interface AuthData {
     Username: String,
@@ -45,22 +45,22 @@ export default class AuthModule {
                 this.auth_success(Token);
                 resolve(Response);
             }).catch(Error => {
-                alert(Error)
+                alert(Error);
                 this.auth_error();
-                localStorage.removeItem('token')
+                localStorage.removeItem('token');
                 reject(Error);
-            })
-        })
+            });
+        });
     }
 
     @Action()
     public Logout() {
         return new Promise((resolve, reject) => {
-            Axios.post('/auth/logout/')
+            Axios.post('/auth/logout/');
             this.auth_logout();
             localStorage.removeItem('token');
             resolve();
-        })
+        });
     }
 
     @Getter()

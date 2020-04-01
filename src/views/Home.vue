@@ -65,18 +65,18 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
     components: {},
     props: {},
     computed: {
         Slides() {
-            return this.$store.getters["Slides/SlidesObject"];
+            return this.$store.getters['Slides/SlidesObject'];
         }
     },
     mounted() {
-        this.$store.dispatch("Slides/UpdateSlides");
+        this.$store.dispatch('Slides/UpdateSlides');
     }
 });
 </script>

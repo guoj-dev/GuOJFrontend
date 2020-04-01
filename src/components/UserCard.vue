@@ -59,8 +59,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Axios from "axios";
+import Vue from 'vue';
+import Axios from 'axios';
 export default Vue.extend({
     props: {},
     data() {
@@ -68,46 +68,46 @@ export default Vue.extend({
             expand: Boolean,
             avatar: String,
             items: [
-                { title: "Click Me" },
-                { title: "Click Me" },
-                { title: "Click Me" },
-                { title: "Click Me 2" }
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me 2' }
             ]
         };
     },
     methods: {
         logout() {
-            this.$store.dispatch("Auth/Logout");
+            this.$store.dispatch('Auth/Logout');
         }
     },
     computed: {
         Username(): String {
-            return this.$store.getters["User/Username"];
+            return this.$store.getters['User/Username'];
         },
         Avatar(): String {
-            return this.$store.getters["User/Avatar"];
+            return this.$store.getters['User/Avatar'];
         },
         Coins(): Number {
-            return this.$store.getters["User/Coins"];
+            return this.$store.getters['User/Coins'];
         },
         islogin(): Boolean {
-            return this.$store.getters["Auth/isLogin"];
+            return this.$store.getters['Auth/isLogin'];
         },
         NameColor(): String {
-            return this.$store.getters["User/NameColor"];
+            return this.$store.getters['User/NameColor'];
         },
         Nameplate(): String {
-            return this.$store.getters["User/Nameplate"];
+            return this.$store.getters['User/Nameplate'];
         },
         NameplateColor(): String {
-            return this.$store.getters["User/NameplateColor"];
+            return this.$store.getters['User/NameplateColor'];
         }
     },
     watch: {
         async islogin(val) {
-            if (this.$store.getters["Auth/isLogin"]) {
-                await this.$store.dispatch("User/Update");
-                await this.$store.dispatch("User/UpdateUserData");
+            if (this.$store.getters['Auth/isLogin']) {
+                await this.$store.dispatch('User/Update');
+                await this.$store.dispatch('User/UpdateUserData');
             }
         }
     },

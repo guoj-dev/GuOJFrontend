@@ -1,19 +1,19 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import ProblemSet from './views/ProblemSet.vue'
-import ProblemView from './views/ProblemView.vue'
-import ProblemEdit from './views/ProblemEdit.vue'
-import JudgeList from './views/JudgeList.vue'
-import JudgeStatus from './views/JudgeStatus.vue'
-import UserInfo from './views/UserInfo.vue'
-import Login from './views/Login.vue'
-import NotFound from './views/404.vue'
-import Error from './views/Error.vue'
-import Register from './views/Register.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import ProblemSet from './views/ProblemSet.vue';
+import ProblemView from './views/ProblemView.vue';
+import ProblemEdit from './views/ProblemEdit.vue';
+import JudgeList from './views/JudgeList.vue';
+import JudgeStatus from './views/JudgeStatus.vue';
+import UserInfo from './views/UserInfo.vue';
+import Login from './views/Login.vue';
+import NotFound from './views/404.vue';
+import Error from './views/Error.vue';
+import Register from './views/Register.vue';
 
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',
@@ -75,4 +75,4 @@ export default new Router({
             component: NotFound
         },
     ]
-})
+});

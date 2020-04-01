@@ -1,5 +1,5 @@
-import Axios from 'axios'
-import { Mutation, Action, Getter, State } from 'vuex-simple'
+import Axios from 'axios';
+import { Mutation, Action, Getter, State } from 'vuex-simple';
 
 export interface User {
     Username: String,
@@ -28,12 +28,12 @@ export default class UserModule {
 
     constructor() {
         this.User = { Username: '', UserID: 0 };
-        this.UserData = { Name: '', Email: '', Avatar: '', Coins: 0, Rating: 0, Experience: 0, Contribution: 0, Nameplate: '', NameColor: '', NameplateColor: '', Text: '' }
+        this.UserData = { Name: '', Email: '', Avatar: '', Coins: 0, Rating: 0, Experience: 0, Contribution: 0, Nameplate: '', NameColor: '', NameplateColor: '', Text: '' };
     }
 
     @Mutation()
     public update(NewUser: User) {
-        this.User = NewUser
+        this.User = NewUser;
     }
 
     @Mutation()
@@ -53,8 +53,8 @@ export default class UserModule {
             Axios.get('/auth/user/').then(Response => {
                 this.update({ Username: Response.data.username, UserID: Response.data.pk });
                 resolve(Response);
-            })
-        })
+            });
+        });
     }
 
     @Action()
@@ -74,9 +74,9 @@ export default class UserModule {
                     NameplateColor: Response.data.NameplateColor,
                     Text: Response.data.Text,
                 });
-                resolve(Response)
-            })
-        })
+                resolve(Response);
+            });
+        });
     }
 
     @Getter()

@@ -109,9 +109,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Markdown from "../components/Markdown.vue";
-import monaco from "../components/Monacoeditor.vue";
+import Vue from 'vue';
+import Markdown from '../components/Markdown.vue';
+import monaco from '../components/Monacoeditor.vue';
 
 export default Vue.extend({
     components: { Markdown, monaco },
@@ -119,63 +119,63 @@ export default Vue.extend({
         return {
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: false,
-                    to: { path: "/" }
+                    to: { path: '/' }
                 },
                 {
-                    text: "题库",
+                    text: '题库',
                     disabled: false,
-                    to: { name: "ProblemSet" }
+                    to: { name: 'ProblemSet' }
                 },
                 {
-                    text: "题目",
+                    text: '题目',
                     disabled: true
                 }
             ],
-            select: "",
+            select: '',
             Languages: [
-                { text: "C", lang: "c" },
-                { text: "C++ 98", lang: "cpp98" },
-                { text: "C++ 11", lang: "cpp11" },
-                { text: "C++ 14", lang: "cpp14" },
-                { text: "C++ 17", lang: "cpp17" },
-                { text: "C++ 20", lang: "cpp20" },
-                { text: "C#", lang: "csharp" },
-                { text: "Visual Basic .Net", lang: "vb" },
-                { text: "F#", lang: "fsharp" },
-                { text: "Java", lang: "java" },
-                { text: "Kotlin", lang: "kotlin" },
-                { text: "Scala", lang: "scala" },
-                { text: "Clojure", lang: "clojure" },
-                { text: "Python 2", lang: "python2" },
-                { text: "Python 3", lang: "python3" },
-                { text: "PyPy 2", lang: "pypy2" },
-                { text: "PyPy 3", lang: "pypy3" },
-                { text: "Ruby", lang: "ruby" },
-                { text: "Lua", lang: "lua" },
-                { text: "Perl", lang: "perl" },
-                { text: "PHP 5.0", lang: "php" },
-                { text: "JavaScript", lang: "javascript" },
-                { text: "TypeScript", lang: "typescript" },
-                { text: "Go", lang: "golang" },
-                { text: "Rust", lang: "rust" },
-                { text: "Haskell", lang: "haskell" },
-                { text: "Lisp", lang: "lisp" },
-                { text: "Racket", lang: "racket" },
-                { text: "Wenyan(JavaScript)", lang: "wenyanjs" },
-                { text: "Wenyan(Python)", lang: "wenyanpy" },
-                { text: "Wenyan(Ruby)", lang: "wenyanrb" },
-                { text: "Dongbei(Python)", lang: "dongbeipy" }
+                { text: 'C', lang: 'c' },
+                { text: 'C++ 98', lang: 'cpp98' },
+                { text: 'C++ 11', lang: 'cpp11' },
+                { text: 'C++ 14', lang: 'cpp14' },
+                { text: 'C++ 17', lang: 'cpp17' },
+                { text: 'C++ 20', lang: 'cpp20' },
+                { text: 'C#', lang: 'csharp' },
+                { text: 'Visual Basic .Net', lang: 'vb' },
+                { text: 'F#', lang: 'fsharp' },
+                { text: 'Java', lang: 'java' },
+                { text: 'Kotlin', lang: 'kotlin' },
+                { text: 'Scala', lang: 'scala' },
+                { text: 'Clojure', lang: 'clojure' },
+                { text: 'Python 2', lang: 'python2' },
+                { text: 'Python 3', lang: 'python3' },
+                { text: 'PyPy 2', lang: 'pypy2' },
+                { text: 'PyPy 3', lang: 'pypy3' },
+                { text: 'Ruby', lang: 'ruby' },
+                { text: 'Lua', lang: 'lua' },
+                { text: 'Perl', lang: 'perl' },
+                { text: 'PHP 5.0', lang: 'php' },
+                { text: 'JavaScript', lang: 'javascript' },
+                { text: 'TypeScript', lang: 'typescript' },
+                { text: 'Go', lang: 'golang' },
+                { text: 'Rust', lang: 'rust' },
+                { text: 'Haskell', lang: 'haskell' },
+                { text: 'Lisp', lang: 'lisp' },
+                { text: 'Racket', lang: 'racket' },
+                { text: 'Wenyan(JavaScript)', lang: 'wenyanjs' },
+                { text: 'Wenyan(Python)', lang: 'wenyanpy' },
+                { text: 'Wenyan(Ruby)', lang: 'wenyanrb' },
+                { text: 'Dongbei(Python)', lang: 'dongbeipy' }
             ],
-            rate: "1",
-            hardcolor: "green",
-            MarkdownData: "# 这里是题面",
+            rate: '1',
+            hardcolor: 'green',
+            MarkdownData: '# 这里是题面',
             overlay: false
         };
     },
     mounted() {
-        window.addEventListener("resize", () => {
+        window.addEventListener('resize', () => {
             this.overlay = false;
         });
     }

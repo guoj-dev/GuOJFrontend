@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import MarkdownEditor from "../components/MarkdownEditor.vue";
+import Vue from 'vue';
+import MarkdownEditor from '../components/MarkdownEditor.vue';
 
 export default Vue.extend({
     components: { MarkdownEditor },
@@ -28,25 +28,25 @@ export default Vue.extend({
         return {
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: false,
-                    to: { path: "/" }
+                    to: { path: '/' }
                 },
                 {
-                    text: "题库",
+                    text: '题库',
                     disabled: false,
-                    to: { name: "ProblemSet" }
+                    to: { name: 'ProblemSet' }
                 },
                 {
-                    text: "题目",
+                    text: '题目',
                     disabled: true
                 },
                 {
-                    text: "编辑题目",
+                    text: '编辑题目',
                     disabled: true
                 }
             ],
-            Markdown: "aaa"
+            Markdown: 'aaa'
         };
     }
 });

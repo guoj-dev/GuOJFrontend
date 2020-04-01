@@ -64,22 +64,22 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import axios from "../api/session";
-import auth from "../api/auth";
+import Vue from 'vue';
+import axios from '../api/session';
+import auth from '../api/auth';
 export default Vue.extend({
     components: {},
     data: () => {
         return {
             valid: true,
             show: false,
-            email: "",
-            username: "",
-            password: "",
-            password_repeat: "",
+            email: '',
+            username: '',
+            password: '',
+            password_repeat: '',
             rules: {
-                required: (value: String) => !!value || "必填",
-                min: (value: String) => value.length >= 8 || "至少8个字符"
+                required: (value: String) => !!value || '必填',
+                min: (value: String) => value.length >= 8 || '至少8个字符'
             }
         };
     },

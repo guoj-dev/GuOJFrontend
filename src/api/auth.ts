@@ -1,6 +1,6 @@
-import axios from './session'
-import Vue from 'vue'
-import store from '@/store'
+import axios from './session';
+import Vue from 'vue';
+import store from '@/store';
 import session from './session';
 
 export default {
@@ -31,4 +31,4 @@ export default {
     verifyAccountEmail(key: String) {
         return axios.post('/auth/registration/verify-email/', { key });
     },
-}
+};

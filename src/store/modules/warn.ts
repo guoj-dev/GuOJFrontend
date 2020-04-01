@@ -1,4 +1,4 @@
-import { Mutation, Action, Getter, State } from "vuex-simple";
+import { Mutation, Action, Getter, State } from 'vuex-simple';
 
 export interface WarnData {
     Color: String;
@@ -8,13 +8,13 @@ export interface WarnData {
 
 export default class WarnModule {
     @State()
-    color: String = "";
+    color: String = '';
 
     @State()
     snackbar: Boolean = false;
 
     @State()
-    text: String = "";
+    text: String = '';
 
     @State()
     timeout: Number = 0;

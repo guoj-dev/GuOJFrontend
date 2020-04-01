@@ -76,21 +76,6 @@
     "vue-template-compiler": "^2.6.10",
     "vuetify-loader": "^1.4.3"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/typescript"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    }
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}

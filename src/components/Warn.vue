@@ -6,28 +6,28 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 export default {
     data() {
         return {
             snackbar: false,
-            color: "error",
-            text: "Error",
+            color: 'error',
+            text: 'Error',
             timeout: 5000
         };
     },
     computed: {
         SnackbarEvent() {
-            return this.$store.getters["Warn/SnackbarEvent"];
+            return this.$store.getters['Warn/SnackbarEvent'];
         },
         Color() {
-            return this.$store.getters["Warn/Color"];
+            return this.$store.getters['Warn/Color'];
         },
         Text() {
-            return this.$store.getters["Warn/Text"];
+            return this.$store.getters['Warn/Text'];
         },
         Timeout() {
-            return this.$store.getters["Warn/Timeout"];
+            return this.$store.getters['Warn/Timeout'];
         }
     },
     watch: {
@@ -41,7 +41,7 @@ export default {
         },
         snackbar(val) {
             if (val == false) {
-                this.$store.dispatch("Warn/EndWarn");
+                this.$store.dispatch('Warn/EndWarn');
             }
         }
     }

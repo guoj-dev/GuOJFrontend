@@ -103,8 +103,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Markdown from "../components/Markdown.vue";
+import Vue from 'vue';
+import Markdown from '../components/Markdown.vue';
 
 export default Vue.extend({
     components: { Markdown }, // eslint-disable-line vue/no-unused-components
@@ -112,26 +112,26 @@ export default Vue.extend({
         return {
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: false,
-                    to: { path: "/" }
+                    to: { path: '/' }
                 },
                 {
-                    text: "评测",
+                    text: '评测',
                     disabled: false,
-                    to: { path: "JudgeStatus" }
+                    to: { path: 'JudgeStatus' }
                 },
                 {
-                    text: "任务",
+                    text: '任务',
                     disabled: true
                 }
             ],
-            ProblemID: "P1000",
-            ProblemName: "A+B Problem",
-            TimeLimit: "1000ms",
-            Time: "0ms",
-            MemoryLimit: "128MB",
-            Memory: "10KB"
+            ProblemID: 'P1000',
+            ProblemName: 'A+B Problem',
+            TimeLimit: '1000ms',
+            Time: '0ms',
+            MemoryLimit: '128MB',
+            Memory: '10KB'
         };
     }
 });
