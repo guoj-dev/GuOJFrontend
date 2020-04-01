@@ -33,7 +33,7 @@ export default class WarnModule {
     }
 
     @Action()
-    public AddWarn(WarnData:WarnData) {
+    public AddWarn(WarnData: WarnData) {
         this.addWarn(WarnData);
     }
 

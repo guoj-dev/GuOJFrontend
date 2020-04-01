@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <warn/>
+        <warn />
         <v-navigation-drawer
             v-model="drawer"
             :mini-variant.sync="mini"
@@ -73,7 +73,7 @@
 <script lang="ts">
 import Vue from "vue";
 import UserCard from "./components/UserCard.vue";
-import Warn from "./components/Warn.vue"
+import Warn from "./components/Warn.vue";
 
 export default {
     components: {
@@ -88,10 +88,10 @@ export default {
     //},
     data: () => ({
         ops: {
-          vuescroll: {wheelScrollDuration:200},
-          scrollPanel: {},
-          rail: {background:"#000"},
-          bar: {background: '#888',opacity:0.6}
+            vuescroll: { wheelScrollDuration: 200 },
+            scrollPanel: {},
+            rail: { background: "#000" },
+            bar: { background: "#888", opacity: 0.6 }
         },
         dialog: false,
         drawer: null,

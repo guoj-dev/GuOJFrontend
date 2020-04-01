@@ -4,6 +4,5 @@ import store from '@/store'
 import auth from './auth'
 
 export default {
-    auth,
-    
+    auth
 }

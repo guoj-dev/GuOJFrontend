@@ -20,7 +20,7 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false;
 Vue.prototype.Velocity = Velocity;
 
-Vue.use(VueSocketIO,socket)
+Vue.use(VueSocketIO, socket)
 
 new Vue({
     vuetify,

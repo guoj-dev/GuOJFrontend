@@ -7,10 +7,10 @@ Vue.use(Vuetify);
 
 export default new Vuetify({
     lang: {
-      locales: { zhHans },
-      current: 'zh-Hans',
+        locales: { zhHans },
+        current: 'zh-Hans',
     },
-  icons: {
-    iconfont: 'mdi',
-  },
+    icons: {
+        iconfont: 'mdi',
+    },
 });

@@ -1,9 +1,9 @@
 import Axios from '../../api/session'
 import { Mutation, Action, Getter, State } from 'vuex-simple'
 
-export interface AuthData{
-    Username:String,
-    Password:String
+export interface AuthData {
+    Username: String,
+    Password: String
 }
 
 export default class AuthModule {
@@ -14,32 +14,32 @@ export default class AuthModule {
     public Token = localStorage.getItem('token') || '';
 
     @Mutation()
-    public auth_request(){
+    public auth_request() {
         this.Status = 'loading';
     }
 
     @Mutation()
-    public auth_success(Token:string){
+    public auth_success(Token: string) {
         this.Status = 'success';
         this.Token = Token;
     }
 
     @Mutation()
-    public auth_error(){
+    public auth_error() {
         this.Status = 'error';
     }
 
     @Mutation()
-    public auth_logout(){
+    public auth_logout() {
         this.Status = '';
         this.Token = '';
     }
 
     @Action()
-    public Login(User:AuthData){
+    public Login(User: AuthData) {
         return new Promise((resolve, reject) => {
             this.auth_request();
-            Axios.post('/auth/login/', User).then(Response =>{
+            Axios.post('/auth/login/', User).then(Response => {
                 const Token = Response.data.key;
                 localStorage.setItem('token', Token);
                 this.auth_success(Token);
@@ -54,7 +54,7 @@ export default class AuthModule {
     }
 
     @Action()
-    public Logout(){
+    public Logout() {
         return new Promise((resolve, reject) => {
             Axios.post('/auth/logout/')
             this.auth_logout();
@@ -64,18 +64,18 @@ export default class AuthModule {
     }
 
     @Getter()
-    public get isLogin(){
+    public get isLogin() {
         return !!this.Token;
     }
 
     @Getter()
-    public get AuthStatus(){
+    public get AuthStatus() {
         return this.Status;
     }
 
     @Action()
-    public Init(){
-        if(localStorage.getItem('token')){
+    public Init() {
+        if (localStorage.getItem('token')) {
             this.auth_success(localStorage.getItem('token'));
         }
     }

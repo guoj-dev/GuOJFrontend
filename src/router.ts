@@ -67,7 +67,7 @@ export default new Router({
             path: '/Error/:ErrorMessage',
             name: 'Error',
             component: Error,
-            
+
         },
         {
             path: '*',

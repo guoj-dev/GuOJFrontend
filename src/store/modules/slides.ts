@@ -10,7 +10,7 @@ export interface Slide {
 
 export default class SlidesModule {
     @State()
-    public Slides: Array<Slide>=[];
+    public Slides: Array<Slide> = [];
 
     @Mutation()
     public update_slides(NewSlides: Array<Slide>) {
@@ -23,7 +23,7 @@ export default class SlidesModule {
             Axios.get('/api/notice/').then(Response => {
                 const Slides = new Array<Slide>();
                 for (const i in Response.data) {
-                    var a: Slide={Color:"",Title:"",Type:"",Background:""};
+                    var a: Slide = { Color: "", Title: "", Type: "", Background: "" };
                     a.Color = Response.data[i].Color;
                     a.Title = Response.data[i].Title;
                     a.Type = Response.data[i].Type;
@@ -37,7 +37,7 @@ export default class SlidesModule {
     }
 
     @Getter()
-    public get SlidesObject(){
+    public get SlidesObject() {
         return this.Slides;
     }
 }

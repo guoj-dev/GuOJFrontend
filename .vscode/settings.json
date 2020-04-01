@@ -1,0 +1,6 @@
+{
+    "vetur.format.options.tabSize": 4,
+    "vetur.format.scriptInitialIndent": false,
+    "vetur.format.styleInitialIndent": false,
+    "vetur.format.options.useTabs": false
+}

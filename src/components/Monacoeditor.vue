@@ -55,8 +55,8 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.editor {
-    width: 100%;
-    height: 100%;
-}
+    .editor {
+        width: 100%;
+        height: 100%;
+    }
 </style>

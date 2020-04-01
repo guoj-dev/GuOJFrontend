@@ -32,8 +32,8 @@ export default class UserModule {
     }
 
     @Mutation()
-    public update(NewUser:User) {
-        this.User=NewUser
+    public update(NewUser: User) {
+        this.User = NewUser
     }
 
     @Mutation()
@@ -51,7 +51,7 @@ export default class UserModule {
     public Update() {
         return new Promise((resolve, reject) => {
             Axios.get('/auth/user/').then(Response => {
-                this.update({Username:Response.data.username, UserID:Response.data.pk});
+                this.update({ Username: Response.data.username, UserID: Response.data.pk });
                 resolve(Response);
             })
         })
@@ -80,52 +80,52 @@ export default class UserModule {
     }
 
     @Getter()
-    public get Username(){
+    public get Username() {
         return this.User.Username;
     }
 
     @Getter()
-    public get UserID(){
+    public get UserID() {
         return this.User.Username;
     }
 
     @Getter()
-    public get Avatar(){
+    public get Avatar() {
         return this.UserData.Avatar;
     }
 
     @Getter()
-    public get Nameplate(){
+    public get Nameplate() {
         return this.UserData.Nameplate;
     }
 
     @Getter()
-    public get NameColor(){
+    public get NameColor() {
         return this.UserData.NameColor;
     }
 
     @Getter()
-    public get NameplateColor(){
+    public get NameplateColor() {
         return this.UserData.NameColor;
     }
 
     @Getter()
-    public get Coins(){
+    public get Coins() {
         return this.UserData.Coins;
     }
-    
+
     @Getter()
-    public get Rating(){
+    public get Rating() {
         return this.UserData.Rating;
     }
 
     @Getter()
-    public get Experince(){
+    public get Experince() {
         return this.UserData.Experience;
     }
 
     @Getter()
-    public get Contribution(){
+    public get Contribution() {
         return this.UserData.Contribution;
     }
 }
