@@ -9,7 +9,7 @@
 </template>
 
 
-<script lang="js">
+<script lang="ts">
 import Vue from 'vue';
 import mavonEditor from 'mavon-editor-guoj';
 import 'mavon-editor-guoj/dist/css/index.css';
