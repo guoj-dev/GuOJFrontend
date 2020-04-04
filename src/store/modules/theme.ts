@@ -37,6 +37,8 @@ export default class ThemeModule {
         Home: {
             Fortune: {
                 Dark: true,
+                ThemeColor: false,
+                Color: 'white',
             },
             Hitokoto: {
                 Dark: true,
