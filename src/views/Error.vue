@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-card outlined color="primary" dark style="margin:100px;padding:100px;">
+        <v-card outlined :color="Theme.Color" :dark="Theme.Dark" :light="!Theme.Dark" style="margin:100px;padding:100px;">
             <v-card-title>
                 <div style="padding:10px;color:white;font-size:36px;">Error</div>
             </v-card-title>
@@ -19,6 +19,11 @@ import Vue from 'vue';
 
 export default Vue.extend({
     components: {},
+    computed:{
+        Theme(){
+            return this.$store.getters['Theme/Error'];
+        }
+    },
     data: () => {
         return {};
     }

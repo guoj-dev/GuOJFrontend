@@ -27,6 +27,8 @@
         </v-row>
         <v-container class="d-flex pa-0 justify-space-between">
             <v-card
+                :dark="Theme.Fortune.Dark"
+                :light="!Theme.Fortune.Dark"
                 class="d-flex flex-column flex-grow-1 me-6"
                 color="green"
                 elevation="12"
@@ -36,13 +38,15 @@
                 </v-card-title>
                 <v-divider></v-divider>
                 <v-container justify="center" class="text-center headline">
-                    <p>今日运势 </p>
+                    <p>今日运势</p>
                     <p>🕊大吉🕊</p>
                 </v-container>
             </v-card>
             <v-card
+                :dark="Theme.Hitokoto.Dark"
+                :light="!Theme.Hitokoto.Dark"
                 class="d-flex flex-column flex-grow-1 mx-6"
-                color="primary"
+                :color="Theme.Hitokoto.Color"
                 elevation="12"
             >
                 <v-card-title>
@@ -54,15 +58,17 @@
                 </v-container>
             </v-card>
             <v-card
+                :dark="Theme.ProblemNew.Dark"
+                :light="!Theme.ProblemNew.Dark"
                 class="d-flex flex-column flex-grow-1 ms-6"
-                color="cyan"
+                :color="Theme.ProblemNew.Color"
                 elevation="12"
             >
                 <v-card-title>
                     <v-icon>mdi-chevron-right</v-icon>题库动态
                 </v-card-title>
                 <v-divider></v-divider>
-                 <v-container>
+                <v-container>
                     <p>新鲜好题:</p>
                 </v-container>
             </v-card>

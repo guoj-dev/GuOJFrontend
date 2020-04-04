@@ -68,6 +68,8 @@
                 :dark="Theme.LoginButton.Dark"
                 :light="!Theme.LoginButton.Dark"
                 :color="Theme.LoginButton.Color"
+                :outlined="Theme.LoginButton.Outlined"
+                :rounded="Theme.LoginButton.Rounded"
                 to="/Login"
                 >登录</v-btn
             >
@@ -76,6 +78,8 @@
                 :dark="Theme.RegisterButton.Dark"
                 :light="!Theme.RegisterButton.Dark"
                 :color="Theme.RegisterButton.Color"
+                :outlined="Theme.RegisterButton.Outlined"
+                :rounded="Theme.RegisterButton.Rounded"
                 to="/Register"
                 >注册</v-btn
             >

@@ -23,10 +23,14 @@ export default class ThemeModule {
             Color: 'blue',
             LoginButton: {
                 Dark: true,
+                Outlined: false,
+                Rounded: false,
                 Color: 'primary',
             },
             RegisterButton: {
                 Dark: true,
+                Outlined: false,
+                Rounded: false,
                 Color: 'green',
             },
         },
@@ -41,6 +45,19 @@ export default class ThemeModule {
             ProblemNew: {
                 Dark: true,
                 Color: 'cyan',
+            },
+        },
+        ProblemSet: {
+            Dark: true,
+            Color: 'light-blue light-1',
+            Problem: {
+                ProblemColor: false,
+                Dark: true,
+                Color: 'light-blue accent-4',
+                Tags: {
+                    Dark: true,
+                    Outlined: false,
+                },
             },
         },
         NotFound: {
@@ -71,5 +88,17 @@ export default class ThemeModule {
     @Getter()
     public get Home() {
         return this.ThemeTree.Home;
+    }
+    @Getter()
+    public get NotFound() {
+        return this.ThemeTree.NotFound;
+    }
+    @Getter()
+    public get Error() {
+        return this.ThemeTree.Error;
+    }
+    @Getter()
+    public get ProblemSet() {
+        return this.ThemeTree.ProblemSet;
     }
 }
