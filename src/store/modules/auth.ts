@@ -39,7 +39,7 @@ export default class AuthModule {
     public Login(User: AuthData) {
         return new Promise((resolve, reject) => {
             this.auth_request();
-            Axios.post('/auth/login/', User).then(Response => {
+            Axios.post('/api/auth/login/', User).then(Response => {
                 const Token = Response.data.key;
                 localStorage.setItem('token', Token);
                 this.auth_success(Token);
@@ -56,7 +56,7 @@ export default class AuthModule {
     @Action()
     public Logout() {
         return new Promise((resolve, reject) => {
-            Axios.post('/auth/logout/');
+            Axios.post('/api/auth/logout/');
             this.auth_logout();
             localStorage.removeItem('token');
             resolve();

@@ -1,25 +1,34 @@
 <template>
     <div>
         <div v-if="islogin">
-            <v-card dark color="blue">
-                <v-container no-gutters style="padding:2px 8px 2px 8px">
-                    <v-row no-gutters justify="space-between">
+            <v-card
+                :dark="Theme.Dark"
+                :light="!Theme.Dark"
+                :color="Theme.Color"
+            >
+                <v-container no-gutters class="pa-1">
+                    <v-row no-gutters justify="space-between" align="center">
                         <v-col no-gutters cols="auto">
-                            <v-avatar size="40" style="margin:4px 0px 4px 0px;">
+                            <v-avatar size="40" class="ma-1">
                                 <img :src="Avatar" />
                             </v-avatar>
                         </v-col>
-                        <v-col no-gutters cols="auto" style="margin:0px 4px 0px 4px;">
-                            <v-row no-gutters justify="center" class="flex-column ma-0">
+                        <v-col no-gutters cols="auto" class="mx-1">
+                            <v-row
+                                no-gutters
+                                justify="center"
+                                class="flex-column ma-0"
+                            >
                                 <v-col>
-                                    {{Username}}
+                                    {{ Username }}
                                     <v-chip
                                         v-if="Nameplate"
                                         x-small
                                         label
                                         :color="NameplateColor"
-                                        style="padding:4px;"
-                                    >{{Nameplate}}</v-chip>
+                                        style="padding: 4px;"
+                                        >{{ Nameplate }}</v-chip
+                                    >
                                 </v-col>
                                 <v-col>
                                     <v-chip x-small color="grey darken-3">
@@ -27,8 +36,9 @@
                                             left
                                             color="yellow darken-2"
                                             small
-                                        >mdi-alpha-c-circle-outline</v-icon>
-                                        {{Coins}}
+                                            >mdi-alpha-c-circle-outline</v-icon
+                                        >
+                                        {{ Coins }}
                                     </v-chip>
                                 </v-col>
                             </v-row>
@@ -36,13 +46,15 @@
                         <v-col>
                             <v-menu offset-y>
                                 <template v-slot:activator="{ on }">
-                                    <v-btn flat icon small v-on="on">
-                                        <v-icon size="40px">mdi-chevron-down</v-icon>
+                                    <v-btn flat icon x-small v-on="on">
+                                        <v-icon>mdi-dots-vertical</v-icon>
                                     </v-btn>
                                 </template>
                                 <v-list>
                                     <v-list-item @click="logout">
-                                        <v-list-item-title>Logout</v-list-item-title>
+                                        <v-list-item-title
+                                            >Logout</v-list-item-title
+                                        >
                                     </v-list-item>
                                 </v-list>
                             </v-menu>
@@ -52,8 +64,21 @@
             </v-card>
         </div>
         <div v-else>
-            <v-btn color="primary" to="/Login">登录</v-btn>
-            <v-btn style="margin:12px;" color="green" to="/Register">注册</v-btn>
+            <v-btn
+                :dark="Theme.LoginButton.Dark"
+                :light="!Theme.LoginButton.Dark"
+                :color="Theme.LoginButton.Color"
+                to="/Login"
+                >登录</v-btn
+            >
+            <v-btn
+                style="margin: 12px;"
+                :dark="Theme.RegisterButton.Dark"
+                :light="!Theme.RegisterButton.Dark"
+                :color="Theme.RegisterButton.Color"
+                to="/Register"
+                >注册</v-btn
+            >
         </div>
     </div>
 </template>
@@ -71,14 +96,14 @@ export default Vue.extend({
                 { title: 'Click Me' },
                 { title: 'Click Me' },
                 { title: 'Click Me' },
-                { title: 'Click Me 2' }
-            ]
+                { title: 'Click Me 2' },
+            ],
         };
     },
     methods: {
         logout() {
             this.$store.dispatch('Auth/Logout');
-        }
+        },
     },
     computed: {
         Username(): String {
@@ -101,7 +126,10 @@ export default Vue.extend({
         },
         NameplateColor(): String {
             return this.$store.getters['User/NameplateColor'];
-        }
+        },
+        Theme() {
+            return this.$store.getters['Theme/Usercard'];
+        },
     },
     watch: {
         async islogin(val) {
@@ -109,13 +137,12 @@ export default Vue.extend({
                 await this.$store.dispatch('User/Update');
                 await this.$store.dispatch('User/UpdateUserData');
             }
-        }
+        },
     },
     mounted() {
         //alert(this.$store.getters)
-    }
+    },
 });
 </script>
 
-<style>
-</style>
+<style></style>

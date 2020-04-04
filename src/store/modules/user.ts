@@ -50,7 +50,7 @@ export default class UserModule {
     @Action()
     public Update() {
         return new Promise((resolve, reject) => {
-            Axios.get('/auth/user/').then(Response => {
+            Axios.get('/api/auth/user/').then(Response => {
                 this.update({ Username: Response.data.username, UserID: Response.data.pk });
                 resolve(Response);
             });

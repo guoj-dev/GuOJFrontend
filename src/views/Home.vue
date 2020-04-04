@@ -5,13 +5,19 @@
                 <v-card elevation="12">
                     <v-carousel>
                         <v-carousel-item
-                            v-for="(Slide,i) in Slides"
+                            v-for="(Slide, i) in Slides"
                             :key="i"
                             :src="Slide.Background"
                         >
                             <v-sheet :color="Slide.Color" height="100%" tile>
-                                <v-row class="fill-height" align="center" justify="center">
-                                    <div class="display-3">{{ Slide.Title }}</div>
+                                <v-row
+                                    class="fill-height"
+                                    align="center"
+                                    justify="center"
+                                >
+                                    <div class="display-3">
+                                        {{ Slide.Title }}
+                                    </div>
                                 </v-row>
                             </v-sheet>
                         </v-carousel-item>
@@ -19,46 +25,46 @@
                 </v-card>
             </v-col>
         </v-row>
-        <v-container class="d-flex justify-space-between">
-            <v-card class="d-flex flex-column flex-grow-1 me-6" color="green" elevation="12">
+        <v-container class="d-flex pa-0 justify-space-between">
+            <v-card
+                class="d-flex flex-column flex-grow-1 me-6"
+                color="green"
+                elevation="12"
+            >
                 <v-card-title>
-                    <v-icon color="white">mdi-chevron-right</v-icon>鸽子算命
+                    <v-icon>mdi-chevron-right</v-icon>鸽子算命
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text>
-                    <div style="text-align:center;">
-                        <v-container>
-                            <v-row justify="center">
-                                <v-col>
-                                    <div style="font-size:20px;color:#fff;">今日运势</div>
-                                </v-col>
-                            </v-row>
-                            <v-row justify="center">
-                                <v-col>
-                                    <div style="font-size:40px;color:#fff;">🕊大吉🕊</div>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </div>
-                </v-card-text>
+                <v-container justify="center" class="text-center headline">
+                    <p>今日运势 </p>
+                    <p>🕊大吉🕊</p>
+                </v-container>
             </v-card>
-            <v-card class="d-flex flex-column flex-grow-1 mx-6" color="primary" elevation="12">
+            <v-card
+                class="d-flex flex-column flex-grow-1 mx-6"
+                color="primary"
+                elevation="12"
+            >
                 <v-card-title>
                     <v-icon>mdi-chevron-right</v-icon>鸽子语录
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text>
-                    <p class="white--text">今天要干什么呢？</p>
-                </v-card-text>
+                <v-container>
+                    <p>今天要干什么呢？</p>
+                </v-container>
             </v-card>
-            <v-card class="d-flex flex-column flex-grow-1 ms-6" color="cyan" elevation="12">
+            <v-card
+                class="d-flex flex-column flex-grow-1 ms-6"
+                color="cyan"
+                elevation="12"
+            >
                 <v-card-title>
                     <v-icon>mdi-chevron-right</v-icon>题库动态
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text>
-                    <p class="white--text">新鲜好题：</p>
-                </v-card-text>
+                 <v-container>
+                    <p>新鲜好题:</p>
+                </v-container>
             </v-card>
         </v-container>
     </v-container>
@@ -73,11 +79,14 @@ export default Vue.extend({
     computed: {
         Slides() {
             return this.$store.getters['Slides/SlidesObject'];
-        }
+        },
+        Theme() {
+            return this.$store.getters['Theme/Home'];
+        },
     },
     mounted() {
         this.$store.dispatch('Slides/UpdateSlides');
-    }
+    },
 });
 </script>
 

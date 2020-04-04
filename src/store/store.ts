@@ -3,6 +3,7 @@ import AuthModule from './modules/auth';
 import UserModule from './modules/user';
 import SlidesModule from './modules/slides';
 import WarnModule from './modules/warn';
+import ThemeModule from './modules/theme';
 
 export class Store {
     @Module()
@@ -16,4 +17,7 @@ export class Store {
 
     @Module()
     public Warn = new WarnModule()
+
+    @Module()
+    public Theme = new ThemeModule()
 }

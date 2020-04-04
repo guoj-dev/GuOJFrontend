@@ -6,12 +6,13 @@
             :mini-variant.sync="mini"
             clipped="true"
             app
-            dark
+            :dark="SideBar.Dark"
+            :light="!SideBar.Dark"
             permanent
             expand-on-hover
             mini-variant-width="56"
             elevation="12"
-            color="blue"
+            :color="SideBar.Color"
         >
             <v-list dense>
                 <template v-for="item in items">
@@ -20,7 +21,9 @@
                             <v-icon>{{ item.icon }}</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
-                            <v-list-item-title>{{ item.text }}</v-list-item-title>
+                            <v-list-item-title>{{
+                                item.text
+                            }}</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                 </template>
@@ -30,13 +33,14 @@
         <v-app-bar
             :clipped-left="true"
             app
-            color="blue"
-            dark
+            :color="TopBar.Color"
+            :dark="TopBar.Dark"
+            :light="!TopBar.Dark"
             fixed
-            src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+            :src="TopBar.BackgroundImage"
             elevation="5"
         >
-            <v-btn flat rounded icon x-large style="margin-left:-12px">
+            <v-btn flat rounded icon x-large style="margin-left: -12px;">
                 <v-icon size="40px">mdi-alpha-g</v-icon>
             </v-btn>
             <v-toolbar-title class="ml-0 pl-4" flat>
@@ -45,15 +49,16 @@
             <div class="flex-grow-1"></div>
             <user-card />
         </v-app-bar>
-        <v-content style="height:100%-64px;">
+        <v-content style="height: 100%-64px;">
             <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
-                    style="background-attachment:fixed; width:100%;"
+                    style="background-attachment: fixed; width: 100%;"
                     class="fill-height inline-flex"
-                    dark
+                    :dark="Global.Dark"
+                    :light="!Global.Dark"
                     tile
-                    color="white darken-3"
-                    img="https://s2.ax1x.com/2019/09/12/nBc7FO.jpg"
+                    :color="Global.Color"
+                    :img="Global.BackgroundImage"
                 >
                     <vue-scroll :ops="ops">
                         <transition
@@ -78,20 +83,28 @@ import Warn from './components/Warn.vue';
 export default {
     components: {
         UserCard,
-        Warn
+        Warn,
     },
     props: {
-        source: String
+        source: String,
     },
-    //computerd: {
-
-    //},
+    computed: {
+        TopBar() {
+            return this.$store.getters['Theme/TopBar'];
+        },
+        SideBar() {
+            return this.$store.getters['Theme/SideBar'];
+        },
+        Global() {
+            return this.$store.getters['Theme/Global'];
+        },
+    },
     data: () => ({
         ops: {
             vuescroll: { wheelScrollDuration: 200 },
             scrollPanel: {},
             rail: { background: '#000' },
-            bar: { background: '#888', opacity: 0.6 }
+            bar: { background: '#888', opacity: 0.6 },
         },
         dialog: false,
         drawer: null,
@@ -102,12 +115,12 @@ export default {
             {
                 icon: 'playlist_add_check',
                 text: '评测列表',
-                to: '/JudgeStatus'
+                to: '/JudgeStatus',
             },
             { icon: 'stars', text: '比赛' },
             { icon: 'people', text: '小组' },
-            { icon: 'chat', text: '论坛' }
-        ]
+            { icon: 'chat', text: '论坛' },
+        ],
     }),
     async mounted() {
         this.$store.dispatch('Auth/Init');
@@ -119,8 +132,8 @@ export default {
     watch: {
         $route() {
             this.$refs.scroll.$el.scrollTop = 0;
-        }
-    }
+        },
+    },
 };
 </script>
 <style>
@@ -141,4 +154,3 @@ body {
     height: 100%;
 }
 </style>
-

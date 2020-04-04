@@ -3,8 +3,11 @@ module.exports = {
         devServer: {
             historyApiFallback: true,
             proxy: {
-                '/': {
-                    target: 'http://localhost:8000',
+                '/api/': {
+                    target: 'http://localhost:8000/',
+                },
+                '/static/': {
+                    target: 'http://localhost:8000/',
                 }
             }
         }
