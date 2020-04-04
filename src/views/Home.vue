@@ -30,7 +30,7 @@
                 :dark="Theme.Fortune.Dark"
                 :light="!Theme.Fortune.Dark"
                 class="d-flex flex-column flex-grow-1 me-6"
-                color="green"
+                :color="Theme.ThemeColor?Theme.Color:FortuneColor"
                 elevation="12"
             >
                 <v-card-title>
@@ -82,6 +82,11 @@ import Vue from 'vue';
 export default Vue.extend({
     components: {},
     props: {},
+    data: () => {
+        return {
+            FortuneColor: 'green',
+        };
+    },
     computed: {
         Slides() {
             return this.$store.getters['Slides/SlidesObject'];
