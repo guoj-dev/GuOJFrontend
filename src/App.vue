@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <warn />
+        <notification />
         <v-navigation-drawer
             v-model="drawer"
             :mini-variant.sync="mini"
@@ -78,12 +78,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import UserCard from './components/UserCard.vue';
-import Warn from './components/Warn.vue';
+import Notification from './components/Notification.vue';
 
 export default {
     components: {
         UserCard,
-        Warn,
+        Notification,
     },
     props: {
         source: String,
