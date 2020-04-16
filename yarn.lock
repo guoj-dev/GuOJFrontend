@@ -5313,7 +5313,7 @@ linkify-it@^2.0.0:
 
 linkify-it@~1.2.2:
   version "1.2.4"
-  resolved "https://registry.npm.taobao.org/linkify-it/download/linkify-it-1.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flinkify-it%2Fdownload%2Flinkify-it-1.2.4.tgz#0773526c317c8fd13bd534ee1d180ff88abf881a"
+  resolved "https://registry.npm.taobao.org/linkify-it/download/linkify-it-1.2.4.tgz#0773526c317c8fd13bd534ee1d180ff88abf881a"
   integrity sha1-B3NSbDF8j9E71TTuHRgP+Iq/iBo=
   dependencies:
     uc.micro "^1.0.1"
@@ -5631,7 +5631,7 @@ markdown-it@^10.0.0:
 
 markdown-it@^6.0.1:
   version "6.1.1"
-  resolved "https://registry.npm.taobao.org/markdown-it/download/markdown-it-6.1.1.tgz#ced037f4473ee9f5153ac414f77dc83c91ba927c"
+  resolved "https://registry.npm.taobao.org/markdown-it/download/markdown-it-6.1.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarkdown-it%2Fdownload%2Fmarkdown-it-6.1.1.tgz#ced037f4473ee9f5153ac414f77dc83c91ba927c"
   integrity sha1-ztA39Ec+6fUVOsQU933IPJG6knw=
   dependencies:
     argparse "^1.0.7"
@@ -8941,10 +8941,10 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-markdown@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.npm.taobao.org/vue-markdown/download/vue-markdown-2.2.4.tgz#db0f774178f3bc91ee18c626d86a3a0d2de22746"
-  integrity sha1-2w93QXjzvJHuGMYm2Go6DS3iJ0Y=
+vue-markdown-guoj@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/vue-markdown-guoj/download/vue-markdown-guoj-1.0.1.tgz?cache=0&sync_timestamp=1587041474783&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-markdown-guoj%2Fdownload%2Fvue-markdown-guoj-1.0.1.tgz#cf7af87cb0a0a2ed1213a3a738474b5fd59549e8"
+  integrity sha1-z3r4fLCgou0SE6OnOEdLX9WVSeg=
   dependencies:
     highlight.js "^9.12.0"
     markdown-it "^6.0.1"
