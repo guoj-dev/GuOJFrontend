@@ -9,7 +9,7 @@
             <v-col style="padding:2px 4px 2px 4px;">
                 <div style="font-size:4px;">
                     Quank
-                    <v-icon small color="grey darken-5">check_circle</v-icon>
+                    <v-icon small color="grey darken-5">mdi-check-decagram</v-icon>
                 </div>
             </v-col>
         </v-row>
