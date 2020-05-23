@@ -1,10 +1,10 @@
 <template>
     <v-card light color="white">
-        <v-card-text>
+        <v-container>
             <div :v-html="html" style="color:#000;">
                 <slot></slot>
             </div>
-        </v-card-text>
+        </v-container>
     </v-card>
 </template>
 

@@ -5,11 +5,11 @@
                 <div style="padding:10px;color:white;font-size:36px;">Error</div>
             </v-card-title>
             <v-divider></v-divider>
-            <v-card-text>
+            <v-container>
                 <div
                     style="text-align:center;padding:50px;color:white;font-size:72px;"
                 >{{$route.params.ErrorMessage}}</div>
-            </v-card-text>
+            </v-container>
         </v-card>
     </v-container>
 </template>

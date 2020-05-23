@@ -9,11 +9,11 @@
             <v-card-title>{{$route.params.ProblemID}} A+B Problem</v-card-title>
             <v-container style="padding: 0px 12px 12px"></v-container>
             <v-divider></v-divider>
-            <v-card-text>
+            <v-container>
                 <div style="color:#fff;">
                     <markdown-editor ref="markdown" :Markdown="Markdown"></markdown-editor>
                 </div>
-            </v-card-text>
+            </v-container>
         </v-card>
     </v-container>
 </template>

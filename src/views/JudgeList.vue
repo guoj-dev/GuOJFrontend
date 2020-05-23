@@ -1,5 +1,5 @@
 <template>
-    <v-card-text>
+    <v-container>
         <v-card
             dark
             elevation="12"
@@ -36,7 +36,7 @@
                 </div>
             </v-container>
         </v-card>
-    </v-card-text>
+    </v-container>
 </template>
 
 <script lang="ts">

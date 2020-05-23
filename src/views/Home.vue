@@ -69,28 +69,28 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import MaterialStatsCard from "../components/MaterialStatsCard.vue";
+import Vue from 'vue';
+import MaterialStatsCard from '../components/MaterialStatsCard.vue';
 
 export default Vue.extend({
-  components: { MaterialStatsCard },
-  props: {},
-  data: () => {
-    return {
-      FortuneColor: "green"
-    };
-  },
-  computed: {
-    Slides() {
-      return this.$store.getters["Slides/SlidesObject"];
+    components: { MaterialStatsCard },
+    props: {},
+    data: () => {
+        return {
+            FortuneColor: 'green'
+        };
     },
-    Theme() {
-      return this.$store.getters["Theme/Home"];
+    computed: {
+        Slides() {
+            return this.$store.getters['Slides/SlidesObject'];
+        },
+        Theme() {
+            return this.$store.getters['Theme/Home'];
+        }
+    },
+    mounted() {
+        this.$store.dispatch('Slides/UpdateSlides');
     }
-  },
-  mounted() {
-    this.$store.dispatch("Slides/UpdateSlides");
-  }
 });
 </script>
 

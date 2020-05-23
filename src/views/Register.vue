@@ -5,7 +5,7 @@
                 <v-icon left>mdi-account-multiple</v-icon>注册
             </v-card-title>
             <v-divider></v-divider>
-            <v-card-text>
+            <v-container>
                 <v-container>
                     <v-form ref="form" v-model="valid">
                         <v-row>
@@ -58,7 +58,7 @@
                         </v-col>
                     </v-row>
                 </v-container>
-            </v-card-text>
+            </v-container>
         </v-card>
     </v-container>
 </template>

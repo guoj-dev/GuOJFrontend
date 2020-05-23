@@ -8,7 +8,7 @@
                     <v-icon left>mdi-login</v-icon>登录
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text>
+                <v-container>
                     <v-container class="py-0">
                         <v-form ref="form" v-model="valid">
                             <v-row>
@@ -64,12 +64,12 @@
                             </v-col>
                         </v-row>
                     </v-container>
-                </v-card-text>
+                </v-container>
             </v-card>
         </v-row>
         <v-row class="my-2">
             <v-card color="primary" dark style="min-width: 450px;">
-                <v-card-text>
+                <v-container>
                     <v-container class="d-flex justify-space-between pa-0">
                         <v-col>
                             <v-btn block color="blue">忘记密码</v-btn>
@@ -80,7 +80,7 @@
                             >
                         </v-col>
                     </v-container>
-                </v-card-text>
+                </v-container>
             </v-card>
         </v-row>
     </v-container>

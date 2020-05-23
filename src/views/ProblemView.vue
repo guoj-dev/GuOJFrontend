@@ -48,7 +48,7 @@
                             <v-icon dark left>mdi-format-list-checks</v-icon>提交记录
                         </v-btn>
                         <v-btn rounded color="blue" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-card-text-outline</v-icon>测试数据
+                            <v-icon dark left>mdi-container-outline</v-icon>测试数据
                         </v-btn>
                         <v-btn rounded color="cyan" style="margin:0px 10px 0px 0px">
                             <v-icon dark left>mdi-file-table-outline</v-icon>统计
@@ -63,9 +63,9 @@
                 </v-row>
             </v-container>
             <v-divider></v-divider>
-            <v-card-text>
-                <markdown :Markdown="MarkdownData">{{MarkdownData}}</markdown>
-            </v-card-text>
+            <v-container>
+                <markdown :Markdown="MarkdownData"></markdown>
+            </v-container>
         </v-card>
         <v-overlay :value="overlay" style="padding:20px 20px 20px 20px">
             <v-container style="margin:0px;padding:0px;height:100%;">

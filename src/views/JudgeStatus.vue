@@ -13,7 +13,7 @@
                         <v-chip style="padding:4px 4px 4px 4px;" small="true" color="green">Accepted</v-chip>
                     </v-card-title>
                     <v-divider></v-divider>
-                    <v-card-text>
+                    
                         <v-container>
                             <v-tooltip bottom v-for="i in 10" :key="i" dark>
                                 <template v-slot:activator="{ on }">
@@ -37,7 +37,6 @@
                                 </span>
                             </v-tooltip>
                         </v-container>
-                    </v-card-text>
                 </v-card>
             </v-col>
 
@@ -45,7 +44,7 @@
                 <v-card color="primary">
                     <v-card-title>评测信息</v-card-title>
                     <v-divider />
-                    <v-card-text>
+                    <v-container>
                         <div style="color:#fff">
                             题目:
                             <v-chip
@@ -95,7 +94,7 @@
                                 <v-icon color="white">monetization_on</v-icon>+1
                             </v-chip>
                         </div>
-                    </v-card-text>
+                    </v-container>
                 </v-card>
             </v-col>
         </v-row>
@@ -119,7 +118,8 @@ export default Vue.extend({
                 {
                     text: '评测',
                     disabled: false,
-                    to: { path: 'JudgeStatus' }
+                    exact: true,
+                    to: { name: 'JudgeList' }
                 },
                 {
                     text: '任务',

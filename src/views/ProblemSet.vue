@@ -1,5 +1,5 @@
 <template>
-    <v-card-text>
+    <v-container>
         <v-card
             :dark="Theme.Dark"
             :light="!Theme.Dark"
@@ -58,7 +58,7 @@
                 </div>
             </v-container>
         </v-card>
-    </v-card-text>
+    </v-container>
 </template>
 
 <script lang="ts">

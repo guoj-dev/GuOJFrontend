@@ -39,14 +39,14 @@ export default new Router({
             component: ProblemEdit
         },
         {
-            path: '/JudgeStatus/:JudgeID',
-            name: 'JudgeStatus',
-            component: JudgeStatus
-        },
-        {
             path: '/JudgeStatus',
             name: 'JudgeList',
             component: JudgeList
+        },
+        {
+            path: '/JudgeStatus/:JudgeID',
+            name: 'JudgeStatus',
+            component: JudgeStatus
         },
         {
             path: '/User/:UserID',

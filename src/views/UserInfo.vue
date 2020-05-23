@@ -10,12 +10,12 @@
                     </v-container>
                     <v-card-title>{{Username}}</v-card-title>
                     <v-divider></v-divider>
-                    <v-card-text></v-card-text>
+                    <v-container></v-container>
                 </v-card>
             </v-col>
             <v-col cols="4">
                 <v-card color="primary">
-                    <v-card-text>
+                    <v-container>
                         <v-row>
                             <v-col cols="2" justify="start">
                                 <v-avatar height="64" width="64">
@@ -43,7 +43,7 @@
                                 </div>
                             </v-col>
                         </v-row>
-                    </v-card-text>
+                    </v-container>
                 </v-card>
             </v-col>
         </v-row>
