@@ -1,9 +1,22 @@
 <template>
-    <v-container class="fill-height justify-center align-center">
-        <v-card color="primary" dark style="max-width:550px;">
-            <v-card-title>
-                <v-icon left>mdi-account-multiple</v-icon>注册
-            </v-card-title>
+    <v-container class="fill-height justify-center align-center my-6">
+        <v-card color="primary" dark style="max-width:550px;" class="pa-3">
+            <div class="d-flex grow flex-wrap">
+                    <v-sheet
+                        class="text-start v-card--material__heading mb-n6 pa-7"
+                        dark
+                        width="auto"
+                        max-height="90"
+                        elevation="6"
+                        color="cyan"
+                    >
+                        <v-icon size="32">mdi-account-multiple</v-icon>
+                    </v-sheet>
+                    <v-card-title>
+                        <span>注册</span>
+                    </v-card-title>
+                    <div class="flex-grow-1"></div>
+                </div>
             <v-divider></v-divider>
             <v-container>
                 <v-container>
@@ -95,5 +108,12 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="css">
+.v-card--material__heading 
+{
+    position: relative;
+    top: -40px;
+    transition: 0.3s ease;
+    z-index: 1;
+}
 </style>

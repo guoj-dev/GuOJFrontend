@@ -64,7 +64,7 @@
                         <transition
                             mode="out-in"
                             enter-active-class="animated fadeIn"
-                            leave-active-class="animated fadeOut"
+                            leave-active-class="animated fadeOut faster"
                         >
                             <router-view></router-view>
                         </transition>

@@ -2,11 +2,24 @@
     <v-container
         class="d-flex flex-column fill-height justify-center align-center"
     >
-        <v-row class="my-2">
-            <v-card color="primary" dark style="min-width: 450px;">
-                <v-card-title>
-                    <v-icon left>mdi-login</v-icon>登录
-                </v-card-title>
+        <v-row class="my-6">
+            <v-card color="primary" dark style="min-width: 450px;" class="pa-3">
+                <div class="d-flex grow flex-wrap">
+                    <v-sheet
+                        class="text-start v-card--material__heading mb-n6 pa-7"
+                        dark
+                        width="auto"
+                        max-height="90"
+                        elevation="6"
+                        color="success"
+                    >
+                        <v-icon size="32">mdi-login</v-icon>
+                    </v-sheet>
+                    <v-card-title>
+                        <span>登录</span>
+                    </v-card-title>
+                    <div class="flex-grow-1"></div>
+                </div>
                 <v-divider></v-divider>
                 <v-container>
                     <v-container class="py-0">
@@ -87,8 +100,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { AuthData } from '../store/modules/auth';
+import Vue from "vue";
+import { AuthData } from "../store/modules/auth";
 export default Vue.extend({
     components: {},
     data: () => {
@@ -96,11 +109,11 @@ export default Vue.extend({
             valid: true,
             show: false,
             login_button_loading: false,
-            username: String(''),
-            password: String(''),
+            username: String(""),
+            password: String(""),
             rules: {
-                required: (value: String) => !!value || '必填',
-                min: (value: String) => value.length >= 8 || '至少8个字符',
+                required: (value: String) => !!value || "必填",
+                min: (value: String) => value.length >= 8 || "至少8个字符",
             },
         };
     },
@@ -114,14 +127,22 @@ export default Vue.extend({
                 Password: password,
             };
             this.$store
-                .dispatch('Auth/Login', { username, password })
-                .then(() => this.$router.push('/'));
+                .dispatch("Auth/Login", { username, password })
+                .then(() => this.$router.push("/"));
         },
     },
     created() {
-        if (this.$store.getters['Auth/isLogin']) this.$router.push('/');
+        if (this.$store.getters["Auth/isLogin"]) this.$router.push("/");
     },
 });
 </script>
 
-<style></style>
+<style lang="css">
+.v-card--material__heading 
+{
+    position: relative;
+    top: -40px;
+    transition: 0.3s ease;
+    z-index: 1;
+}
+</style>
