@@ -19,48 +19,48 @@
       <v-row>
         <v-col cols="12" sm="6" lg="3">
           <material-stats-card
-            color="info"
+            :color="Theme.Cards.Color"
             icon="mdi-calendar-check-outline"
             title="签到"
             value="365Days"
             sub-icon="mdi-check-circle-outline"
             sub-text="今日已签到"
-            dark
+            :dark="Theme.Cards.Dark"
           ></material-stats-card>
         </v-col>
         <v-col cols="12" sm="6" lg="3">
           <material-stats-card
-            color="info"
+            :color="Theme.Cards.Color"
             sheetcolor="yellow darken-2"
             icon="mdi-new-box"
             title="今日新题"
             smallValue="0题"
             sub-icon="mdi-checkbox-multiple-marked-circle"
             sub-text="今天也是充满干劲的一天"
-            dark
+            :dark="Theme.Cards.Dark"
           ></material-stats-card>
         </v-col>
         <v-col cols="12" sm="6" lg="3">
           <material-stats-card
-            color="info"
+            :color="Theme.Cards.Color"
             sheetcolor="red"
             icon="mdi-calendar-blank"
             title="今日比赛"
             value="0场"
             sub-icon="mdi-card-bulleted"
             sub-text="今日无事可做"
-            dark
+            :dark="Theme.Cards.Dark"
           ></material-stats-card>
         </v-col>
         <v-col cols="12" sm="6" lg="3">
           <material-stats-card
-            color="info"
+            :color="Theme.Cards.Color"
             icon="mdi-checkbox-marked-circle-outline"
             title="To-Do"
             value="0题"
             sub-icon="mdi-format-list-checks"
             sub-text="任务完成了"
-            dark
+            :dark="Theme.Cards.Dark"
           ></material-stats-card>
         </v-col>
       </v-row>

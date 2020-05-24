@@ -19,10 +19,14 @@
                 >
                     <v-icon size="32">mdi-calendar</v-icon>
                 </v-sheet>
-                    <span class="display-1 px-6 py-2">题库</span>
+                <span class="display-1 px-6 py-2">题库</span>
                 <div class="flex-grow-1"></div>
                 <div>
-                    <v-text-field label="搜索" prepend-inner-icon="mdi-magnify" outlined></v-text-field>
+                    <v-text-field
+                        label="搜索"
+                        prepend-inner-icon="mdi-magnify"
+                        outlined
+                    ></v-text-field>
                 </div>
             </div>
 
@@ -44,7 +48,7 @@
                         </v-list-item-title>
                     </v-list-item-content>
                     <v-list-item-action>
-                        <v-chip :color="key[3][0]">
+                        <v-chip :color="key[3][0]" :dark="Theme.Problem.Tags.Dark" :outlined="Theme.Problem.Tags.Outlined">
                             {{ key[3][1] }}
                         </v-chip>
                     </v-list-item-action>
@@ -65,7 +69,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
     components: {},
@@ -73,77 +77,77 @@ export default Vue.extend({
         return {
             Problems: [
                 [
-                    "P1000",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1000',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1001",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1001',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1002",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1002',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1003",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1003',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1005",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1005',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1006",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1006',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1007",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1007',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1008",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1008',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
                 [
-                    "P1009",
-                    "A+B Problem",
-                    "light-blue accent-4",
-                    ["green", "入门难度"],
+                    'P1009',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
                 ],
             ],
             items: [
                 {
-                    text: "GuOJ",
+                    text: 'GuOJ',
                     disabled: true,
-                    href: "/",
+                    href: '/',
                 },
                 {
-                    text: "ProblemSet",
+                    text: 'ProblemSet',
                     disabled: true,
-                    href: "/ProblemSet",
+                    href: '/ProblemSet',
                 },
             ],
         };
     },
     computed: {
         Theme() {
-            return this.$store.getters["Theme/ProblemSet"];
+            return this.$store.getters['Theme/ProblemSet'];
         },
     },
 });

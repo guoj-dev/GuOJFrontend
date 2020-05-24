@@ -40,9 +40,33 @@
             :src="TopBar.BackgroundImage"
             elevation="5"
         >
-            <v-btn flat rounded icon x-large style="margin-left: -12px;">
-                <v-icon size="40px">mdi-alpha-g</v-icon>
-            </v-btn>
+            <v-menu offset-y transition="slide-y-transition" nudge-bottom="4px">
+                <template v-slot:activator="{ on }">
+                    <v-btn
+                        flat
+                        rounded
+                        icon
+                        x-large
+                        style="margin-left: -12px;"
+                        v-on="on"
+                    >
+                        <v-icon size="40px">mdi-alpha-g</v-icon>
+                    </v-btn>
+                </template>
+                <v-list>
+                    <v-subheader>主题</v-subheader>
+                    <v-list-item @click="SwitchClassicTheme">
+                        <v-list-item-title>GuOJ Classic</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item @click="SwitchDarkTheme">
+                        <v-list-item-title>GuOJ Dark</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item @click="SwitchLightTheme">
+                        <v-list-item-title>GuOJ Light</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+
             <v-toolbar-title class="ml-0 pl-4" flat>
                 <span class="hidden-sm-and-down">GuOJ</span>
             </v-toolbar-title>
@@ -52,11 +76,10 @@
         <v-content style="height: 100%-64px;">
             <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
-                    style="background-attachment: fixed; width: 100%;"
+                    style="background-attachment: fixed; width: 100%; border-radius:0px;"
                     class="fill-height inline-flex"
                     :dark="Global.Dark"
                     :light="!Global.Dark"
-                    tile
                     :color="Global.Color"
                     :img="Global.BackgroundImage"
                 >
@@ -128,6 +151,17 @@ export default {
             await this.$store.dispatch('User/Update');
             await this.$store.dispatch('User/UpdateUserData');
         }
+    },
+    methods: {
+        SwitchClassicTheme() {
+            this.$store.dispatch('Theme/SetClassic');
+        },
+        SwitchDarkTheme() {
+            this.$store.dispatch('Theme/SetDark');
+        },
+        SwitchLightTheme() {
+            this.$store.dispatch('Theme/SetLight');
+        },
     },
     watch: {
         $route() {
