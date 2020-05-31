@@ -61,6 +61,10 @@ export default class ThemeModule {
             Dark: true,
             Color: 'primary',
         },
+        BreadCrumbs: {
+            Dark: false,
+            Color: ''
+        }
     };
     @Getter()
     public get TopBar() {
@@ -93,6 +97,10 @@ export default class ThemeModule {
     @Getter()
     public get ProblemSet() {
         return this.ThemeTree.ProblemSet;
+    }
+    @Getter()
+    public get BreadCrumbs() {
+        return this.ThemeTree.BreadCrumbs;
     }
     @Mutation()
     public set_classic() {
@@ -155,6 +163,10 @@ export default class ThemeModule {
                 Dark: true,
                 Color: 'primary',
             },
+            BreadCrumbs: {
+                Dark: false,
+                Color: ''
+            }
         };
     }
     @Mutation()
@@ -217,6 +229,10 @@ export default class ThemeModule {
                 Dark: false,
                 Color: 'white',
             },
+            BreadCrumbs: {
+                Dark: false,
+                Color: ''
+            }
         };
     }
     @Mutation()
@@ -279,6 +295,10 @@ export default class ThemeModule {
                 Dark: true,
                 Color: '',
             },
+            BreadCrumbs: {
+                Dark: true,
+                Color: ''
+            }
         };
     }
     @Action()

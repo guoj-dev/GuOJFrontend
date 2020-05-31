@@ -1,66 +1,54 @@
 <template>
     <v-container>
-        <v-card color="primary" dark>
-            <v-container style="padding: 12px 12px 0px">
-                <v-chip label style="padding:4px 4px 4px 4px;" small="true" color="white">
-                    <v-breadcrumbs style="padding:12px ;" light :items="items"></v-breadcrumbs>
-                </v-chip>
-            </v-container>
-            <v-card-title>
-                <v-btn
-                    color="green"
-                    rounded
-                    outlined
-                    small
-                    icon
-                    disable
-                    style="margin: 0px 6px 0px 0px;"
+        <v-sheet :dark="BreadCrumbs.Dark" :light="!BreadCrumbs.Dark" :color="BreadCrumbs.Color" class="d-inline-flex">
+            <v-breadcrumbs class="px-4 py-2" :items="items"></v-breadcrumbs>
+        </v-sheet>
+        <v-card color="primary" dark class="mt-8">
+            <v-container class="d-flex grow flex-wrap pb-0">
+                <v-sheet
+                    class="text-start mb-n6 pa-7 mr-2"
+                    dark
+                    width="auto"
+                    max-height="90"
+                    elevation="6"
+                    color="success"
+                    style="position: relative;top: -40px;transition: .3s ease;z-index: 1;"
                 >
-                    <v-icon dark color="green" style="margin: 0px 0px 0px 0px;">mdi-check</v-icon>
-                </v-btn>
+                    <v-icon size="32">mdi-checkbox-marked-circle-outline</v-icon>
+                </v-sheet>
+                <span class="display-1">
                 {{$route.params.ProblemID}} A+B Problem
-            </v-card-title>
-            <v-container style="padding: 0px 12px 12px">
-                <v-row>
-                    <v-col style="padding:0px;">
-                        <v-chip
-                            small="true"
-                            outlined
-                            elevation="12"
-                            style="margin:6px 10px 0px 10px"
-                        >
-                            <v-rating
-                                v-model="rate"
-                                readonly="true"
-                                half-increments="true"
-                                color="yellow"
-                            ></v-rating>
-                        </v-chip>
-                        <v-btn
-                            rounded
-                            color="green"
-                            @click="overlay = true"
-                            style="margin:0px 10px 0px 10px"
-                        >
-                            <v-icon dark left>mdi-checkbox-marked-circle-outline</v-icon>提交
-                        </v-btn>
-                        <v-btn rounded color="yellow darken-2" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-format-list-checks</v-icon>提交记录
-                        </v-btn>
-                        <v-btn rounded color="blue" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-container-outline</v-icon>测试数据
-                        </v-btn>
-                        <v-btn rounded color="cyan" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-file-table-outline</v-icon>统计
-                        </v-btn>
-                        <v-btn rounded color="light-blue" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-forum-outline</v-icon>讨论
-                        </v-btn>
-                        <v-btn rounded color="black lighten-2" style="margin:0px 10px 0px 0px">
-                            <v-icon dark left>mdi-comment-question</v-icon>问答
-                        </v-btn>
-                    </v-col>
-                </v-row>
+                </span>
+            </v-container>
+            <v-container class="d-flex grow flex-wrap pt-0">
+                <v-btn rounded color="success" class="font-weight-black mr-2">
+                    <v-icon left>mdi-checkbox-marked-circle</v-icon>
+                    提交
+                </v-btn>
+                <v-btn rounded color="info" class="font-weight-black mr-2">
+                    <v-icon left>mdi-format-list-checks</v-icon>
+                    评测记录
+                </v-btn>
+                <v-btn rounded color="warning" class="font-weight-black mr-2">
+                    <v-icon left>mdi-comment-text-multiple</v-icon>
+                    讨论
+                </v-btn>
+                <v-btn rounded color="cyan" class="font-weight-black mr-2">
+                    <v-icon left>mdi-comment-question-outline</v-icon>
+                    问题
+                </v-btn>
+                <v-btn rounded color="error" class="font-weight-black mr-2">
+                    <v-icon left>mdi-bug</v-icon>
+                    Debug
+                </v-btn>
+                <v-btn rounded color="light-blue" class="font-weight-black mr-2">
+                    <v-icon left>mdi-database</v-icon>
+                    数据
+                </v-btn>
+                <v-btn rounded color="grey" class="font-weight-black mr-2">
+                    <v-icon left>mdi-wrench</v-icon>
+                    设置
+                </v-btn>
             </v-container>
             <v-divider></v-divider>
             <v-container>
@@ -173,6 +161,11 @@ export default Vue.extend({
             MarkdownData: '# 这里是题面',
             overlay: false
         };
+    },
+    computed:{
+        BreadCrumbs() {
+            return this.$store.getters['Theme/BreadCrumbs'];
+        },  
     },
     mounted() {
         window.addEventListener('resize', () => {

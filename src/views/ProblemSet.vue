@@ -1,11 +1,14 @@
 <template>
-    <v-container class="my-6">
+    <v-container>
+        <v-sheet :dark="BreadCrumbs.Dark" :light="!BreadCrumbs.Dark" :color="BreadCrumbs.Color" class="d-inline-flex">
+            <v-breadcrumbs class="px-4 py-2" :items="items"></v-breadcrumbs>
+        </v-sheet>
         <v-card
             :dark="Theme.Dark"
             :light="!Theme.Dark"
             elevation="12"
             :color="Theme.Color"
-            class="pa-3"
+            class="pa-3 my-8"
             transition="slide-y-reverse-transition"
         >
             <div class="d-flex grow flex-wrap">
@@ -134,7 +137,7 @@ export default Vue.extend({
             items: [
                 {
                     text: 'GuOJ',
-                    disabled: true,
+                    disabled: false,
                     href: '/',
                 },
                 {
@@ -148,6 +151,9 @@ export default Vue.extend({
     computed: {
         Theme() {
             return this.$store.getters['Theme/ProblemSet'];
+        },
+        BreadCrumbs() {
+            return this.$store.getters['Theme/BreadCrumbs'];
         },
     },
 });
