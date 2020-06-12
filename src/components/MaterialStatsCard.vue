@@ -1,25 +1,32 @@
  
 <template>
-  <card :icon="icon" class="v-card--material-stats" v-bind="$attrs" v-on="$listeners" :color="color" :sheetcolor="sheetcolor">
-    <template v-slot:after-heading>
-      <div class="ml-auto text-left">
-        <div class="body-3 font-weight-light" v-text="title" />
+    <card
+        :icon="icon"
+        class="v-card--material-stats"
+        v-bind="$attrs"
+        v-on="$listeners"
+        :color="color"
+        :sheetcolor="sheetcolor"
+    >
+        <template v-slot:after-heading>
+            <div class="ml-auto text-left">
+                <div class="body-3 font-weight-light" v-text="title" />
 
-        <h3 class="display-1 font-weight-light">
-          {{ value }}
-          <small>{{ smallValue }}</small>
-        </h3>
-      </div>
-    </template>
+                <h3 class="display-1 font-weight-light">
+                    {{ value }}
+                    <small>{{ smallValue }}</small>
+                </h3>
+            </div>
+        </template>
 
-    <v-col cols="12" class="px-0" v-if="subIcon&&subText">
-      <v-divider />
-    </v-col>
+        <v-col cols="12" class="px-0" v-if="subIcon&&subText">
+            <v-divider />
+        </v-col>
 
-    <v-icon :color="subIconColor" size="16" class="ml-2 mr-1">{{ subIcon }}</v-icon>
+        <v-icon :color="subIconColor" size="16" class="ml-2 mr-1">{{ subIcon }}</v-icon>
 
-    <span :class="subTextColor" class="caption  font-weight-light" v-text="subText" />
-  </card>
+        <span :class="subTextColor" class="caption font-weight-light" v-text="subText" />
+    </card>
 </template>
 
 <script lang="ts">
@@ -29,7 +36,7 @@ import Card from './MaterialCard.vue';
 export default {
     name: 'MaterialStatsCard',
     inheritAttrs: false,
-    components:{Card},
+    components: { Card },
     props: {
         icon: {
             type: String,
