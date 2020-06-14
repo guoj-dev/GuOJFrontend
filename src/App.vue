@@ -21,7 +21,7 @@
                             <v-icon>{{ item.icon }}</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
-                            <v-list-item-title>{{
+                            <v-list-item-title class="font-weight-black mr-2">{{
                                 item.text
                             }}</v-list-item-title>
                         </v-list-item-content>
@@ -68,7 +68,7 @@
             </v-menu>
 
             <v-toolbar-title class="ml-0 pl-4" flat>
-                <span class="hidden-sm-and-down">GuOJ</span>
+                <span class="hidden-sm-and-down font-weight-black">GuOJ</span>
             </v-toolbar-title>
             <div class="flex-grow-1"></div>
             <user-card />
