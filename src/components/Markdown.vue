@@ -1,38 +1,47 @@
 <template>
     <v-card light color="white">
         <v-container>
-            <div :v-html="html" style="color:#000;">
+            <vue-markdown>
                 <slot></slot>
-            </div>
+            </vue-markdown>
         </v-container>
     </v-card>
 </template>
 
-
 <script lang="ts">
 import Vue from 'vue';
-import mavonEditor from 'mavon-editor';
-import 'mavon-editor/dist/css/index.css';
+import VueMarkdown from 'vue-markdown-guoj';
+import Prism from 'prismjs';
+import 'prismjs/components/';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/toolbar/prism-toolbar';
+import 'prismjs/plugins/toolbar/prism-toolbar.css';
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
+import 'prismjs/plugins/download-button/prism-download-button';
+import 'prismjs/plugins/show-language/prism-show-language';
 
-Vue.use(mavonEditor);
 export default Vue.extend({
-    props: [
-        'Markdown'
-    ],
-    data() {
-        return {
-            html:''
-        };
+    components: {
+        VueMarkdown,
     },
-    watch:{
-        Markdown: function(val,oldVal) {
-            this.Render(val);
-        }
+    methods: {
+        update() {
+            this.$nextTick(() => {
+                Prism.highlightAll();
+            });
+        },
     },
-    methods:{
-        Render(val) {
-            
-        }
+    mounted(){
+        this.update();
+    },
+    updated(){
+        this.update();
     }
 });
 </script>
+<style>
+code, pre {
+    border-radius: none;
+    box-shadow: none!important;
+}
+</style>

@@ -52,7 +52,7 @@
             </v-container>
             <v-divider></v-divider>
             <v-container>
-                <markdown :Markdown="MarkdownData"></markdown>
+                <markdown>{{MarkdownText}}</markdown>
             </v-container>
         </v-card>
         <v-overlay :value="overlay" style="padding:20px 20px 20px 20px">
@@ -158,7 +158,7 @@ export default Vue.extend({
             ],
             rate: '1',
             hardcolor: 'green',
-            MarkdownData: '# 这里是题面',
+            MarkdownText: '',
             overlay: false
         };
     },
