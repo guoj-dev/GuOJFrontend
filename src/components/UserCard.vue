@@ -1,11 +1,7 @@
 <template>
     <div>
         <div v-if="islogin">
-            <v-card
-                :dark="Theme.Dark"
-                :light="!Theme.Dark"
-                :color="Theme.Color"
-            >
+            <v-card :dark="Theme.Dark" :light="!Theme.Dark" :color="Theme.Color">
                 <v-container no-gutters class="pa-1">
                     <v-row no-gutters justify="space-between" align="center">
                         <v-col no-gutters cols="auto">
@@ -14,11 +10,7 @@
                             </v-avatar>
                         </v-col>
                         <v-col no-gutters cols="auto" class="mx-1">
-                            <v-row
-                                no-gutters
-                                justify="center"
-                                class="flex-column ma-0"
-                            >
+                            <v-row no-gutters justify="center" class="flex-column ma-0">
                                 <v-col>
                                     {{ Username }}
                                     <v-chip
@@ -27,8 +19,7 @@
                                         label
                                         :color="NameplateColor"
                                         style="padding: 4px;"
-                                        >{{ Nameplate }}</v-chip
-                                    >
+                                    >{{ Nameplate }}</v-chip>
                                 </v-col>
                                 <v-col>
                                     <v-chip x-small color="grey darken-3">
@@ -36,8 +27,7 @@
                                             left
                                             color="yellow darken-2"
                                             small
-                                            >mdi-alpha-c-circle-outline</v-icon
-                                        >
+                                        >mdi-alpha-c-circle-outline</v-icon>
                                         {{ Coins }}
                                     </v-chip>
                                 </v-col>
@@ -52,9 +42,7 @@
                                 </template>
                                 <v-list>
                                     <v-list-item @click="logout">
-                                        <v-list-item-title
-                                            >Logout</v-list-item-title
-                                        >
+                                        <v-list-item-title>Logout</v-list-item-title>
                                     </v-list-item>
                                 </v-list>
                             </v-menu>
@@ -71,8 +59,7 @@
                 :outlined="Theme.LoginButton.Outlined"
                 :rounded="Theme.LoginButton.Rounded"
                 to="/Login"
-                >登录</v-btn
-            >
+            >登录</v-btn>
             <v-btn
                 style="margin: 12px;"
                 :dark="Theme.RegisterButton.Dark"
@@ -81,8 +68,7 @@
                 :outlined="Theme.RegisterButton.Outlined"
                 :rounded="Theme.RegisterButton.Rounded"
                 to="/Register"
-                >注册</v-btn
-            >
+            >注册</v-btn>
         </div>
     </div>
 </template>

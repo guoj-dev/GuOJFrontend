@@ -28,5 +28,5 @@ jobs:
       if: success()
     - uses: actions/upload-artifact@v1
       with:
-        name: dist
+        name: dist${{ matrix.node-version }}.zip
         path: dist.zip
