@@ -24,9 +24,8 @@ jobs:
         yarn lint
       env:
         CI: true
-    - run: zip -r dist.zip dist
-      if: success()
     - uses: actions/upload-artifact@v1
+      if: success()
       with:
         name: dist${{ matrix.node-version }}.zip
-        path: dist.zip
+        path: dist
