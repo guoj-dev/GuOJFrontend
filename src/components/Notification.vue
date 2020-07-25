@@ -1,13 +1,28 @@
 <template>
-    <v-snackbar
-        v-model="snackbar"
-        bottom="true"
-        :color="color"
-        :timeout="timeout"
-    >
-        {{ text }}
-        <v-btn dark text @click="snackbar = false">Close</v-btn>
-    </v-snackbar>
+    <div class="v-snack v-snack--active v-snack--bottom">
+            <transition-group name="notification-list" style="margin: 0 auto;">
+                <div
+                    class="ma-4 d-flex v-snack__wrapper notification-list-item"
+                    v-for="(item,index) in NotificationList"
+                    :key="item"
+                >
+                    <v-btn
+                        icon
+                        right
+                        class="mr-2"
+                        small
+                        @click="NotificationList.splice(index,1)"
+                    >
+                        <v-icon small>
+                            mdi-close
+                        </v-icon>
+                    </v-btn>
+                    <span class="ma-2">
+                        {{ item.Text }}
+                    </span>
+                </div>
+            </transition-group>
+    </div>
 </template>
 
 <script lang="ts">
@@ -15,38 +30,38 @@ import Vue from 'vue';
 export default {
     data() {
         return {
-            snackbar: false,
-            color: 'error',
-            text: 'Error',
-            timeout: 5000,
+            NotificationList: [],
         };
     },
-    computed: {
-        NotificationExists() {
-            return this.$store.getters['Notifucation/NotificationExists'];
-        },
-        Color() {
-            return this.$store.getters['Notification/Color'];
-        },
-        Text() {
-            return this.$store.getters['Notification/Text'];
-        },
-        Timeout() {
-            return this.$store.getters['Notification/Timeout'];
-        },
-    },
-    watch: {
-        snackbar(val) {
-            if (val == false) {
-                this.$store.dispatch('Notification/EndNotification');
-                if (this.NotificationExists) {
-                    this.color = this.Color;
-                    this.text = this.Text;
-                    this.timeout = this.Timeout;
-                    this.snackbar = true;
-                }
-            }
-        },
-    },
+    method: {},
+    computed: {},
+    watch: {},
 };
 </script>
+
+<style scoped>
+.notification-wrapper {
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    margin: 0 auto;
+    z-index: inherit;
+}
+.notification-list-move {
+    transition: transform 0.5s;
+}
+.notification-list-item {
+  transition: all 0.5s;
+  display: inline-block;
+}
+.notification-list-enter-active,
+.notification-list-leave-active {
+    transition: all 0.5s;
+    position: absolute;
+}
+.notification-list-enter, .notification-list-leave-to
+/* .list-leave-active for below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+}
+</style>

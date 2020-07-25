@@ -1,27 +1,27 @@
 <template>
-    <v-container>
+    <v-container class="pb-0">
         <v-sheet :dark="BreadCrumbs.Dark" :light="!BreadCrumbs.Dark" :color="BreadCrumbs.Color" class="d-inline-flex">
             <v-breadcrumbs class="px-4 py-2" :items="items"></v-breadcrumbs>
         </v-sheet>
-        <v-card color="primary" dark class="mt-8">
+        <v-card class="mt-8 fill-height pa-3 pt-6 px-6 rounded-b-0 animated fadeIn" style="border-top-left-radius:4em;border-top-right-radius:4em;min-height:90vh;">
             <v-container class="d-flex grow flex-wrap pb-0">
                 <v-sheet
-                    class="text-start mb-n6 pa-7 mr-2"
+                    class="text-start v-card--material__heading mb-n6 pa-7 animated fadeInUp"
                     dark
                     width="auto"
-                    max-height="90"
-                    elevation="6"
+                    max-height="120"
+                    elevation="12"
                     color="success"
-                    style="position: relative;top: -40px;transition: .3s ease;z-index: 1;"
+                    style="top:-60px;"
                 >
-                    <v-icon size="32">mdi-checkbox-marked-circle-outline</v-icon>
+                    <v-icon size="64">mdi-checkbox-marked-circle-outline</v-icon>
                 </v-sheet>
-                <span class="display-1">
+                <span class="display-1 px-6 py-2 animated fadeInLeft">
                 {{$route.params.ProblemID}} A+B Problem
                 </span>
             </v-container>
             <v-container class="d-flex grow flex-wrap pt-0">
-                <v-btn rounded color="success" class="font-weight-black mr-2">
+                <v-btn rounded color="success" class="font-weight-black mr-2" @click="overlay = !overlay">
                     <v-icon left>mdi-checkbox-marked-circle</v-icon>
                     提交
                 </v-btn>
@@ -57,7 +57,7 @@
         </v-card>
         <v-overlay :value="overlay" style="padding:20px 20px 20px 20px">
             <v-container style="margin:0px;padding:0px;height:100%;">
-                <v-card light style="margin:0px;padding:0px;height:100%;">
+                <v-card light style="margin:0px;padding:0px;height:100%;" class="rounded-xl">
                     <v-card-title>
                         <v-btn icon @click="overlay = false">
                             <v-icon dark>mdi-close</v-icon>
@@ -158,7 +158,7 @@ export default Vue.extend({
             ],
             rate: '1',
             hardcolor: 'green',
-            MarkdownText: '',
+            MarkdownText: '# 题目描述\n 114514',
             overlay: false
         };
     },

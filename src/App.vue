@@ -71,18 +71,38 @@
                 <span class="hidden-sm-and-down font-weight-black">GuOJ</span>
             </v-toolbar-title>
             <div class="flex-grow-1"></div>
+            <v-responsive
+                class="mx-4 flex-shrink-1 transition-swing"
+                style="max-width:360px;"
+            >
+                <v-autocomplete
+                    label="搜索"
+                    light
+                    flat
+                    rounded
+                    hide-details
+                    solo
+                    dense
+                    prepend-inner-icon="mdi-magnify"
+                    class="flex-shrink-1 align-center py-auto mx-6"
+                    background-color="grey lighten-3"
+                    clearable
+                ></v-autocomplete>
+            </v-responsive>
             <user-card />
         </v-app-bar>
-        <v-content style="height: 100%-64px;">
+        <v-content style="height: 100vh;">
             <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
                     style="background-attachment: fixed; width: 100%; border-radius:0px;"
                     class="fill-height inline-flex"
+                    tile
+                    flat
                     :dark="Global.Dark"
                     :light="!Global.Dark"
                     :color="Global.Color"
                     :img="Global.BackgroundImage"
-                >
+                    >
                     <vue-scroll :ops="ops">
                         <transition
                             mode="out-in"
@@ -90,6 +110,7 @@
                             leave-active-class="animated fadeOut faster"
                         >
                             <router-view></router-view>
+                            
                         </transition>
                     </vue-scroll>
                 </v-card>
@@ -126,8 +147,8 @@ export default {
         ops: {
             vuescroll: { wheelScrollDuration: 200 },
             scrollPanel: {},
-            rail: { background: '#000' },
-            bar: { background: '#888', opacity: 0.6 },
+            rail: { background: '#000000' },
+            bar: { background: '#888888', opacity: 0.6 , size:"10px"},
         },
         dialog: false,
         drawer: null,
@@ -140,8 +161,8 @@ export default {
                 text: '评测列表',
                 to: '/JudgeStatus',
             },
-            { icon: 'stars', text: '比赛' },
-            { icon: 'people', text: '小组' },
+            { icon: 'stars', text: '比赛',to:'/ContestList' },
+            { icon: 'people', text: '社区' },
             { icon: 'chat', text: '论坛' },
         ],
     }),

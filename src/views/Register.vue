@@ -1,9 +1,9 @@
 <template>
-    <v-container class="fill-height justify-center align-center my-6">
-        <v-card color="primary" dark style="max-width:550px;" class="pa-3">
+    <v-container class="fill-height my-6 justify-center align-center">
+        <v-card style="max-width:550px;" class="pa-3 rounded-xl">
             <div class="d-flex grow flex-wrap">
                     <v-sheet
-                        class="text-start v-card--material__heading mb-n6 pa-7"
+                        class="text-start v-card--material__heading mb-n6 pa-7 animated fadeInUp"
                         dark
                         width="auto"
                         max-height="90"
@@ -13,7 +13,7 @@
                         <v-icon size="32">mdi-account-multiple</v-icon>
                     </v-sheet>
                     <v-card-title>
-                        <span>注册</span>
+                        <span class="animated fadeInLeft" style="animation-delay:0.2s">注册</span>
                     </v-card-title>
                     <div class="flex-grow-1"></div>
                 </div>
@@ -49,7 +49,7 @@
                                 hint="至少8个字符"
                                 :value="password"
                                 v-model="password"
-                                class="input-group--focused"
+                                class="input-group--focused pr-2"
                                 @click:append="show = !show"
                             ></v-text-field>
                             <v-text-field
@@ -60,14 +60,14 @@
                                 hint="至少8个字符"
                                 :value="password_repeat"
                                 v-model="password_repeat"
-                                class="input-group--focused"
+                                class="input-group--focused pl-2"
                             ></v-text-field>
                         </v-row>
                         <v-row></v-row>
                     </v-form>
                     <v-row>
                         <v-col>
-                            <v-btn block :disabled="!valid" color="success" @click="Register">注册</v-btn>
+                            <v-btn block :disabled="!valid" color="primary" @click="Register">注册</v-btn>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -93,8 +93,24 @@ export default Vue.extend({
             rules: {
                 required: (value: String) => !!value || '必填',
                 min: (value: String) => value.length >= 8 || '至少8个字符'
-            }
+            },
+            items: [
+                {
+                    text: 'GuOJ',
+                    disabled: false,
+                    to: { path: '/' }
+                },
+                {
+                    text: 'Register',
+                    disabled: true,
+                },
+            ],
         };
+    },
+    computed: {
+        BreadCrumbs() {
+            return this.$store.getters['Theme/BreadCrumbs'];
+        },
     },
     methods: {
         Register() {
@@ -108,7 +124,7 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="css">
+<style lang="css" scope>
 .v-card--material__heading 
 {
     position: relative;

@@ -12,10 +12,7 @@
             ></v-breadcrumbs> </v-sheet
         ><v-card class="mx-auto align-center justify-center my-2" color="white">
             <v-hover v-slot:default="{ hover }">
-                <v-img
-                    :aspect-ratio="16 / 3"
-                    src=""                    
-                >
+                <v-img :aspect-ratio="16 / 3" src="">
                     <v-expand-transition>
                         <div
                             v-if="hover"
@@ -53,9 +50,7 @@
                         style="top:-60px;"
                     >
                         <v-avatar color="orange" size="100" tile>
-                            <v-img
-                                src=""
-                            />
+                            <v-img src="" />
                         </v-avatar>
                     </v-sheet>
                     <span class="display-1 px-6">Quank</span>
@@ -64,9 +59,20 @@
 
                 <v-divider />
 
-                <v-card light class="ma-2 pa-2">
-                    Quank
-                </v-card>
+                <v-container>
+                    <v-row cols="8">
+                        <v-col cols="8">
+                            <v-card light class="pa-2">
+                                Markdown Here
+                            </v-card>
+                        </v-col>
+                        <v-col cols="4">
+                            <v-card light class="pa-2">
+                                Markdown Here
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
             </v-card>
         </v-card>
     </v-container>

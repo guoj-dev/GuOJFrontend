@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="pb-0">
         <v-sheet :dark="BreadCrumbs.Dark" :light="!BreadCrumbs.Dark" :color="BreadCrumbs.Color" class="d-inline-flex">
             <v-breadcrumbs class="px-4 py-2" :items="items"></v-breadcrumbs>
         </v-sheet>
@@ -8,23 +8,25 @@
             :light="!Theme.Dark"
             elevation="12"
             :color="Theme.Color"
-            class="pa-3 my-8"
-            transition="slide-y-reverse-transition"
+            class="pa-3 pt-6 px-6 rounded-b-0 animated fadeIn"
+            fill-height
+            style="border-top-left-radius:4em;border-top-right-radius:4em;margin-top:48px;animation-delay:0.5s;"
         >
-            <div class="d-flex grow flex-wrap">
+            <div class="d-flex grow flex-wrap mb-2">
                 <v-sheet
-                    class="text-start v-card--material__heading mb-n6 pa-7"
+                    class="text-start v-card--material__heading mb-n6 pa-7 animated fadeInUp"
                     dark
                     width="auto"
-                    max-height="90"
-                    elevation="6"
+                    max-height="120"
+                    elevation="12"
                     color="success"
+                    style="top:-60px;"
                 >
-                    <v-icon size="32">mdi-calendar</v-icon>
+                    <v-icon size="64">mdi-calendar</v-icon>
                 </v-sheet>
-                <span class="display-1 px-6 py-2">题库</span>
+                <span class="display-2 px-6 py-2 animated fadeInLeft">题库</span>
                 <div class="flex-grow-1"></div>
-                <div>
+                <div class="mr-4">
                     <v-text-field
                         label="搜索"
                         prepend-inner-icon="mdi-magnify"
@@ -33,8 +35,8 @@
                 </div>
             </div>
 
-            <v-divider />
-            <v-list :color="Theme.Color" shaped="true" subheader="false" tile>
+            <v-divider class="animated fadeInUp"/>
+            <v-list :color="Theme.Color" shaped="true" subheader="false" tile class="mt-4">
                 <v-list-item
                     v-for="key in Problems"
                     :key="key"
@@ -133,17 +135,24 @@ export default Vue.extend({
                     'light-blue accent-4',
                     ['green', '入门难度'],
                 ],
+                [
+                    'P1010',
+                    'A+B Problem',
+                    'light-blue accent-4',
+                    ['green', '入门难度'],
+                ],
+                
             ],
             items: [
                 {
                     text: 'GuOJ',
                     disabled: false,
-                    href: '/',
+                    to: '/',
                 },
                 {
                     text: 'ProblemSet',
                     disabled: true,
-                    href: '/ProblemSet',
+                    to: '/ProblemSet',
                 },
             ],
         };
@@ -159,7 +168,7 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="sass">
+<style lang="sass" scope>
 .v-card--material
     &__avatar
         position: relative
@@ -167,7 +176,7 @@ export default Vue.extend({
         margin-bottom: -32px
     &__heading
         position: relative
-        top: -40px
+        top: -60px
         transition: .3s ease
         z-index: 1
 </style>

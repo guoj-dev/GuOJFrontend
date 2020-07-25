@@ -13,13 +13,13 @@ import io from 'socket.io-client';
 import vuescroll from 'vuescroll';
 
 Vue.use(vuescroll);
-const socket = io('http://127.0.0.1:3000');
+//const socket = io('http://127.0.0.1:3000');
 Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 Vue.prototype.Velocity = Velocity;
 
-Vue.use(VueSocketIO, socket);
+//Vue.use(VueSocketIO, socket);
 
 new Vue({
     vuetify,

@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container class="pb-0">
     <v-row>
       <v-col>
-        <v-card elevation="12">
+        <v-card elevation="12" class="animated fadeIn">
           <v-carousel>
             <v-carousel-item v-for="(Slide, i) in Slides" :key="i" :src="Slide.Background">
               <v-sheet :color="Slide.Color" height="100%" tile>
@@ -25,6 +25,7 @@
             value="365Days"
             sub-icon="mdi-check-circle-outline"
             sub-text="今日已签到"
+            class="animated fadeInUp"
             :dark="Theme.Cards.Dark"
           ></material-stats-card>
         </v-col>
@@ -32,6 +33,8 @@
           <material-stats-card
             :color="Theme.Cards.Color"
             sheetcolor="yellow darken-2"
+            class="animated fadeInUp"
+            style="animation-delay:0.1s;"
             icon="mdi-new-box"
             title="今日新题"
             smallValue="0题"
@@ -44,6 +47,8 @@
           <material-stats-card
             :color="Theme.Cards.Color"
             sheetcolor="red"
+            class="animated fadeInUp"
+            style="animation-delay:0.2s;"
             icon="mdi-calendar-blank"
             title="今日比赛"
             value="0场"
@@ -55,6 +60,8 @@
         <v-col cols="12" sm="6" lg="3">
           <material-stats-card
             :color="Theme.Cards.Color"
+            class="animated fadeInUp"
+            style="animation-delay:0.3s;"
             icon="mdi-checkbox-marked-circle-outline"
             title="To-Do"
             value="0题"

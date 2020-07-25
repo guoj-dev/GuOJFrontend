@@ -1,14 +1,11 @@
 <template>
     <v-container class="ma-0 pa-0">
-        <vue-markdown class="line-numbers">
-            <slot></slot>
-        </vue-markdown>
+        <pre class="line-numbers"><code :class="'language-'+language"><slot></slot></code></pre>
     </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import VueMarkdown from 'vue-markdown-guoj';
 import Prism from 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -21,9 +18,6 @@ import 'prismjs/plugins/download-button/prism-download-button';
 import 'prismjs/plugins/show-language/prism-show-language';
 
 export default Vue.extend({
-    components: {
-        VueMarkdown,
-    },
     methods: {
         update() {
             this.$nextTick(() => {
@@ -37,6 +31,7 @@ export default Vue.extend({
     updated() {
         this.update();
     },
+    props:['language']
 });
 </script>
 <style>

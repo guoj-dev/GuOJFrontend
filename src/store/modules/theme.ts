@@ -4,62 +4,61 @@ export default class ThemeModule {
     @State()
     public ThemeTree = {
         TopBar: {
-            Dark: true,
-            Color: 'blue',
-            BackgroundImage:
-                'https://cdn.vuetifyjs.com/images/parallax/material.jpg',
+            Dark: false,
+            Color: 'white',
+            BackgroundImage: '',
         },
         SideBar: {
             Dark: true,
-            Color: 'blue',
+            Color: 'black',
         },
         Global: {
-            Dark: true,
+            Dark: false,
             Color: 'white',
-            BackgroundImage: 'https://s2.ax1x.com/2019/09/12/nBc7FO.jpg',
+            BackgroundImage: '',
         },
         Usercard: {
             Dark: true,
             Color: 'blue',
             LoginButton: {
                 Dark: true,
-                Outlined: false,
+                Outlined: true,
                 Rounded: false,
                 Color: 'primary',
             },
             RegisterButton: {
                 Dark: true,
-                Outlined: false,
+                Outlined: true,
                 Rounded: false,
                 Color: 'green',
             },
         },
         Home: {
             Cards: {
-                Dark: true,
-                Color: 'primary',
+                Dark: false,
+                Color: 'white',
             },
         },
         ProblemSet: {
-            Dark: true,
-            Color: 'light-blue light-1',
+            Dark: false,
+            Color: 'white',
             Problem: {
                 ProblemColor: false,
                 Dark: true,
-                Color: 'light-blue accent-4',
+                Color: 'white',
                 Tags: {
                     Dark: true,
-                    Outlined: false,
+                    Outlined: true,
                 },
             },
         },
         NotFound: {
-            Dark: true,
-            Color: 'primary',
+            Dark: false,
+            Color: 'white',
         },
         Error: {
-            Dark: true,
-            Color: 'primary',
+            Dark: false,
+            Color: 'white',
         },
         BreadCrumbs: {
             Dark: false,
