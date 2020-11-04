@@ -4,7 +4,7 @@
         <v-navigation-drawer
             v-model="drawer"
             :mini-variant.sync="mini"
-            clipped="true"
+            :clipped="true"
             app
             :dark="SideBar.Dark"
             :light="!SideBar.Dark"
@@ -43,7 +43,7 @@
             <v-menu offset-y transition="slide-y-transition" nudge-bottom="4px">
                 <template v-slot:activator="{ on }">
                     <v-btn
-                        flat
+                        text
                         rounded
                         icon
                         x-large
@@ -91,7 +91,7 @@
             </v-responsive>
             <user-card />
         </v-app-bar>
-        <v-content style="height: 100vh;">
+        <v-main style="height: 100vh;">
             <v-container class="fill-height d-flex px-0 py-0" fluid>
                 <v-card
                     style="background-attachment: fixed; width: 100%; border-radius:0px;"
@@ -115,82 +115,85 @@
                     </vue-scroll>
                 </v-card>
             </v-container>
-        </v-content>
+        </v-main>
     </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import UserCard from './components/UserCard.vue';
 import Notification from './components/Notification.vue';
 
-export default {
+@Component({
     components: {
         UserCard,
         Notification,
-    },
-    props: {
-        source: String,
-    },
-    computed: {
-        TopBar() {
-            return this.$store.getters['Theme/TopBar'];
+    }
+})
+export default class App extends Vue {
+    @Prop(String) source: string;
+
+    get TopBar() {
+        return this.$store.getters['Theme/TopBar'];
+    }
+
+    get SideBar() {
+        return this.$store.getters['Theme/SideBar'];
+    }
+
+    get Global() {
+        return this.$store.getters['Theme/Global'];
+    }
+
+    ops = {
+        vuescroll: { wheelScrollDuration: 200 },
+        scrollPanel: {},
+        rail: { background: '#000000' },
+        bar: { background: '#888888', opacity: 0.6 , size: '10px'},
+    };
+    dialog = false;
+    drawer = null;
+    mini = false;
+    items = [
+        { icon: 'home', text: '主页', to: '/' },
+        { icon: 'list', text: '题库', to: '/ProblemSet' },
+        {
+            icon: 'playlist_add_check',
+            text: '评测列表',
+            to: '/JudgeStatus',
         },
-        SideBar() {
-            return this.$store.getters['Theme/SideBar'];
-        },
-        Global() {
-            return this.$store.getters['Theme/Global'];
-        },
-    },
-    data: () => ({
-        ops: {
-            vuescroll: { wheelScrollDuration: 200 },
-            scrollPanel: {},
-            rail: { background: '#000000' },
-            bar: { background: '#888888', opacity: 0.6 , size:"10px"},
-        },
-        dialog: false,
-        drawer: null,
-        mini: false,
-        items: [
-            { icon: 'home', text: '主页', to: '/' },
-            { icon: 'list', text: '题库', to: '/ProblemSet' },
-            {
-                icon: 'playlist_add_check',
-                text: '评测列表',
-                to: '/JudgeStatus',
-            },
-            { icon: 'stars', text: '比赛',to:'/ContestList' },
-            { icon: 'people', text: '社区' },
-            { icon: 'chat', text: '论坛' },
-        ],
-    }),
+        { icon: 'stars', text: '比赛',to:'/ContestList' },
+        { icon: 'people', text: '社区' },
+        { icon: 'chat', text: '论坛' },
+    ];
+
     async mounted() {
         this.$store.dispatch('Auth/Init');
         if (this.$store.getters['Auth/isLogin']) {
             await this.$store.dispatch('User/Update');
             await this.$store.dispatch('User/UpdateUserData');
         }
-    },
-    methods: {
-        SwitchClassicTheme() {
-            this.$store.dispatch('Theme/SetClassic');
-        },
-        SwitchDarkTheme() {
-            this.$store.dispatch('Theme/SetDark');
-        },
-        SwitchLightTheme() {
-            this.$store.dispatch('Theme/SetLight');
-        },
-    },
-    watch: {
-        $route() {
-            this.$refs.scroll.$el.scrollTop = 0;
-        },
-    },
-};
+    }
+
+    SwitchClassicTheme() {
+        this.$store.dispatch('Theme/SetClassic');
+    }
+
+    SwitchDarkTheme() {
+        this.$store.dispatch('Theme/SetDark');
+    }
+
+    SwitchLightTheme() {
+        this.$store.dispatch('Theme/SetLight');
+    }
+
+    @Watch('$route')
+    on$routeChanged() {
+        (this.$refs.scroll as Vue).$el.scrollTop = 0;
+    }
+}
 </script>
+
 <style>
 html,
 body {
@@ -205,7 +208,7 @@ body {
     opacity: 0;
 }
 #inspire,
-.v-content {
+.v-main {
     height: 100%;
 }
 </style>

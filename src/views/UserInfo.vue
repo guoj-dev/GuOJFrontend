@@ -79,32 +79,27 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
-    components: {},
-    data: () => {
-        return {
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: { path: '/' },
-                },
-                {
-                    text: '用户',
-                    disabled: true,
-                },
-            ],
-            Username: 'null',
-        };
-    },
-    computed: {
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
+@Component
+export default class UserInfo extends Vue {
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: { path: '/' },
         },
-    },
-});
+        {
+            text: '用户',
+            disabled: true,
+        },
+    ];
+    Username = 'null';
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
+    }
+}
 </script>
 
 <style scoped>

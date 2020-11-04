@@ -36,10 +36,10 @@
             </div>
 
             <v-divider class="animated fadeInUp"/>
-            <v-list :color="Theme.Color" shaped="true" subheader="false" tile class="mt-4">
+            <v-list :color="Theme.Color" :shaped="true" :subheader="false" tile class="mt-4">
                 <v-list-item
                     v-for="key in Problems"
-                    :key="key"
+                    :key="key[0]"
                     link
                     :to="'/Problem/' + key[0]"
                 >
@@ -74,98 +74,95 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
-    components: {},
-    data: () => {
-        return {
-            Problems: [
-                [
-                    'P1000',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1001',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1002',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1003',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1005',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1006',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1007',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1008',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1009',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                [
-                    'P1010',
-                    'A+B Problem',
-                    'light-blue accent-4',
-                    ['green', '入门难度'],
-                ],
-                
-            ],
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: '/',
-                },
-                {
-                    text: 'ProblemSet',
-                    disabled: true,
-                    to: '/ProblemSet',
-                },
-            ],
-        };
-    },
-    computed: {
-        Theme() {
-            return this.$store.getters['Theme/ProblemSet'];
+@Component
+export default class ProblemSet extends Vue {
+    Problems = [
+        [
+            'P1000',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1001',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1002',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1003',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1005',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1006',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1007',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1008',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1009',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        [
+            'P1010',
+            'A+B Problem',
+            'light-blue accent-4',
+            ['green', '入门难度'],
+        ],
+        
+    ];
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: '/',
         },
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
+        {
+            text: 'ProblemSet',
+            disabled: true,
+            to: '/ProblemSet',
         },
-    },
-});
+    ];
+    page = 1;
+
+    get Theme() {
+        return this.$store.getters['Theme/ProblemSet'];
+    }
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
+    }
+}
 </script>
 
 <style lang="sass" scope>

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import Prism from 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -17,23 +17,26 @@ import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prismjs/plugins/download-button/prism-download-button';
 import 'prismjs/plugins/show-language/prism-show-language';
 
-export default Vue.extend({
-    methods: {
-        update() {
-            this.$nextTick(() => {
-                Prism.highlightAll();
-            });
-        },
-    },
+@Component
+export default class CodeContainer extends Vue {
+    @Prop(String) readonly language: string;
+
+    update() {
+        this.$nextTick(() => {
+            Prism.highlightAll();
+        });
+    }
+
     mounted() {
         this.update();
-    },
+    }
+
     updated() {
         this.update();
-    },
-    props:['language']
-});
+    }
+}
 </script>
+
 <style>
 code,
 pre {

@@ -21,35 +21,30 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
-    components: { },
-    props: {},
-    data: () => {
-        return {
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: '/',
-                },
-                {
-                    text: 'ContestList',
-                    disabled: true,
-                    to: '/ContestList',
-                },
-            ],
-        };
-    },
-    computed: {
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
+@Component
+export default class ContestList extends Vue {
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: '/',
         },
-    },
+        {
+            text: 'ContestList',
+            disabled: true,
+            to: '/ContestList',
+        },
+    ];
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
+    }
+
     mounted() {
     }
-});
+}
 </script>
 
 <style>

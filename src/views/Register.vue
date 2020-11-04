@@ -77,51 +77,46 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import axios from '../api/session';
 import auth from '../api/auth';
-export default Vue.extend({
-    components: {},
-    data: () => {
-        return {
-            valid: true,
-            show: false,
-            email: '',
-            username: '',
-            password: '',
-            password_repeat: '',
-            rules: {
-                required: (value: String) => !!value || '必填',
-                min: (value: String) => value.length >= 8 || '至少8个字符'
-            },
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: { path: '/' }
-                },
-                {
-                    text: 'Register',
-                    disabled: true,
-                },
-            ],
-        };
-    },
-    computed: {
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
+
+@Component
+export default class Register extends Vue {
+    valid = true;
+    show = false;
+    email = '';
+    username = '';
+    password = '';
+    password_repeat = '';
+    rules = {
+        required: (value: String) => !!value || '必填',
+        min: (value: String) => value.length >= 8 || '至少8个字符'
+    };
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: { path: '/' }
         },
-    },
-    methods: {
-        Register() {
-            const email = this.email;
-            const username = this.username;
-            const password = this.password;
-            const password_repeat = this.password_repeat;
-            //this.$store.dispatch('Login',{username,password}).then(()=>this.$router.push('/'))
-        }
+        {
+            text: 'Register',
+            disabled: true,
+        },
+    ];
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
     }
-});
+
+    Register() {
+        const email = this.email;
+        const username = this.username;
+        const password = this.password;
+        const password_repeat = this.password_repeat;
+        //this.$store.dispatch('Login',{username,password}).then(()=>this.$router.push('/'))
+    }
+}
 </script>
 
 <style lang="css" scope>

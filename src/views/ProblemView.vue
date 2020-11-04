@@ -97,82 +97,83 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import Markdown from '../components/Markdown.vue';
 import monaco from '../components/Monacoeditor.vue';
 
-export default Vue.extend({
-    components: { Markdown, monaco },
-    data: () => {
-        return {
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: { path: '/' }
-                },
-                {
-                    text: '题库',
-                    disabled: false,
-                    to: { name: 'ProblemSet' }
-                },
-                {
-                    text: '题目',
-                    disabled: true
-                }
-            ],
-            select: '',
-            Languages: [
-                { text: 'C', lang: 'c' },
-                { text: 'C++ 98', lang: 'cpp98' },
-                { text: 'C++ 11', lang: 'cpp11' },
-                { text: 'C++ 14', lang: 'cpp14' },
-                { text: 'C++ 17', lang: 'cpp17' },
-                { text: 'C++ 20', lang: 'cpp20' },
-                { text: 'C#', lang: 'csharp' },
-                { text: 'Visual Basic .Net', lang: 'vb' },
-                { text: 'F#', lang: 'fsharp' },
-                { text: 'Java', lang: 'java' },
-                { text: 'Kotlin', lang: 'kotlin' },
-                { text: 'Scala', lang: 'scala' },
-                { text: 'Clojure', lang: 'clojure' },
-                { text: 'Python 2', lang: 'python2' },
-                { text: 'Python 3', lang: 'python3' },
-                { text: 'PyPy 2', lang: 'pypy2' },
-                { text: 'PyPy 3', lang: 'pypy3' },
-                { text: 'Ruby', lang: 'ruby' },
-                { text: 'Lua', lang: 'lua' },
-                { text: 'Perl', lang: 'perl' },
-                { text: 'PHP 5.0', lang: 'php' },
-                { text: 'JavaScript', lang: 'javascript' },
-                { text: 'TypeScript', lang: 'typescript' },
-                { text: 'Go', lang: 'golang' },
-                { text: 'Rust', lang: 'rust' },
-                { text: 'Haskell', lang: 'haskell' },
-                { text: 'Lisp', lang: 'lisp' },
-                { text: 'Racket', lang: 'racket' },
-                { text: 'Wenyan(JavaScript)', lang: 'wenyanjs' },
-                { text: 'Wenyan(Python)', lang: 'wenyanpy' },
-                { text: 'Wenyan(Ruby)', lang: 'wenyanrb' },
-                { text: 'Dongbei(Python)', lang: 'dongbeipy' }
-            ],
-            rate: '1',
-            hardcolor: 'green',
-            MarkdownText: '# 题目描述\n 114514',
-            overlay: false
-        };
+@Component({
+    components: {
+        Markdown,
+        monaco,
     },
-    computed:{
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
-        },  
-    },
+})
+export default class ProblemView extends Vue {
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: { path: '/' }
+        },
+        {
+            text: '题库',
+            disabled: false,
+            to: { name: 'ProblemSet' }
+        },
+        {
+            text: '题目',
+            disabled: true
+        }
+    ];
+    select = '';
+    Languages = [
+        { text: 'C', lang: 'c' },
+        { text: 'C++ 98', lang: 'cpp98' },
+        { text: 'C++ 11', lang: 'cpp11' },
+        { text: 'C++ 14', lang: 'cpp14' },
+        { text: 'C++ 17', lang: 'cpp17' },
+        { text: 'C++ 20', lang: 'cpp20' },
+        { text: 'C#', lang: 'csharp' },
+        { text: 'Visual Basic .Net', lang: 'vb' },
+        { text: 'F#', lang: 'fsharp' },
+        { text: 'Java', lang: 'java' },
+        { text: 'Kotlin', lang: 'kotlin' },
+        { text: 'Scala', lang: 'scala' },
+        { text: 'Clojure', lang: 'clojure' },
+        { text: 'Python 2', lang: 'python2' },
+        { text: 'Python 3', lang: 'python3' },
+        { text: 'PyPy 2', lang: 'pypy2' },
+        { text: 'PyPy 3', lang: 'pypy3' },
+        { text: 'Ruby', lang: 'ruby' },
+        { text: 'Lua', lang: 'lua' },
+        { text: 'Perl', lang: 'perl' },
+        { text: 'PHP 5.0', lang: 'php' },
+        { text: 'JavaScript', lang: 'javascript' },
+        { text: 'TypeScript', lang: 'typescript' },
+        { text: 'Go', lang: 'golang' },
+        { text: 'Rust', lang: 'rust' },
+        { text: 'Haskell', lang: 'haskell' },
+        { text: 'Lisp', lang: 'lisp' },
+        { text: 'Racket', lang: 'racket' },
+        { text: 'Wenyan(JavaScript)', lang: 'wenyanjs' },
+        { text: 'Wenyan(Python)', lang: 'wenyanpy' },
+        { text: 'Wenyan(Ruby)', lang: 'wenyanrb' },
+        { text: 'Dongbei(Python)', lang: 'dongbeipy' }
+    ];
+    rate = '1';
+    hardcolor = 'green';
+    MarkdownText = '# 题目描述\n 114514';
+    overlay = false;
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
+    }
+
     mounted() {
         window.addEventListener('resize', () => {
             this.overlay = false;
         });
     }
-});
+}
 </script>
 
 <style>
@@ -181,4 +182,3 @@ export default Vue.extend({
     width: 80%;
 }
 </style>
- 

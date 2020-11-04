@@ -26,17 +26,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-export default {
-    data() {
-        return {
-            NotificationList: [],
-        };
-    },
-    method: {},
-    computed: {},
-    watch: {},
-};
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component
+export default class Notification extends Vue {
+    NotificationList = [];
+}
 </script>
 
 <style scoped>

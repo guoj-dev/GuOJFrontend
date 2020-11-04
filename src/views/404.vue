@@ -15,19 +15,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
-    components: {},
-    computed:{
-        Theme(){
-            return this.$store.getters['Theme/NotFound'];
-        }
-    },
-    data: () => {
-        return {};
+@Component
+export default class NotFound extends Vue {
+    get Theme() {
+        return this.$store.getters['Theme/NotFound'];
     }
-});
+}
 </script>
 
 <style>

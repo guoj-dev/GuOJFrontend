@@ -40,13 +40,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import Markdown from '../components/Markdown.vue';
 import monaco from '../components/Monacoeditor.vue';
 
-export default Vue.extend({
-    components: { Markdown, monaco },
-});
+@Component({
+    components: {
+        Markdown,
+        monaco
+    },
+})
+export default class Discussion extends Vue {}
 </script>
 
 <style>
