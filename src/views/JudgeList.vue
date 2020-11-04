@@ -30,10 +30,10 @@
                 >
             </div>
             <v-divider class="animated fadeInUp" />
-            <v-list subheader="false" tile class="mt-4" shaped>
+            <v-list :subheader="false" tile class="mt-4" shaped>
                 <v-list-item
                     v-for="key in Judges"
-                    :key="key"
+                    :key="key[0]"
                     :to="'/JudgeStatus/' + key[0]"
                     link
 
@@ -74,45 +74,41 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
-    components: {},
-    data: () => {
-        return {
-            Judges: [
-                ['1', 'A+B Problem', ['green', 'Accepted']],
-                ['2', 'A+B Problem', ['green', 'Accepted']],
-                ['3', 'A+B Problem', ['green', 'Accepted']],
-                ['4', 'A+B Problem', ['green', 'Accepted']],
-                ['5', 'A+B Problem', ['green', 'Accepted']],
-                ['6', 'A+B Problem', ['green', 'Accepted']],
-                ['7', 'A+B Problem', ['green', 'Accepted']],
-                ['8', 'A+B Problem', ['green', 'Accepted']],
-                ['9', 'A+B Problem', ['green', 'Accepted']],
-                ['10', 'A+B Problem', ['green', 'Accepted']],
-                ['11', 'A+B Problem', ['green', 'Accepted']],
-            ],
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: '/',
-                },
-                {
-                    text: 'ProblemSet',
-                    disabled: true,
-                    to: '/ProblemSet',
-                },
-            ],
-        };
-    },
-    computed: {
-        BreadCrumbs() {
-            return this.$store.getters['Theme/BreadCrumbs'];
+@Component
+export default class JudgeList extends Vue {
+    Judges = [
+        ['1', 'A+B Problem', ['green', 'Accepted']],
+        ['2', 'A+B Problem', ['green', 'Accepted']],
+        ['3', 'A+B Problem', ['green', 'Accepted']],
+        ['4', 'A+B Problem', ['green', 'Accepted']],
+        ['5', 'A+B Problem', ['green', 'Accepted']],
+        ['6', 'A+B Problem', ['green', 'Accepted']],
+        ['7', 'A+B Problem', ['green', 'Accepted']],
+        ['8', 'A+B Problem', ['green', 'Accepted']],
+        ['9', 'A+B Problem', ['green', 'Accepted']],
+        ['10', 'A+B Problem', ['green', 'Accepted']],
+        ['11', 'A+B Problem', ['green', 'Accepted']],
+    ];
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: '/',
         },
-    },
-});
+        {
+            text: 'ProblemSet',
+            disabled: true,
+            to: '/ProblemSet',
+        },
+    ];
+    page = 1;
+
+    get BreadCrumbs() {
+        return this.$store.getters['Theme/BreadCrumbs'];
+    }
+}
 </script>
 
 <style>

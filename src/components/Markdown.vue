@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import VueMarkdown from 'vue-markdown-guoj';
 import Prism from 'prismjs';
 import 'prismjs/plugins/autoloader/prism-autoloader';
@@ -20,25 +20,28 @@ import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prismjs/plugins/download-button/prism-download-button';
 import 'prismjs/plugins/show-language/prism-show-language';
 
-export default Vue.extend({
+@Component({
     components: {
         VueMarkdown,
     },
-    methods: {
-        update() {
-            this.$nextTick(() => {
-                Prism.highlightAll();
-            });
-        },
-    },
+})
+export default class Markdown extends Vue {
+    update() {
+        this.$nextTick(() => {
+            Prism.highlightAll();
+        });
+    }
+
     mounted() {
         this.update();
-    },
+    }
+
     updated() {
         this.update();
-    },
-});
+    }
+}
 </script>
+
 <style>
 code,
 pre {

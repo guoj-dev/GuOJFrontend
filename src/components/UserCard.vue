@@ -74,65 +74,68 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Watch } from 'vue-property-decorator';
 import Axios from 'axios';
-export default Vue.extend({
-    props: {},
-    data() {
-        return {
-            expand: Boolean,
-            avatar: String,
-            items: [
-                { title: 'Click Me' },
-                { title: 'Click Me' },
-                { title: 'Click Me' },
-                { title: 'Click Me 2' },
-            ],
-        };
-    },
-    methods: {
-        logout() {
-            this.$store.dispatch('Auth/Logout');
-        },
-    },
-    computed: {
-        Username(): String {
-            return this.$store.getters['User/Username'];
-        },
-        Avatar(): String {
-            return this.$store.getters['User/Avatar'];
-        },
-        Coins(): Number {
-            return this.$store.getters['User/Coins'];
-        },
-        islogin(): Boolean {
-            return this.$store.getters['Auth/isLogin'];
-        },
-        NameColor(): String {
-            return this.$store.getters['User/NameColor'];
-        },
-        Nameplate(): String {
-            return this.$store.getters['User/Nameplate'];
-        },
-        NameplateColor(): String {
-            return this.$store.getters['User/NameplateColor'];
-        },
-        Theme() {
-            return this.$store.getters['Theme/Usercard'];
-        },
-    },
-    watch: {
-        async islogin(val) {
-            if (this.$store.getters['Auth/isLogin']) {
-                await this.$store.dispatch('User/Update');
-                await this.$store.dispatch('User/UpdateUserData');
-            }
-        },
-    },
+
+@Component
+export default class UserCard extends Vue {
+    expand: Boolean;
+    avatar: String;
+    items = [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+    ];
+
+    logout() {
+        this.$store.dispatch('Auth/Logout');
+    }
+
+    get Username(): String {
+        return this.$store.getters['User/Username'];
+    }
+
+    get Avatar(): String {
+        return this.$store.getters['User/Avatar'];
+    }
+
+    get Coins(): Number {
+        return this.$store.getters['User/Coins'];
+    }
+
+    get islogin(): Boolean {
+        return this.$store.getters['Auth/isLogin'];
+    }
+
+    get NameColor(): String {
+        return this.$store.getters['User/NameColor'];
+    }
+
+    get Nameplate(): String {
+        return this.$store.getters['User/Nameplate'];
+    }
+
+    get NameplateColor(): String {
+        return this.$store.getters['User/NameplateColor'];
+    }
+
+    get Theme() {
+        return this.$store.getters['Theme/Usercard'];
+    }
+
+    @Watch('islogin')
+    async onIsloginChanged(val) {
+        if (this.$store.getters['Auth/isLogin']) {
+            await this.$store.dispatch('User/Update');
+            await this.$store.dispatch('User/UpdateUserData');
+        }
+    }
+
     mounted() {
         //alert(this.$store.getters)
-    },
-});
+    }
+}
 </script>
 
 <style></style>

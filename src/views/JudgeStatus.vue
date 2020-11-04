@@ -3,7 +3,7 @@
         <v-chip
             label
             style="padding:4px 4px 4px 4px;"
-            small="true"
+            :small="true"
             color="white"
         >
             <v-breadcrumbs
@@ -161,40 +161,40 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import CodeContainer from '../components/CodeContainer.vue';
 
-export default Vue.extend({
-    components: { CodeContainer }, // eslint-disable-line vue/no-unused-components
-    data: () => {
-        return {
-            items: [
-                {
-                    text: 'GuOJ',
-                    disabled: false,
-                    to: { path: '/' },
-                },
-                {
-                    text: '评测',
-                    disabled: false,
-                    exact: true,
-                    to: { name: 'JudgeList' },
-                },
-                {
-                    text: '任务',
-                    disabled: true,
-                },
-            ],
-            ProblemID: 'P1000',
-            ProblemName: 'A+B Problem',
-            TimeLimit: '1000ms',
-            Time: '0ms',
-            MemoryLimit: '128MB',
-            Memory: '10KB',
-            Code:'var a = require(\'\')'
-        };
+@Component({
+    components: {
+        CodeContainer,
     },
-});
+})
+export default class JudgeStatus extends Vue {
+    items = [
+        {
+            text: 'GuOJ',
+            disabled: false,
+            to: { path: '/' },
+        },
+        {
+            text: '评测',
+            disabled: false,
+            exact: true,
+            to: { name: 'JudgeList' },
+        },
+        {
+            text: '任务',
+            disabled: true,
+        },
+    ];
+    ProblemID = 'P1000';
+    ProblemName = 'A+B Problem';
+    TimeLimit = '1000ms';
+    Time = '0ms';
+    MemoryLimit = '128MB';
+    Memory = '10KB';
+    Code ='var a = require(\'\')';
+}
 </script>
 
 <style scoped>

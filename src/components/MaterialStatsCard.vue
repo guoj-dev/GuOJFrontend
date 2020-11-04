@@ -30,56 +30,27 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import Card from './MaterialCard.vue';
 
-export default {
-    name: 'MaterialStatsCard',
+@Component({
+    components: {
+        Card,
+    },
     inheritAttrs: false,
-    components: { Card },
-    props: {
-        icon: {
-            type: String,
-            required: true
-        },
-        subIcon: {
-            type: String,
-            default: undefined
-        },
-        subIconColor: {
-            type: String,
-            default: undefined
-        },
-        subTextColor: {
-            type: String,
-            default: undefined
-        },
-        subText: {
-            type: String,
-            default: undefined
-        },
-        title: {
-            type: String,
-            default: undefined
-        },
-        value: {
-            type: String,
-            default: undefined
-        },
-        smallValue: {
-            type: String,
-            default: undefined
-        },
-        color: {
-            type: String,
-            default: 'primary'
-        },
-        sheetcolor: {
-            type: String,
-            default: 'success'
-        }
-    }
-};
+})
+export default class MaterialStatsCard extends Vue {
+    @Prop({ type: String, required: true }) readonly icon: string;
+    @Prop(String) readonly subIcon?: string;
+    @Prop(String) readonly subIconColor?: string;
+    @Prop(String) readonly subTextColor?: string;
+    @Prop(String) readonly subText?: string;
+    @Prop(String) readonly title?: string;
+    @Prop(String) readonly value?: string;
+    @Prop(String) readonly smallValue?: string;
+    @Prop({ type: String, default: 'primary' }) readonly color: string;
+    @Prop({ type: String, default: 'success' }) readonly sheetcolor: string;
+}
 </script>
 
 <style lang="sass">

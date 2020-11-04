@@ -68,53 +68,32 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-export default {
-    name: 'MaterialCard',
-    props: {
-        avatar: {
-            type: String,
-            default: '',
-        },
-        color: {
-            type: String,
-            default: 'primary',
-        },
-        sheetcolor: {
-            type: String,
-            default: 'success',
-        },
-        icon: {
-            type: String,
-            default: undefined,
-        },
-        image: {
-            type: Boolean,
-            default: false,
-        },
-        text: {
-            type: String,
-            default: '',
-        },
-        title: {
-            type: String,
-            default: '',
-        },
-    },
-    computed: {
-        classes() {
-            return {
-                'v-card--material--has-heading': this.hasHeading,
-            };
-        },
-        hasHeading() {
-            return Boolean(this.$slots.heading || this.title || this.icon);
-        },
-        hasAltHeading() {
-            return Boolean(this.$slots.heading || (this.title && this.icon));
-        },
-    },
-};
+import { Vue, Component, Prop } from 'vue-property-decorator';
+
+@Component
+export default class MaterialCard extends Vue {
+    @Prop({ type: String, default: '' }) readonly avatar: string;
+    @Prop({ type: String, default: 'primary' }) readonly color: string;
+    @Prop({ type: String, default: 'success' }) readonly sheetcolor: string;
+    @Prop(String) readonly icon?: string;
+    @Prop({ type: Boolean, default: false }) readonly image: boolean;
+    @Prop({ type: String, default: '' }) readonly text: string;
+    @Prop({ type: String, default: '' }) readonly title: string;
+
+    get classes() {
+        return {
+            'v-card--material--has-heading': this.hasHeading,
+        };
+    }
+
+    get hasHeading() {
+        return Boolean(this.$slots.heading || this.title || this.icon);
+    }
+
+    get hasAltHeading() {
+        return Boolean(this.$slots.heading || (this.title && this.icon));
+    }
+}
 </script>
 
 <style lang="sass" scope>
